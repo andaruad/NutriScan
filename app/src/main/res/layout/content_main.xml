@@ -13,23 +13,50 @@
     tools:context=".MainActivity">
 
     <LinearLayout
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:paddingLeft="30dp">
 
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/bBarcode"
-            android:layout_gravity="center_horizontal|top"
             android:adjustViewBounds="true"
             android:maxWidth="200dp"
             android:maxHeight="200dp"
             android:scaleType="fitCenter"
+            android:layout_gravity="center"
+            android:paddingBottom="@dimen/activity_horizontal_margin"
+            android:id="@+id/bbsearch"
             android:src="@drawable/ic_bbarcode"/>
 
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:maxWidth="500dp"
+            android:maxHeight="500dp"
+            android:scaleType="fitCenter"
+            android:layout_gravity="center"
+            android:id="@+id/bhistory"
+            android:src="@drawable/ic_bbarcode"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:maxWidth="200dp"
+            android:maxHeight="200dp"
+            android:scaleType="fitCenter"
+            android:layout_gravity="center"
+            android:id="@+id/bbarcode"
+            android:src="@drawable/ic_bbarcode"/>
     </LinearLayout>
 
 </RelativeLayout>
