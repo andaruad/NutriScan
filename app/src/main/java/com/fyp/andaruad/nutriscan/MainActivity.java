@@ -1,5 +1,6 @@
 package com.fyp.andaruad.nutriscan;
 
+import android.media.Image;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -43,10 +44,8 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        //Added Buttons
-
-        ImageButton bbarcode;
-        bbarcode = (ImageButton)findViewById(R.id.bbarcode);
+        //Barcode Button
+        ImageButton bbarcode = (ImageButton)findViewById(R.id.bbarcode);
         bbarcode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,8 +53,15 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-
-
+        //Search Button
+        ImageButton bsearch = (ImageButton)findViewById(R.id.bsearch);
+        bsearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Snackbar.make(v,"Snackbar bsearch",Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
 
 
     }
