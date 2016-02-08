@@ -16,6 +16,8 @@ import android.view.MenuItem;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.google.zxing.integration.android.IntentIntegrator;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -44,12 +46,16 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        //Scanner
+
+
         //Barcode Button
         ImageButton bbarcode = (ImageButton)findViewById(R.id.bbarcode);
         bbarcode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                IntentIntegrator integrator = new IntentIntegrator(MainActivity.this);
+                integrator.initiateScan();
             }
         });
 
