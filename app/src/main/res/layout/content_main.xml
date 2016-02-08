@@ -13,40 +13,38 @@
     tools:context=".MainActivity"
     android:background="@color/BGcolor">
 
-    <LinearLayout
-        android:orientation="horizontal"
+    <GridLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingLeft="30dp"
-        android:weightSum="1">
+        android:layout_height="match_parent">
 
         <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="200dp"
+            android:layout_width="168dp"
+            android:layout_height="164dp"
             android:adjustViewBounds="true"
             android:maxWidth="500dp"
             android:maxHeight="500dp"
             android:scaleType="fitCenter"
-            android:layout_gravity="bottom|end"
-            android:paddingBottom="@dimen/activity_horizontal_margin"
-            android:id="@+id/bhistory"
-            android:src="@drawable/ic_bhistory" />
-
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="200dp"
-            android:adjustViewBounds="true"
-            android:maxWidth="500dp"
-            android:maxHeight="500dp"
-            android:scaleType="fitCenter"
-            android:layout_gravity="bottom|end"
             android:id="@+id/bsearch"
             android:src="@drawable/ic_bsearch"
-            android:layout_weight="0.86" />
-    </LinearLayout>
+            android:layout_weight="0.86"
+            android:layout_row="15"
+            android:layout_column="1" />
 
-    <LinearLayout
-        android:orientation="vertical"
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:maxWidth="500dp"
+            android:maxHeight="500dp"
+            android:scaleType="fitCenter"
+            android:paddingBottom="@dimen/activity_horizontal_margin"
+            android:id="@+id/bhistory"
+            android:src="@drawable/ic_bhistory"
+            android:layout_row="15"
+            android:layout_column="7" />
+    </GridLayout>
+
+    <GridLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -57,9 +55,11 @@
             android:maxWidth="500dp"
             android:maxHeight="500dp"
             android:scaleType="fitCenter"
-            android:layout_gravity="center"
+            android:layout_gravity="top|center"
             android:id="@+id/bbarcode"
-            android:src="@drawable/ic_bbarcode"/>
-    </LinearLayout>
+            android:src="@drawable/ic_bbarcode"
+            android:layout_row="0"
+            android:layout_column="8" />
+    </GridLayout>
 
 </RelativeLayout>
