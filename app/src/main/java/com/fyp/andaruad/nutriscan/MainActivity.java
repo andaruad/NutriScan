@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity
         bbarcode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),"bbarcode button",Toast.LENGTH_LONG).show();
+
             }
         });
 
@@ -63,8 +63,16 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
+        //History Button
+        ImageButton bhistory=(ImageButton)findViewById(R.id.bhistory);
+        bhistory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(),"bhistory button",Toast.LENGTH_LONG).show();
+            }
+        });
 
-    }
+            }
 
     @Override
     public void onBackPressed() {
