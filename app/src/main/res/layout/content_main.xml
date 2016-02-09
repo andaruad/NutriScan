@@ -24,8 +24,8 @@
             android:maxWidth="500dp"
             android:maxHeight="500dp"
             android:scaleType="fitCenter"
-            android:id="@+id/bsearch"
-            android:src="@drawable/ic_bsearch"
+            android:id="@+id/bhistory"
+            android:src="@drawable/ic_bhistory"
             android:layout_weight="0.86"
             android:layout_row="15"
             android:layout_column="1" />
@@ -38,8 +38,8 @@
             android:maxHeight="500dp"
             android:scaleType="fitCenter"
             android:paddingBottom="@dimen/activity_horizontal_margin"
-            android:id="@+id/bhistory"
-            android:src="@drawable/ic_bhistory"
+            android:id="@+id/bsearch"
+            android:src="@drawable/ic_bsearch"
             android:layout_row="15"
             android:layout_column="7" />
     </GridLayout>
