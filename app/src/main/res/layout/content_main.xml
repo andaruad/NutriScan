@@ -11,7 +11,7 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/app_bar_main"
     tools:context=".MainActivity"
-    android:background="@color/BGcolor">
+    android:background="@drawable/background">
 
     <GridLayout
         android:layout_width="match_parent"
@@ -28,20 +28,21 @@
             android:src="@drawable/ic_bhistory"
             android:layout_weight="0.86"
             android:layout_row="15"
-            android:layout_column="1" />
+            android:layout_column="1"
+            android:background="@null"/>
 
         <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="168dp"
+            android:layout_height="164dp"
             android:adjustViewBounds="true"
             android:maxWidth="500dp"
             android:maxHeight="500dp"
             android:scaleType="fitCenter"
-            android:paddingBottom="@dimen/activity_horizontal_margin"
             android:id="@+id/bsearch"
             android:src="@drawable/ic_bsearch"
             android:layout_row="15"
-            android:layout_column="7" />
+            android:layout_column="7"
+            android:background="@null"/>
     </GridLayout>
 
     <GridLayout
@@ -59,7 +60,8 @@
             android:id="@+id/bbarcode"
             android:src="@drawable/ic_bbarcode"
             android:layout_row="0"
-            android:layout_column="8" />
+            android:layout_column="8"
+            android:background="@null"/>
     </GridLayout>
 
 </RelativeLayout>
