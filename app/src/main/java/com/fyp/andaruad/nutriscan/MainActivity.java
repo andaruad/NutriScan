@@ -1,9 +1,9 @@
 package com.fyp.andaruad.nutriscan;
 
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,6 +14,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.zxing.integration.android.IntentIntegrator;
@@ -37,6 +38,8 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
 
         //Scanner
 
@@ -70,13 +73,18 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
+        //Text View
+        TextView tvresult = (TextView) findViewById(R.id.tvresult);
+            tvresult.setText("Testing");
             }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent intent){
         IntentResult scanResult = IntentIntegrator.parseActivityResult(requestCode,resultCode, intent);
             if (scanResult != null){
-
+                String re = scanResult.getContents();
+                Log.d("code", re);
+            // This May cause a problem
 
             }
 

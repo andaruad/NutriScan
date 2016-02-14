@@ -18,25 +18,24 @@
         android:layout_height="match_parent">
 
         <ImageButton
-            android:layout_width="168dp"
-            android:layout_height="164dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:adjustViewBounds="true"
-            android:maxWidth="500dp"
-            android:maxHeight="500dp"
+            android:maxWidth="400dp"
+            android:maxHeight="400dp"
             android:scaleType="fitCenter"
             android:id="@+id/bhistory"
             android:src="@drawable/ic_bhistory"
-            android:layout_weight="0.86"
             android:layout_row="15"
             android:layout_column="1"
             android:background="@null"/>
 
         <ImageButton
-            android:layout_width="168dp"
-            android:layout_height="164dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:adjustViewBounds="true"
-            android:maxWidth="500dp"
-            android:maxHeight="500dp"
+            android:maxWidth="400dp"
+            android:maxHeight="400dp"
             android:scaleType="fitCenter"
             android:id="@+id/bsearch"
             android:src="@drawable/ic_bsearch"
@@ -62,6 +61,22 @@
             android:layout_row="0"
             android:layout_column="8"
             android:background="@null"/>
+
+    </GridLayout>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="250dp"
+            android:text="New Text"
+            android:id="@+id/tvresult"
+            android:layout_row="4"
+            android:layout_column="5"
+            android:cursorVisible="true"
+            android:textIsSelectable="true" />
     </GridLayout>
 
 </RelativeLayout>
