@@ -9,7 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-/**
+/*
  * Created by Andaruad on 14/02/2016.
  */
 public class SearchArrayAdapter extends ArrayAdapter<String>{

@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity
 
         //Text View
         TextView tvresult = (TextView) findViewById(R.id.tvresult);
-            tvresult.setText("Testing");
+            tvresult.setText("Apa kek");
             }
 
     @Override
