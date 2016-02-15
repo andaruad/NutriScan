@@ -2,7 +2,6 @@ package com.fyp.andaruad.nutriscan;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.Snackbar;
 import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -59,8 +58,9 @@ public class MainActivity extends AppCompatActivity
         bsearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Snackbar.make(v,"Snackbar bsearch",Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent intent = new Intent(v.getContext(),SearchActivity.class);
+                startActivity(intent);
+                //Toast.makeText(getApplicationContext(),"bsearch button",Toast.LENGTH_LONG).show();
             }
         });
 

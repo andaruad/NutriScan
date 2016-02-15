@@ -62,21 +62,17 @@
             android:layout_column="8"
             android:background="@null"/>
 
-    </GridLayout>
-
-    <GridLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
         <TextView
-            android:layout_width="300dp"
-            android:layout_height="250dp"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
             android:text="New Text"
             android:id="@+id/tvresult"
-            android:layout_row="4"
-            android:layout_column="5"
+            android:layout_row="1"
+            android:layout_column="8"
             android:cursorVisible="true"
-            android:textIsSelectable="true" />
+            android:textIsSelectable="true"
+            />
+
     </GridLayout>
 
 </RelativeLayout>
