@@ -69,13 +69,13 @@ public class MainActivity extends AppCompatActivity
         bhistory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),"bhistory button",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),"bhistory button",Toast.LENGTH_SHORT).show();
             }
         });
 
         //Text View
-        TextView tvresult = (TextView) findViewById(R.id.tvresult);
-            tvresult.setText("Apa kek");
+            //TextView tvresult = (TextView) findViewById(R.id.tvresult);
+            //tvresult.setText("Apa kek");
             }
 
     @Override
@@ -84,6 +84,8 @@ public class MainActivity extends AppCompatActivity
             if (scanResult != null){
                 String re = scanResult.getContents();
                 Log.d("code", re);
+                     TextView tvresult = (TextView) findViewById(R.id.tvresult);
+                    tvresult.setText("Your scanned barcode is"+ re);
             // This May cause a problem
 
             }
