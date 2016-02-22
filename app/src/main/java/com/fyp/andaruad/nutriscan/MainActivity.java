@@ -1,5 +1,6 @@
 package com.fyp.andaruad.nutriscan;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -131,8 +132,8 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camara) {
-            // Handle the camera action
+        if (id == R.id.diettypes) {
+            startActivity(new Intent(getApplicationContext(),DietTypes.class));
         } else if (id == R.id.nav_gallery) {
 
         } else if (id == R.id.nav_slideshow) {

@@ -14,7 +14,7 @@ import android.widget.Toast;
 public class SearchActivity extends ListActivity {
 
     static final String[] MOBILE_OS =
-            new String[] { "Android", "iOS", "WindowsMobile", "Blackberry"};
+            new String[] { "Product1", "Product2", "Product3", "Product4"};
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -34,11 +34,11 @@ public class SearchActivity extends ListActivity {
 
         //get selected items
         String selectedValue = (String) getListAdapter().getItem(position);
-        if(selectedValue == "Android"){
+        if(selectedValue == "Product1"){
             //Toast.makeText(getApplicationContext(),"Traaaai",Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(v.getContext(),ResultActivity.class);
             startActivity(intent);
-        };
+        }
         //Toast.makeText(this, selectedValue, Toast.LENGTH_SHORT).show();
 
     }
