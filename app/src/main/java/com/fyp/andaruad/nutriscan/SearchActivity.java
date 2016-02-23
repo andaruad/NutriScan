@@ -21,11 +21,6 @@ public class SearchActivity extends ListActivity {
         super.onCreate(savedInstanceState);
 
         setListAdapter(new SearchArrayAdapter(this, MOBILE_OS));
-
-
-
-
-
     }
 
 
@@ -40,7 +35,6 @@ public class SearchActivity extends ListActivity {
             startActivity(intent);
         }
         //Toast.makeText(this, selectedValue, Toast.LENGTH_SHORT).show();
-
     }
 
 }
