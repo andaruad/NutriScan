@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 /*
@@ -31,8 +32,13 @@ public class SearchActivity extends ListActivity {
         String selectedValue = (String) getListAdapter().getItem(position);
         if(selectedValue == "Product1"){
             //Toast.makeText(getApplicationContext(),"Traaaai",Toast.LENGTH_SHORT).show();
+//            TextView textView = (TextView) findViewById(R.id.textView26);
+//            ProductsDB product1 = new ProductsDB("Product Name trial 1",10);
+//            textView.setText(product1.getp_name());
             Intent intent = new Intent(v.getContext(),ResultActivity.class);
             startActivity(intent);
+
+
         }
         //Toast.makeText(this, selectedValue, Toast.LENGTH_SHORT).show();
     }
