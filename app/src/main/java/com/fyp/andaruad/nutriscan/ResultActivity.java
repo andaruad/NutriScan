@@ -2,6 +2,7 @@ package com.fyp.andaruad.nutriscan;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.widget.TextView;
 
 /*
  * Created by Andaruad on 16/02/2016.
@@ -14,8 +15,5 @@ public class ResultActivity extends Activity {
         setContentView(R.layout.result_main);
 
     }
-
-
-
 
 }
