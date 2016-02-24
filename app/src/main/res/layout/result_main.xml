@@ -18,7 +18,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Small Text"
+        android:text="Text"
         android:id="@+id/textView2"
         android:layout_marginBottom="52dp"
         android:layout_alignBottom="@+id/textView"
