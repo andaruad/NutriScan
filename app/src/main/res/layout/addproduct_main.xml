@@ -136,7 +136,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Carbohydrates ()"
+        android:text="Carbohydrates (in gram)"
         android:layout_marginTop="10dp"
         android:id="@+id/textView44" />
 
@@ -149,7 +149,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Product Name:"
+        android:text="Protein (in gram)"
         android:layout_marginTop="10dp"
         android:id="@+id/textView45" />
 
@@ -162,7 +162,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Product Name:"
+        android:text="Vitamin D (in miligram)"
         android:layout_marginTop="10dp"
         android:id="@+id/textView46" />
 
@@ -175,7 +175,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Product Name:"
+        android:text="Calcium (in miligram)"
         android:layout_marginTop="10dp"
         android:id="@+id/textView47" />
 
@@ -188,7 +188,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Product Name:"
+        android:text="Iron (in miligram)"
         android:layout_marginTop="10dp"
         android:id="@+id/textView48" />
 
@@ -201,7 +201,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Product Name:"
+        android:text="Potassium (in miligram)"
         android:layout_marginTop="10dp"
         android:id="@+id/textView49" />
 
@@ -209,19 +209,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/editText15"
-        android:layout_gravity="center_horizontal" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Product Name:"
-        android:layout_marginTop="10dp"
-        android:id="@+id/textView50" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/editText16"
         android:layout_gravity="center_horizontal" />
 
     <Button
