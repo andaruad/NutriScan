@@ -24,6 +24,7 @@
         <activity android:name=".ResultActivity" android:configChanges="keyboardHidden|orientation"/>
         <activity android:name=".DietTypes" android:configChanges="keyboardHidden|orientation"/>
         <activity android:name=".AddProduct" android:configChanges="keyboardHidden|orientation"/>
+        <activity android:name=".About" android:configChanges="keyboardHidden|orientation"/>
     </application>
 
 </manifest>

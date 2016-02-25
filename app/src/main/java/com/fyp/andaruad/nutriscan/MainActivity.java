@@ -143,6 +143,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.addproduct) {
             startActivity(new Intent(getApplicationContext(),AddProduct.class));
         } else if (id == R.id.about) {
+            startActivity(new Intent(getApplicationContext(),About.class));
 
         } else if (id == R.id.nav_manage) {
 
