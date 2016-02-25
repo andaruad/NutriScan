@@ -4,9 +4,9 @@
     <group android:checkableBehavior="single">
         <item android:id="@+id/diettypes" android:icon="@android:drawable/ic_menu_camera"
             android:title="Diet Types" />
-        <item android:id="@+id/nav_gallery" android:icon="@android:drawable/ic_menu_gallery"
+        <item android:id="@+id/addproduct" android:icon="@android:drawable/ic_menu_gallery"
             android:title="Add Product" />
-        <item android:id="@+id/nav_slideshow" android:icon="@android:drawable/ic_menu_slideshow"
+        <item android:id="@+id/about" android:icon="@android:drawable/ic_menu_slideshow"
             android:title="About" />
         <item android:id="@+id/nav_manage" android:icon="@android:drawable/ic_menu_manage"
             android:title="Tools" />
