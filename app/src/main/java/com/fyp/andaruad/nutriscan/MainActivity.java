@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -13,7 +15,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.PopupWindow;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -51,10 +56,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 IntentIntegrator integrator = new IntentIntegrator(MainActivity.this);
-                integrator.initiateScan();
-
-
-            }
+                integrator.initiateScan();}
         });
 
         //Search Button
@@ -64,6 +66,7 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(),SearchActivity.class);
                 startActivity(intent);
+
                 //Toast.makeText(getApplicationContext(),"bsearch button",Toast.LENGTH_LONG).show();
             }
         });
@@ -77,6 +80,7 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
+
         //Text View
             //TextView tvresult = (TextView) findViewById(R.id.tvresult);
             //tvresult.setText("Apa kek");
@@ -86,18 +90,12 @@ public class MainActivity extends AppCompatActivity
     public void onActivityResult(int requestCode, int resultCode, Intent intent){
         IntentResult scanResult = IntentIntegrator.parseActivityResult(requestCode,resultCode, intent);
             if (scanResult != null){
+                Toast.makeText(getApplicationContext(),"success",Toast.LENGTH_SHORT).show();
                 String re = scanResult.getContents();
                 Log.d("code", re);
                      TextView tvresult = (TextView) findViewById(R.id.tvresult);
                     tvresult.setText("Your scanned barcode is: " + re);
-
-
-
-
-
             }
-
-
     }
 
     @Override
@@ -116,6 +114,9 @@ public class MainActivity extends AppCompatActivity
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
+    private LayoutInflater pop;
+    private PopupWindow popupWindow;
+    private RelativeLayout relativeLayout;
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -126,9 +127,14 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            return true;
-        }
+            //startActivity(new Intent(MainActivity.this,Help.class));
+            pop = (LayoutInflater) getApplicationContext().getSystemService(LAYOUT_INFLATER_SERVICE);
+            relativeLayout = (RelativeLayout) findViewById(R.id.main);
+            ViewGroup container = (ViewGroup) pop.inflate(R.layout.help,null);
+            popupWindow = new PopupWindow(container, RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT,true);
+            popupWindow.showAtLocation(relativeLayout, Gravity.CENTER,0,0);
 
+        }
         return super.onOptionsItemSelected(item);
     }
 

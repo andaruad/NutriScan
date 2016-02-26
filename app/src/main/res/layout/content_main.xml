@@ -11,7 +11,8 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/app_bar_main"
     tools:context=".MainActivity"
-    android:background="@drawable/img_background">
+    android:background="@drawable/img_background"
+    android:id="@+id/main">
 
     <GridLayout
         android:layout_width="match_parent"
