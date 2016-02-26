@@ -90,11 +90,12 @@ public class MainActivity extends AppCompatActivity
     public void onActivityResult(int requestCode, int resultCode, Intent intent){
         IntentResult scanResult = IntentIntegrator.parseActivityResult(requestCode,resultCode, intent);
             if (scanResult != null){
-                Toast.makeText(getApplicationContext(),"success",Toast.LENGTH_SHORT).show();
                 String re = scanResult.getContents();
                 Log.d("code", re);
-                     TextView tvresult = (TextView) findViewById(R.id.tvresult);
-                    tvresult.setText("Your scanned barcode is: " + re);
+                //TextView tvresult = (TextView) findViewById(R.id.tvresult);
+                //tvresult.setText("Your scanned barcode is: " + re);
+                //Toast.makeText(getApplicationContext(),"Your scanned barcode is: " + re, Toast.LENGTH_LONG).show();
+
             }
     }
 
