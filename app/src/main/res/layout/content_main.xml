@@ -18,11 +18,11 @@
         android:layout_height="match_parent">
 
         <ImageButton
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:adjustViewBounds="true"
-            android:maxWidth="150dp"
-            android:maxHeight="150dp"
+            android:maxWidth="100dp"
+            android:maxHeight="100dp"
             android:scaleType="fitCenter"
             android:id="@+id/bhistory"
             android:src="@drawable/ic_bhistory"
@@ -31,11 +31,11 @@
             android:background="@null"/>
 
         <ImageButton
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:adjustViewBounds="true"
-            android:maxWidth="150dp"
-            android:maxHeight="150dp"
+            android:maxWidth="100dp"
+            android:maxHeight="100dp"
             android:scaleType="fitCenter"
             android:id="@+id/bsearch"
             android:src="@drawable/ic_bsearch"
@@ -50,10 +50,10 @@
 
         <ImageButton
             android:layout_width="wrap_content"
-            android:layout_height="350dp"
+            android:layout_height="300dp"
             android:adjustViewBounds="true"
-            android:maxWidth="350dp"
-            android:maxHeight="350dp"
+            android:maxWidth="300dp"
+            android:maxHeight="300dp"
             android:scaleType="fitCenter"
             android:layout_gravity="top|center"
             android:id="@+id/bbarcode"

@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity
                 String re = scanResult.getContents();
                 Log.d("code", re);
                      TextView tvresult = (TextView) findViewById(R.id.tvresult);
-                    tvresult.setText("Your scanned barcode is" + re);
+                    tvresult.setText("Your scanned barcode is: " + re);
 
 
 
