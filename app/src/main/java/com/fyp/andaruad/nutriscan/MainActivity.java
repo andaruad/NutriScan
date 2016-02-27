@@ -92,10 +92,10 @@ public class MainActivity extends AppCompatActivity
             if (scanResult != null){
                 String re = scanResult.getContents();
                 Log.d("code", re);
+                startActivity(new Intent(getApplicationContext(), CompareMain.class));
                 //TextView tvresult = (TextView) findViewById(R.id.tvresult);
                 //tvresult.setText("Your scanned barcode is: " + re);
                 //Toast.makeText(getApplicationContext(),"Your scanned barcode is: " + re, Toast.LENGTH_LONG).show();
-
             }
     }
 
@@ -134,7 +134,6 @@ public class MainActivity extends AppCompatActivity
             ViewGroup container = (ViewGroup) pop.inflate(R.layout.help,null);
             popupWindow = new PopupWindow(container, RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT,true);
             popupWindow.showAtLocation(relativeLayout, Gravity.CENTER,0,0);
-
         }
         return super.onOptionsItemSelected(item);
     }
