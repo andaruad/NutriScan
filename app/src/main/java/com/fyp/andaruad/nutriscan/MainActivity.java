@@ -1,6 +1,7 @@
 package com.fyp.andaruad.nutriscan;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -56,7 +57,8 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 IntentIntegrator integrator = new IntentIntegrator(MainActivity.this);
-                integrator.initiateScan();}
+                integrator.initiateScan();
+            }
         });
 
         //Search Button
@@ -80,11 +82,10 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
+            }//Do Not Delete this
 
-        //Text View
-            //TextView tvresult = (TextView) findViewById(R.id.tvresult);
-            //tvresult.setText("Apa kek");
-            }
+
+
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent intent){
@@ -92,6 +93,7 @@ public class MainActivity extends AppCompatActivity
             if (scanResult != null){
                 String re = scanResult.getContents();
                 Log.d("code", re);
+
                 TextView tvresult = (TextView) findViewById(R.id.tvresult);
                 tvresult.setText("Your scanned barcode is: " + re);
                 Intent compare = new Intent(this, CompareMain.class);
@@ -101,6 +103,7 @@ public class MainActivity extends AppCompatActivity
                         "No scan data received!", Toast.LENGTH_LONG);
                 toast.show();
             }
+
     }
 
     @Override
@@ -138,13 +141,12 @@ public class MainActivity extends AppCompatActivity
             ViewGroup container = (ViewGroup) pop.inflate(R.layout.help,null);
             popupWindow = new PopupWindow(container, RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT,true);
             popupWindow.showAtLocation(relativeLayout, Gravity.CENTER,0,0);
-            }
-
-
-
-
+            popupWindow.setFocusable(true);
+            popupWindow.setOutsideTouchable(true);}
         return super.onOptionsItemSelected(item);
     }
+
+
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
