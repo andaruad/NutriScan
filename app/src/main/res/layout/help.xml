@@ -2,14 +2,27 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/ic_help"
-    android:id="@+id/helproot">
+
+    android:id="@+id/helproot"
+    android:weightSum="1">
 
     <ImageButton
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:id="@+id/imageButton"
         android:layout_gravity="right"
         android:background="@drawable/ic_exit"
         />
+
+    <ImageButton
+        android:layout_marginTop="-40dp"
+        android:layout_width="360dp"
+        android:layout_height="500dp"
+        android:id="@+id/imageButton2"
+        android:src="@drawable/ic_help"
+        android:background="@null"
+        android:layout_gravity="center"
+        android:layout_weight="0.08" />
+
+
 </LinearLayout>

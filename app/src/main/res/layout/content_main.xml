@@ -64,7 +64,7 @@
             android:background="@null"/>
 
         <TextView
-            android:layout_width="130dp"
+            android:layout_width="236dp"
             android:layout_height="50dp"
             android:text="Scan to see barcode"
             android:layout_gravity="top|center"

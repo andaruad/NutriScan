@@ -94,12 +94,12 @@ public class MainActivity extends AppCompatActivity
                 Log.d("code", re);
                 TextView tvresult = (TextView) findViewById(R.id.tvresult);
                 tvresult.setText("Your scanned barcode is: " + re);
-                Toast.makeText(getApplicationContext(),"Your scanned barcode is: " + re, Toast.LENGTH_LONG).show();
-                //Intent compare = new Intent(this, CompareMain.class);
-                //startActivity(compare);
+                //Toast.makeText(getApplicationContext(),"Your scanned barcode is: " + re, Toast.LENGTH_LONG).show();
+                Intent compare = new Intent(this, CompareMain.class);
+                startActivity(compare);
             }else {
                 Toast toast = Toast.makeText(getApplicationContext(),
-                        "No scan data received!", Toast.LENGTH_SHORT);
+                        "No scan data received!", Toast.LENGTH_LONG);
                 toast.show();
             }
     }
@@ -139,6 +139,8 @@ public class MainActivity extends AppCompatActivity
             ViewGroup container = (ViewGroup) pop.inflate(R.layout.help,null);
             popupWindow = new PopupWindow(container, RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT,true);
             popupWindow.showAtLocation(relativeLayout, Gravity.CENTER,0,0);
+        }if(id== R.drawable.ic_exit){
+            popupWindow.dismiss();
         }
         return super.onOptionsItemSelected(item);
     }
