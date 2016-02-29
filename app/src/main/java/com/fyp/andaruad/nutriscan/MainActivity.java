@@ -3,6 +3,7 @@ package com.fyp.andaruad.nutriscan;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
@@ -86,7 +87,6 @@ public class MainActivity extends AppCompatActivity
 
 
 
-
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent intent){
         IntentResult scanResult = IntentIntegrator.parseActivityResult(requestCode,resultCode, intent);
@@ -103,8 +103,9 @@ public class MainActivity extends AppCompatActivity
                         "No scan data received!", Toast.LENGTH_LONG);
                 toast.show();
             }
-
     }
+
+
 
     @Override
     public void onBackPressed() {
@@ -140,9 +141,10 @@ public class MainActivity extends AppCompatActivity
             relativeLayout = (RelativeLayout) findViewById(R.id.main);
             ViewGroup container = (ViewGroup) pop.inflate(R.layout.help,null);
             popupWindow = new PopupWindow(container, RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT,true);
-            popupWindow.showAtLocation(relativeLayout, Gravity.CENTER,0,0);
+            popupWindow.showAtLocation(relativeLayout, Gravity.CENTER, 0, 0);
             popupWindow.setFocusable(true);
-            popupWindow.setOutsideTouchable(true);}
+            popupWindow.setOutsideTouchable(true);
+        }
         return super.onOptionsItemSelected(item);
     }
 
