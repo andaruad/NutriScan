@@ -3,9 +3,9 @@ package com.fyp.andaruad.nutriscan;
 import android.app.Activity;
 import android.os.Bundle;
 
-/**
- * Created by Andaruad on 22/02/2016.
- */
+
+//* Created by Andaruad on 22/02/2016.
+
 public class CompareMain extends Activity {
 
     @Override
@@ -13,6 +13,9 @@ public class CompareMain extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.compare_main);
     }
+
+
+
 
 
 
