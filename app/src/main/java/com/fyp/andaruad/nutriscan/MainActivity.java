@@ -89,6 +89,7 @@ public class MainActivity extends AppCompatActivity
         IntentResult scanResult = IntentIntegrator.parseActivityResult(requestCode,resultCode, intent);
             if (scanResult != null){
                 String re = scanResult.getContents();
+                //re = scanResult.getContents();
                 Log.d("code", re);
 //                if(re != null){
 //                    StoreValue value =  (StoreValue) StoreValue.setValue1(re);
@@ -97,6 +98,7 @@ public class MainActivity extends AppCompatActivity
                 TextView tvresult = (TextView) findViewById(R.id.tvresult);
                 tvresult.setText("Your scanned barcode is:\n" + re);
                 Intent compare = new Intent(this, CompareMain.class);
+                compare.putExtra("barcode_num1", re);
                 startActivity(compare);
             }else {
                 Toast toast = Toast.makeText(getApplicationContext(),
