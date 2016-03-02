@@ -1,41 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Rescan"
-        android:id="@+id/button2"
-        android:layout_gravity="center_horizontal" />
+    <ImageButton
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:adjustViewBounds="true"
+        android:maxWidth="150dp"
+        android:maxHeight="150dp"
+        android:scaleType="fitCenter"
+        android:layout_gravity="top|center"
+        android:id="@+id/brescan"
+        android:src="@drawable/ic_brescan"
+        android:background="@null"
+        />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Compare"
-        android:id="@+id/button3"
-        android:layout_gravity="center_horizontal" />
+    <ImageButton
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:adjustViewBounds="true"
+        android:maxWidth="150dp"
+        android:maxHeight="150dp"
+        android:scaleType="fitCenter"
+        android:layout_gravity="top|center"
+        android:id="@+id/bcompare2"
+        android:src="@drawable/ic_bcompare"
+        android:background="@null"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="See Result"
-        android:id="@+id/button4"
-        android:layout_gravity="center_horizontal" />
+        android:id="@+id/bresult"
+        android:layout_gravity="center_horizontal"
+        android:layout_below="@+id/brescan"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Your Scanned product is:"
-        android:id="@+id/textView29" />
+        android:id="@+id/textView29"
+        android:layout_below="@+id/bresult"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="______"
+        android:text="_____________"
         android:id="@+id/tvresult2"
-        android:layout_gravity="right" />
-</LinearLayout>
+        android:layout_gravity="right"
+        android:layout_below="@+id/textView29"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>
