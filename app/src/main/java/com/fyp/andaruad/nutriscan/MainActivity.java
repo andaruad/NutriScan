@@ -45,10 +45,8 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
 
-
-
-        //Scanner
-
+        //Get Object from StoreValue
+        final StoreValue value1 = new StoreValue();
 
         //Barcode Button
         ImageButton bbarcode = (ImageButton)findViewById(R.id.bbarcode);
@@ -92,6 +90,10 @@ public class MainActivity extends AppCompatActivity
             if (scanResult != null){
                 String re = scanResult.getContents();
                 Log.d("code", re);
+//                if(re != null){
+//                    StoreValue value =  (StoreValue) StoreValue.setValue1(re);
+//
+//                }
                 TextView tvresult = (TextView) findViewById(R.id.tvresult);
                 tvresult.setText("Your scanned barcode is:\n" + re);
                 Intent compare = new Intent(this, CompareMain.class);
@@ -158,10 +160,8 @@ public class MainActivity extends AppCompatActivity
             startActivity(new Intent(getApplicationContext(),AddProduct.class));
         } else if (id == R.id.about) {
             startActivity(new Intent(getApplicationContext(),About.class));
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
+        }
+        else if (id == R.id.nav_share) {
 
         }
 
