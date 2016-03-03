@@ -20,12 +20,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SearchActivity" android:configChanges="keyboardHidden|orientation"/>
-        <activity android:name=".ResultActivity" android:configChanges="keyboardHidden|orientation"/>
-        <activity android:name=".DietTypes" android:configChanges="keyboardHidden|orientation"/>
-        <activity android:name=".AddProduct" android:configChanges="keyboardHidden|orientation"/>
-        <activity android:name=".About" android:configChanges="keyboardHidden|orientation"/>
-        <activity android:name=".CompareMain" android:configChanges="keyboardHidden|orientation"/>
+        <activity android:name=".SearchActivity" android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:name=".ResultActivity" android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:name=".DietTypes" android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:name=".AddProduct" android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:name=".About" android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:name=".CompareMain" android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
     </application>
 
 </manifest>
