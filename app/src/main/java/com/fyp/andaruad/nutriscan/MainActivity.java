@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity
 
 
         //Get Object from StoreValue
-        final StoreValue value1 = new StoreValue();
+        //final StoreValue value1 = new StoreValue();
 
         //Barcode Button
         ImageButton bbarcode = (ImageButton)findViewById(R.id.bbarcode);
@@ -56,6 +56,17 @@ public class MainActivity extends AppCompatActivity
                 IntentIntegrator integrator = new IntentIntegrator(MainActivity.this);
                 integrator.initiateScan();}
         });
+        bbarcode.setOnLongClickListener(new View.OnLongClickListener(){
+            @Override
+            public boolean onLongClick(View arg0) {
+                Toast toast= Toast.makeText(getApplicationContext(),
+                        "Press Button to Scan Barcode", Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER_VERTICAL, 0, 140);
+                toast.show();
+                return true;
+            }
+
+        });
 
         //Search Button
         ImageButton bsearch = (ImageButton)findViewById(R.id.bsearch);
@@ -64,9 +75,18 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(),SearchActivity.class);
                 startActivity(intent);
-
                 //Toast.makeText(getApplicationContext(),"bsearch button",Toast.LENGTH_LONG).show();
+            }});
+        bsearch.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View arg0) {
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        "Press Button to View Products", Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER_VERTICAL, 0, 140);
+                toast.show();
+                return true;
             }
+
         });
 
         //History Button
@@ -77,8 +97,6 @@ public class MainActivity extends AppCompatActivity
                 Toast.makeText(getApplicationContext(),"bhistory button",Toast.LENGTH_SHORT).show();
             }
         });
-
-
         //Text View
             //TextView tvresult = (TextView) findViewById(R.id.tvresult);
             //tvresult.setText("Apa kek");
@@ -143,10 +161,6 @@ public class MainActivity extends AppCompatActivity
             popupWindow = new PopupWindow(container, RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT,true);
             popupWindow.showAtLocation(relativeLayout, Gravity.CENTER,0,0);
             }
-
-
-
-
         return super.onOptionsItemSelected(item);
     }
 
