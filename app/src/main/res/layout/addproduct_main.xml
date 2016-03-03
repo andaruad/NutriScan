@@ -13,7 +13,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Add Product to Database"
         android:layout_marginTop="10dp"
-        android:id="@+id/textView34" />
+        android:id="@+id/addproductTitle" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -21,12 +21,26 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Product Name:"
         android:layout_marginTop="10dp"
-        android:id="@+id/textView35" />
+        android:id="@+id/tvproductname" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editText1"
+        android:id="@+id/etproductname"
+        android:layout_gravity="center_horizontal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Product Barcode:"
+        android:layout_marginTop="10dp"
+        android:id="@+id/tvproductbarcode" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etproductbarcode"
         android:layout_gravity="center_horizontal" />
     <TextView
         android:layout_width="wrap_content"
@@ -210,13 +224,24 @@
         android:layout_height="wrap_content"
         android:id="@+id/editText15"
         android:layout_gravity="center_horizontal" />
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete"
+        android:id="@+id/button2" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="right"
-        android:text="Finish"
-        android:id="@+id/button5" />
-
+        android:text="Add"
+        android:id="@+id/button5"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+</RelativeLayout>
 </LinearLayout>
     </ScrollView>

@@ -6,10 +6,10 @@ public class ProductsDB  {
 
     private String p_barcode;
     private int p_calories;
+    private int id;
 
-    public ProductsDB(String p_barcode, int p_calories) {
+    public ProductsDB(String p_barcode) {
         this.p_barcode = p_barcode;
-        this.p_calories = p_calories;
     }
     public ProductsDB(){
 
@@ -21,6 +21,14 @@ public class ProductsDB  {
 
     public void setP_barcode(String p_barcode) {
         this.p_barcode = p_barcode;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getP_calories() {
