@@ -133,6 +133,7 @@ public class MainActivity extends AppCompatActivity
         } else {
             super.onBackPressed();
         }
+
     }
 
     @Override
@@ -179,10 +180,12 @@ public class MainActivity extends AppCompatActivity
         }
         else if (id == R.id.nav_share) {
 
-        }
+        }else if (id == R.id.testing) {
+            startActivity(new Intent(getApplicationContext(),Testing.class));}
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
 }
