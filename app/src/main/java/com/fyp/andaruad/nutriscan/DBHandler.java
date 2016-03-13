@@ -5,65 +5,134 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
+
+import java.util.ArrayList;
 // Created by Andaruad on 03/03/2016.
 
 public class DBHandler extends SQLiteOpenHelper {
 
-    private static final int DATABASE_VERSION = 1;
-    private static final String DATABASE_NAME = "ProductsDB.DB";
-    private static final String TABLE_PRODUCTS = "ProductsDB";
-    private static final String COLUMN_ID = "_id";
-    private static final String COLUMN_PRODUCTNAME = "p_barcode";
+    // database version
+	private static final int DATABASE_VERSION = 1;
+	// database name
+	private static final String DATABASE_NAME = "productsdatabase";
+	private static final String TABLE_PRODUCTS = "products";
+	private static final String COLUMN_ID = "_id";
+    private static final String COLUMN_NAME = "_name";
+	private static final String COLUMN_BARCODE = "barcode";
+	private static final String COLUMN_CALORIES = "calories";
+    private final ArrayList<Product> product_list = new ArrayList<Product>();
 
-    public DBHandler(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
-        super(context, name, factory, version);
+	private static final String[] COLUMNS = { COLUMN_ID, COLUMN_NAME, COLUMN_BARCODE, COLUMN_CALORIES };
+
+	public DBHandler(Context context) {
+		super(context, DATABASE_NAME, null, DATABASE_VERSION);
+	}
+
+	@Override
+	public void onCreate(SQLiteDatabase db) {
+		// SQL statement to create book table
+		String CREATE_DATABASE_TABLE = "CREATE TABLE " + TABLE_PRODUCTS + "(" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT" +
+                COLUMN_ID + " TEXT" + COLUMN_BARCODE+ " TEXT" + COLUMN_CALORIES + " TEXT" + ")";
+		db.execSQL(CREATE_DATABASE_TABLE);
+	}
+
+	@Override
+	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+		// drop books table if already exists
+		db.execSQL("DROP TABLE IF EXISTS " + TABLE_PRODUCTS);
+		onCreate(db);
     }
-
-    @Override
-    public void onCreate(SQLiteDatabase db) {
-        String query = "CREATE TABLE" + TABLE_PRODUCTS + "(" +
-                COLUMN_ID + "INTEGER PRIMARY KEY AUTOINCREMENT" +
-                COLUMN_PRODUCTNAME + "TEXT" +
-                ");";
-        db.execSQL(query);
-    }
-
-    @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        onCreate(db);
-    }
-
-    //Add new row to database
-    public void addProduct(ProductsDB productsDB){
+	public void addProduct(Product product){
+        SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put(COLUMN_PRODUCTNAME, productsDB.getP_barcode());
-        SQLiteDatabase db = getWritableDatabase();
+        values.put(COLUMN_NAME, product.getP_name()); // Product Name
+        values.put(COLUMN_BARCODE, product.getP_barcode()); // Product Barcode
+        values.put(COLUMN_CALORIES, product.getP_calories()); // Product Calories
+        // Inserting Row
         db.insert(TABLE_PRODUCTS, null, values);
+        db.close(); // Closing database connection
+    }
+    Product Get_Product(int id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = db.query(TABLE_PRODUCTS, new String[] { COLUMN_ID,
+                        COLUMN_NAME, COLUMN_BARCODE, COLUMN_CALORIES }, COLUMN_ID + "=?",
+                new String[] { String.valueOf(id) }, null, null, null, null);
+        if (cursor != null)
+            cursor.moveToFirst();
+
+        Product product = new Product(Integer.parseInt(cursor.getString(0)),
+                cursor.getString(1), cursor.getString(2), cursor.getString(3));
+        // return product
+        cursor.close();
         db.close();
-    }
-    //Delete product from DB
-    public void delProduct (String p_barcode){
-        SQLiteDatabase db = getWritableDatabase();
-        db.execSQL("DELETE FROM" + TABLE_PRODUCTS + "WHERE" + COLUMN_PRODUCTNAME + "=\"" + p_barcode + "\";");
-    }
 
-    //get database into string
-    public String databasetoString(){
-        String dbString = "";
-        SQLiteDatabase db = getWritableDatabase();
-        String query = "SELECT * FROM" + TABLE_PRODUCTS + "WHERE 1";
+        return product;
+    }
+    // Getting All Contacts
+    public ArrayList<Product> Get_Product() {
+        try {
+            product_list.clear();
 
-        //CURSOR POINT TO A LOCATION IN RESULT
-        Cursor c = db.rawQuery(query, null);
-        c.moveToFirst();
-        while (!c.isAfterLast()){
-            if(c.getString(c.getColumnIndex("p_barcode"))!= null){
-                dbString += c.getString(c.getColumnIndex("p_barcode"));
-                dbString += "\n";
+            // Select All Query
+            String selectQuery = "SELECT  * FROM " + TABLE_PRODUCTS;
+
+            SQLiteDatabase db = this.getWritableDatabase();
+            Cursor cursor = db.rawQuery(selectQuery, null);
+
+            // looping through all rows and adding to list
+            if (cursor.moveToFirst()) {
+                do {
+                    Product contact = new Product();
+                    contact.setId(Integer.parseInt(cursor.getString(0)));
+                    contact.setP_name(cursor.getString(1));
+                    contact.setP_barcode(cursor.getString(2));
+                    contact.setP_calories(cursor.getString(3));
+                    // Adding contact to list
+                    product_list.add(contact);
+                } while (cursor.moveToNext());
             }
-        }
-        db.close();
-        return dbString;
-    }
 
+            // return contact list
+            cursor.close();
+            db.close();
+            return product_list;
+        } catch (Exception e) {
+            // TODO: handle exception
+            Log.e("all_contact", "" + e);
+        }
+
+        return product_list;
+    }
+    // Updating single contact
+    public int Update_Product(Product product) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_NAME, product.getP_name());
+        values.put(COLUMN_BARCODE, product.getP_barcode());
+        values.put(COLUMN_CALORIES, product.getP_calories());
+
+        // updating row
+        return db.update(TABLE_PRODUCTS, values, COLUMN_ID + " = ?",
+                new String[] { String.valueOf(product.getId()) });
+    }
+    // Deleting single contact
+    public void Delete_Product(int id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(TABLE_PRODUCTS, COLUMN_ID + " = ?",
+                new String[]{String.valueOf(id)});
+        db.close();
+    }
+    // Getting contacts Count
+    public int Get_Total_Contacts() {
+        String countQuery = "SELECT  * FROM " + TABLE_PRODUCTS;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(countQuery, null);
+        cursor.close();
+
+        // return count
+        return cursor.getCount();
+    }
 }
