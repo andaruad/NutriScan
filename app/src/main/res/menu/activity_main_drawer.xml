@@ -8,6 +8,8 @@
             android:title="Add Product" />
         <item android:id="@+id/about" android:icon="@android:drawable/ic_menu_slideshow"
             android:title="About" />
+        <item android:id="@+id/testing" android:icon="@android:drawable/ic_menu_slideshow"
+            android:title="Testing" />
     </group>
 
     <item android:title="Communicate">
