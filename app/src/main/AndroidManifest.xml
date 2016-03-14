@@ -34,6 +34,8 @@
             android:configChanges="keyboardHidden|orientation|screenSize"/>
         <activity android:name=".Testing" android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:name=".Add_Update" android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
     </application>
 
 </manifest>

@@ -5,7 +5,7 @@ package com.fyp.andaruad.nutriscan;
 public class Product  {
     private String p_name;
     private String p_barcode;
-    private String p_calories;
+    private String p_category;
     private int id;
 
     public Product(){
@@ -16,17 +16,17 @@ public class Product  {
         this.p_barcode = p_barcode;
     }
 
-    public Product(int id, String p_name, String p_barcode, String p_calories) {
+    public Product(int id, String p_name, String p_barcode, String p_category) {
         this.id = id;
         this.p_name = p_name;
         this.p_barcode = p_barcode;
-        this.p_calories = p_calories;
+        this.p_category = p_category;
     }
 
-    public Product(String p_name, String p_barcode, String p_calories) {
+    public Product(String p_name, String p_barcode, String p_category) {
         this.p_name = p_name;
         this.p_barcode = p_barcode;
-        this.p_calories = p_calories;
+        this.p_category = p_category;
     }
 
     public int getId() {
@@ -45,12 +45,12 @@ public class Product  {
         this.p_barcode = p_barcode;
     }
 
-    public String getP_calories() {
-        return p_calories;
+    public String getP_category() {
+        return p_category;
     }
 
-    public void setP_calories(String p_calories) {
-        this.p_calories = p_calories;
+    public void setP_category(String p_category) {
+        this.p_category = p_category;
     }
 
     public String getP_name() {
