@@ -1,65 +1,71 @@
 package com.fyp.andaruad.nutriscan;
 
-// * Created by Andaruad on 22/02/2016.
+public class Product {
 
-public class Product  {
-    private String p_name;
-    private String p_barcode;
-    private String p_category;
-    private int id;
+    // private variables
+    public int _id;
+    public String _name;
+    public String _phone_number;
+    public String _email;
 
-    public Product(){
+
+    public Product() {
+    }
+
+    // constructor
+    public Product(int id, String name, String _phone_number, String _email) {
+        this._id = id;
+        this._name = name;
+        this._phone_number = _phone_number;
+        this._email = _email;
 
     }
 
-    public Product(String p_barcode) {
-        this.p_barcode = p_barcode;
+    // constructor
+    public Product(String name, String _phone_number, String _email) {
+        this._name = name;
+        this._phone_number = _phone_number;
+        this._email = _email;
     }
 
-    public Product(int id, String p_name, String p_barcode, String p_category) {
-        this.id = id;
-        this.p_name = p_name;
-        this.p_barcode = p_barcode;
-        this.p_category = p_category;
+    // getting ID
+    public int getID() {
+        return this._id;
     }
 
-    public Product(String p_name, String p_barcode, String p_category) {
-        this.p_name = p_name;
-        this.p_barcode = p_barcode;
-        this.p_category = p_category;
+    // setting id
+    public void setID(int id) {
+        this._id = id;
     }
 
-    public int getId() {
-        return id;
+    // getting name
+    public String getName() {
+        return this._name;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    // setting name
+    public void setName(String name) {
+        this._name = name;
     }
 
-    public String getP_barcode() {
-        return p_barcode;
+    // getting phone number
+    public String getPhoneNumber() {
+        return this._phone_number;
     }
 
-    public void setP_barcode(String p_barcode) {
-        this.p_barcode = p_barcode;
+    // setting phone number
+    public void setPhoneNumber(String phone_number) {
+        this._phone_number = phone_number;
     }
 
-    public String getP_category() {
-        return p_category;
+    // getting email
+    public String getEmail() {
+        return this._email;
     }
 
-    public void setP_category(String p_category) {
-        this.p_category = p_category;
+    // setting email
+    public void setEmail(String email) {
+        this._email = email;
     }
-
-    public String getP_name() {
-        return p_name;
-    }
-
-    public void setP_name(String p_name) {
-        this.p_name = p_name;
-    }
-
 
 }

@@ -1,31 +1,28 @@
 package com.fyp.andaruad.nutriscan;
 
-    import java.util.ArrayList;
-    import java.util.List;
+import java.util.ArrayList;
 
-    import android.app.Activity;
-    import android.app.AlertDialog;
-    import android.app.ListActivity;
-    import android.content.DialogInterface;
-    import android.content.Intent;
-    import android.os.Bundle;
-    import android.util.Log;
-    import android.view.LayoutInflater;
-    import android.view.View;
-    import android.view.ViewGroup;
-    import android.widget.AdapterView;
-    import android.widget.AdapterView.OnItemClickListener;
-    import android.widget.ArrayAdapter;
-    import android.widget.Button;
-    import android.widget.ListView;
-    import android.widget.TextView;
-    import android.widget.Toast;
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class Testing extends Activity {
     Button add_btn;
     ListView Contact_listview;
     ArrayList<Product> contact_data = new ArrayList<Product>();
-    Product_Adapter cAdapter;
+    Contact_Adapter cAdapter;
     DBHandler db;
     String Toast_msg;
 
@@ -33,18 +30,18 @@ public class Testing extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.testing);
-        try{
+        try {
             Contact_listview = (ListView) findViewById(R.id.list);
             Contact_listview.setItemsCanFocus(false);
             add_btn = (Button) findViewById(R.id.add_btn);
 
-            Set_Refresh_Data();
+            Set_Referash_Data();
 
-        }catch (Exception e){
+        } catch (Exception e) {
             // TODO: handle exception
             Log.e("some error", "" + e);
         }
-    add_btn.setOnClickListener(new View.OnClickListener() {
+        add_btn.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -58,49 +55,55 @@ public class Testing extends Activity {
                 finish();
             }
         });
+
     }
-    public void Set_Refresh_Data() {
+
+
+    public void Set_Referash_Data() {
         contact_data.clear();
         db = new DBHandler(this);
-        ArrayList<Product> contact_array_from_db = db.Get_Product();
+        ArrayList<Product> contact_array_from_db = db.Get_Contacts();
 
         for (int i = 0; i < contact_array_from_db.size(); i++) {
 
-            int tidno = contact_array_from_db.get(i).getId();
-            String name = contact_array_from_db.get(i).getP_name();
-            String barcode = contact_array_from_db.get(i).getP_barcode();
-            String category = contact_array_from_db.get(i).getP_category();
+            int tidno = contact_array_from_db.get(i).getID();
+            String name = contact_array_from_db.get(i).getName();
+            String mobile = contact_array_from_db.get(i).getPhoneNumber();
+            String email = contact_array_from_db.get(i).getEmail();
             Product cnt = new Product();
-            cnt.setId(tidno);
-            cnt.setP_name(name);
-            cnt.setP_barcode(barcode);
-            cnt.setP_category(category);
+            cnt.setID(tidno);
+            cnt.setName(name);
+            cnt.setEmail(email);
+            cnt.setPhoneNumber(mobile);
 
             contact_data.add(cnt);
         }
         db.close();
-        cAdapter = new Product_Adapter(Testing.this, R.layout.list_view_row,
+        cAdapter = new Contact_Adapter(Testing.this, R.layout.list_view_row,
                 contact_data);
         Contact_listview.setAdapter(cAdapter);
         cAdapter.notifyDataSetChanged();
     }
+
     public void Show_Toast(String msg) {
         Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG).show();
     }
+
     @Override
     public void onResume() {
         // TODO Auto-generated method stub
         super.onResume();
-        Set_Refresh_Data();
+        Set_Referash_Data();
+
     }
 
-    public class Product_Adapter extends ArrayAdapter<Product> {
+    public class Contact_Adapter extends ArrayAdapter<Product> {
         Activity activity;
         int layoutResourceId;
         Product user;
         ArrayList<Product> data = new ArrayList<Product>();
 
-        public Product_Adapter(Activity act, int layoutResourceId,
+        public Contact_Adapter(Activity act, int layoutResourceId,
                                ArrayList<Product> data) {
             super(act, layoutResourceId, data);
             this.layoutResourceId = layoutResourceId;
@@ -119,9 +122,9 @@ public class Testing extends Activity {
 
                 row = inflater.inflate(layoutResourceId, parent, false);
                 holder = new UserHolder();
-                holder.name = (TextView) row.findViewById(R.id.product_name_txt);
-                holder.category = (TextView) row.findViewById(R.id.product_category_txt); // could cause problem
-                holder.number = (TextView) row.findViewById(R.id.product_barcode_txt);
+                holder.name = (TextView) row.findViewById(R.id.user_name_txt);
+                holder.email = (TextView) row.findViewById(R.id.user_email_txt);
+                holder.number = (TextView) row.findViewById(R.id.user_mob_txt);
                 holder.edit = (Button) row.findViewById(R.id.btn_update);
                 holder.delete = (Button) row.findViewById(R.id.btn_delete);
                 row.setTag(holder);
@@ -129,13 +132,13 @@ public class Testing extends Activity {
                 holder = (UserHolder) row.getTag();
             }
             user = data.get(position);
-            holder.edit.setTag(user.getId());
-            holder.delete.setTag(user.getId());
-            holder.name.setText(user.getP_name());
-            holder.category.setText(user.getP_category());
-            holder.number.setText(user.getP_barcode());
+            holder.edit.setTag(user.getID());
+            holder.delete.setTag(user.getID());
+            holder.name.setText(user.getName());
+            holder.email.setText(user.getEmail());
+            holder.number.setText(user.getPhoneNumber());
 
-            holder.edit.setOnClickListener(new View.OnClickListener() {
+            holder.edit.setOnClickListener(new OnClickListener() {
 
                 @Override
                 public void onClick(View v) {
@@ -150,7 +153,7 @@ public class Testing extends Activity {
 
                 }
             });
-            holder.delete.setOnClickListener(new View.OnClickListener() {
+            holder.delete.setOnClickListener(new OnClickListener() {
 
                 @Override
                 public void onClick(final View v) {
@@ -171,7 +174,7 @@ public class Testing extends Activity {
                                     // MyDataObject.remove(positionToRemove);
                                     DBHandler dBHandler = new DBHandler(
                                             activity.getApplicationContext());
-                                    dBHandler.Delete_Product(user_id);
+                                    dBHandler.Delete_Contact(user_id);
                                     Testing.this.onResume();
 
                                 }
@@ -186,7 +189,7 @@ public class Testing extends Activity {
 
         class UserHolder {
             TextView name;
-            TextView category;
+            TextView email;
             TextView number;
             Button edit;
             Button delete;
