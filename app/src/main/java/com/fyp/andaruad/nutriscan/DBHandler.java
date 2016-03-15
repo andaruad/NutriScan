@@ -20,10 +20,10 @@ public class DBHandler extends SQLiteOpenHelper {
 	private static final String COLUMN_ID = "_id";
     private static final String COLUMN_NAME = "_name";
 	private static final String COLUMN_BARCODE = "barcode";
-	private static final String COLUMN_CALORIES = "calories";
+	private static final String COLUMN_CATEGORY = "category";
     private final ArrayList<Product> product_list = new ArrayList<Product>();
 
-	private static final String[] COLUMNS = { COLUMN_ID, COLUMN_NAME, COLUMN_BARCODE, COLUMN_CALORIES };
+	private static final String[] COLUMNS = { COLUMN_ID, COLUMN_NAME, COLUMN_BARCODE, COLUMN_CATEGORY };
 
 	public DBHandler(Context context) {
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -33,7 +33,7 @@ public class DBHandler extends SQLiteOpenHelper {
 	public void onCreate(SQLiteDatabase db) {
 		// SQL statement to create book table
 		String CREATE_DATABASE_TABLE = "CREATE TABLE " + TABLE_PRODUCTS + "(" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT" +
-                COLUMN_ID + " TEXT" + COLUMN_BARCODE+ " TEXT" + COLUMN_CALORIES + " TEXT" + ")";
+                COLUMN_ID + " TEXT" + COLUMN_BARCODE+ " TEXT" + COLUMN_CATEGORY + " TEXT" + ")";
 		db.execSQL(CREATE_DATABASE_TABLE);
 	}
 
@@ -48,7 +48,7 @@ public class DBHandler extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(COLUMN_NAME, product.getP_name()); // Product Name
         values.put(COLUMN_BARCODE, product.getP_barcode()); // Product Barcode
-        values.put(COLUMN_CALORIES, product.getP_calories()); // Product Calories
+        values.put(COLUMN_CATEGORY, product.getP_category()); // Product Calories
         // Inserting Row
         db.insert(TABLE_PRODUCTS, null, values);
         db.close(); // Closing database connection
@@ -57,7 +57,7 @@ public class DBHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor cursor = db.query(TABLE_PRODUCTS, new String[] { COLUMN_ID,
-                        COLUMN_NAME, COLUMN_BARCODE, COLUMN_CALORIES }, COLUMN_ID + "=?",
+                        COLUMN_NAME, COLUMN_BARCODE, COLUMN_CATEGORY }, COLUMN_ID + "=?",
                 new String[] { String.valueOf(id) }, null, null, null, null);
         if (cursor != null)
             cursor.moveToFirst();
@@ -84,13 +84,13 @@ public class DBHandler extends SQLiteOpenHelper {
             // looping through all rows and adding to list
             if (cursor.moveToFirst()) {
                 do {
-                    Product contact = new Product();
-                    contact.setId(Integer.parseInt(cursor.getString(0)));
-                    contact.setP_name(cursor.getString(1));
-                    contact.setP_barcode(cursor.getString(2));
-                    contact.setP_calories(cursor.getString(3));
+                    Product product = new Product();
+                    product.setId(Integer.parseInt(cursor.getString(0)));
+                    product.setP_name(cursor.getString(1));
+                    product.setP_barcode(cursor.getString(2));
+                    product.setP_category(cursor.getString(3));
                     // Adding contact to list
-                    product_list.add(contact);
+                    product_list.add(product);
                 } while (cursor.moveToNext());
             }
 
@@ -112,7 +112,7 @@ public class DBHandler extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(COLUMN_NAME, product.getP_name());
         values.put(COLUMN_BARCODE, product.getP_barcode());
-        values.put(COLUMN_CALORIES, product.getP_calories());
+        values.put(COLUMN_CATEGORY, product.getP_category());
 
         // updating row
         return db.update(TABLE_PRODUCTS, values, COLUMN_ID + " = ?",
