@@ -1,6 +1,5 @@
 package com.fyp.andaruad.nutriscan;
 
-
 import java.util.ArrayList;
 
 import android.content.ContentValues;
@@ -19,10 +18,10 @@ public class DBHandler extends SQLiteOpenHelper {
     // Database Name
     private static final String DATABASE_NAME = "contactsManager";
 
-    // Contacts table name
+    // Products table name
     private static final String TABLE_CONTACTS = "contacts";
 
-    // Contacts Table Columns names
+    // Products Table Columns names
     private static final String KEY_ID = "id";
     private static final String KEY_NAME = "name";
     private static final String KEY_PH_NO = "phone_number";
@@ -57,19 +56,19 @@ public class DBHandler extends SQLiteOpenHelper {
      */
 
     // Adding new contact
-    public void Add_Contact(Product contact) {
+    public void Add_Product(Product contact) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(KEY_NAME, contact.getName()); // Product Name
         values.put(KEY_PH_NO, contact.getPhoneNumber()); // Product Phone
-        values.put(KEY_EMAIL, contact.getName()); // Product Email
+        values.put(KEY_EMAIL, contact.getEmail()); // Product Email
         // Inserting Row
         db.insert(TABLE_CONTACTS, null, values);
         db.close(); // Closing database connection
     }
 
     // Getting single contact
-    Product Get_Contact(int id) {
+    Product Get_Product(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor cursor = db.query(TABLE_CONTACTS, new String[] { KEY_ID,
@@ -87,8 +86,8 @@ public class DBHandler extends SQLiteOpenHelper {
         return contact;
     }
 
-    // Getting All Contacts
-    public ArrayList<Product> Get_Contacts() {
+    // Getting All Products
+    public ArrayList<Product> Get_Products() {
         try {
             contact_list.clear();
 
@@ -124,7 +123,7 @@ public class DBHandler extends SQLiteOpenHelper {
     }
 
     // Updating single contact
-    public int Update_Contact(Product contact) {
+    public int Update_Product(Product contact) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
@@ -138,7 +137,7 @@ public class DBHandler extends SQLiteOpenHelper {
     }
 
     // Deleting single contact
-    public void Delete_Contact(int id) {
+    public void Delete_Product(int id) {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(TABLE_CONTACTS, KEY_ID + " = ?",
                 new String[] { String.valueOf(id) });
@@ -146,7 +145,7 @@ public class DBHandler extends SQLiteOpenHelper {
     }
 
     // Getting contacts Count
-    public int Get_Total_Contacts() {
+    public int Get_Total_Products() {
         String countQuery = "SELECT  * FROM " + TABLE_CONTACTS;
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(countQuery, null);

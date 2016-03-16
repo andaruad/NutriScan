@@ -5,26 +5,25 @@ public class Product {
     // private variables
     public int _id;
     public String _name;
-    public String _phone_number;
+    public String _barcode;
     public String _email;
-
 
     public Product() {
     }
 
     // constructor
-    public Product(int id, String name, String _phone_number, String _email) {
+    public Product(int id, String name, String _barcode, String _email) {
         this._id = id;
         this._name = name;
-        this._phone_number = _phone_number;
+        this._barcode = _barcode;
         this._email = _email;
 
     }
 
     // constructor
-    public Product(String name, String _phone_number, String _email) {
+    public Product(String name, String _barcode, String _email) {
         this._name = name;
-        this._phone_number = _phone_number;
+        this._barcode = _barcode;
         this._email = _email;
     }
 
@@ -50,12 +49,12 @@ public class Product {
 
     // getting phone number
     public String getPhoneNumber() {
-        return this._phone_number;
+        return this._barcode;
     }
 
     // setting phone number
     public void setPhoneNumber(String phone_number) {
-        this._phone_number = phone_number;
+        this._barcode = _barcode;
     }
 
     // getting email

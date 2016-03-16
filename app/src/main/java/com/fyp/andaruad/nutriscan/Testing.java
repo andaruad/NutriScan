@@ -1,5 +1,4 @@
 package com.fyp.andaruad.nutriscan;
-
 import java.util.ArrayList;
 
 import android.app.Activity;
@@ -20,9 +19,9 @@ import android.widget.Toast;
 
 public class Testing extends Activity {
     Button add_btn;
-    ListView Contact_listview;
+    ListView Product_listview;
     ArrayList<Product> contact_data = new ArrayList<Product>();
-    Contact_Adapter cAdapter;
+    Product_Adapter cAdapter;
     DBHandler db;
     String Toast_msg;
 
@@ -31,8 +30,8 @@ public class Testing extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.testing);
         try {
-            Contact_listview = (ListView) findViewById(R.id.list);
-            Contact_listview.setItemsCanFocus(false);
+            Product_listview = (ListView) findViewById(R.id.list);
+            Product_listview.setItemsCanFocus(false);
             add_btn = (Button) findViewById(R.id.add_btn);
 
             Set_Referash_Data();
@@ -58,11 +57,10 @@ public class Testing extends Activity {
 
     }
 
-
     public void Set_Referash_Data() {
         contact_data.clear();
         db = new DBHandler(this);
-        ArrayList<Product> contact_array_from_db = db.Get_Contacts();
+        ArrayList<Product> contact_array_from_db = db.Get_Products();
 
         for (int i = 0; i < contact_array_from_db.size(); i++) {
 
@@ -79,9 +77,9 @@ public class Testing extends Activity {
             contact_data.add(cnt);
         }
         db.close();
-        cAdapter = new Contact_Adapter(Testing.this, R.layout.list_view_row,
+        cAdapter = new Product_Adapter(Testing.this, R.layout.list_view_row,
                 contact_data);
-        Contact_listview.setAdapter(cAdapter);
+        Product_listview.setAdapter(cAdapter);
         cAdapter.notifyDataSetChanged();
     }
 
@@ -97,13 +95,13 @@ public class Testing extends Activity {
 
     }
 
-    public class Contact_Adapter extends ArrayAdapter<Product> {
+    public class Product_Adapter extends ArrayAdapter<Product> {
         Activity activity;
         int layoutResourceId;
         Product user;
         ArrayList<Product> data = new ArrayList<Product>();
 
-        public Contact_Adapter(Activity act, int layoutResourceId,
+        public Product_Adapter(Activity act, int layoutResourceId,
                                ArrayList<Product> data) {
             super(act, layoutResourceId, data);
             this.layoutResourceId = layoutResourceId;
@@ -174,7 +172,7 @@ public class Testing extends Activity {
                                     // MyDataObject.remove(positionToRemove);
                                     DBHandler dBHandler = new DBHandler(
                                             activity.getApplicationContext());
-                                    dBHandler.Delete_Contact(user_id);
+                                    dBHandler.Delete_Product(user_id);
                                     Testing.this.onResume();
 
                                 }

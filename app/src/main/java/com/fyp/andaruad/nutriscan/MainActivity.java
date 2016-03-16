@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity
         bsearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(),SearchActivity.class);
+                Intent intent = new Intent(v.getContext(),About.class);
                 startActivity(intent);
                 //Toast.makeText(getApplicationContext(),"bsearch button",Toast.LENGTH_LONG).show();
             }});
