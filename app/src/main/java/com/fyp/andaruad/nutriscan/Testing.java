@@ -126,6 +126,7 @@ public class Testing extends Activity {
                 holder.number = (TextView) row.findViewById(R.id.user_mob_txt);
                 holder.edit = (Button) row.findViewById(R.id.btn_update);
                 holder.delete = (Button) row.findViewById(R.id.btn_delete);
+                holder.showproduct = (ListView) row.findViewById(R.id.list);
                 row.setTag(holder);
             } else {
                 holder = (UserHolder) row.getTag();
@@ -136,7 +137,6 @@ public class Testing extends Activity {
             holder.name.setText(user.getName());
             holder.email.setText(user.getEmail());
             holder.number.setText(user.getPhoneNumber());
-
             holder.edit.setOnClickListener(new OnClickListener() {
 
                 @Override
@@ -184,6 +184,7 @@ public class Testing extends Activity {
             });
             return row;
 
+
         }
 
         class UserHolder {
@@ -192,6 +193,7 @@ public class Testing extends Activity {
             TextView number;
             Button edit;
             Button delete;
+            ListView showproduct;
         }
 
     }

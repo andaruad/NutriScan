@@ -70,9 +70,17 @@
         android:id="@+id/tvresult2"
         android:layout_gravity="right"
         android:layout_above="@+id/brescan"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="10dp" />
+        android:layout_toLeftOf="@+id/bcompare2"
+        android:layout_toStartOf="@+id/bcompare2" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="_____________"
+        android:id="@+id/tvresult3"
+        android:layout_below="@+id/textView29"
+        android:layout_alignRight="@+id/bcompare2"
+        android:layout_alignEnd="@+id/bcompare2" />
 
 
 </RelativeLayout>
