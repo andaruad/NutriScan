@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 public class Testing extends Activity {
     Button add_btn;
+    ListView show_product;
     ListView Product_listview;
     ArrayList<Product> contact_data = new ArrayList<Product>();
     Product_Adapter cAdapter;
