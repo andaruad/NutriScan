@@ -19,7 +19,7 @@
             android:background="#000000"
             android:clickable="false"
             android:focusable="false"
-            android:text="Add User"
+            android:text="Add Product"
             android:textColor="#FFFFFF" />
     </LinearLayout>
 
