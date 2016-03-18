@@ -9,17 +9,36 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.Objects;
+
 /*
  * Created by Andaruad on 14/02/2016.
  */
-public class SearchArrayAdapter extends ArrayAdapter<String>{
-        private final Context context;
-        private final String[] values;
+public class SearchArrayAdapter extends ArrayAdapter<Product>{
 
-        public SearchArrayAdapter(Context context, String[] values) {
-            super(context, R.layout.search_main, values);
+        private Context context;
+        private ArrayList<Product> products;
+
+        public SearchArrayAdapter(Context context, ArrayList<Product> products) {
+            super(context, R.layout.search_main);
             this.context = context;
-            this.values = values;
+            this.products = products;
+        }
+
+        @Override
+        public Product getItem(int position){
+            return products.get(position);
+        }
+
+        @Override
+        public long getItemId(int position){
+           return getItem(position).getID();
+        }
+
+        @Override
+        public int getCount(){
+            return products.size();
         }
 
         @Override
@@ -27,28 +46,16 @@ public class SearchArrayAdapter extends ArrayAdapter<String>{
             LayoutInflater inflater = (LayoutInflater) context
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
+            Product currentProduct = getItem(position);
             View rowView = inflater.inflate(R.layout.search_main, parent, false);
             TextView textView = (TextView) rowView.findViewById(R.id.listlabel);
             ImageView imageView = (ImageView) rowView.findViewById(R.id.icon);
-            textView.setText(values[position]);
+            textView.setText(currentProduct.getName());
 
-            // Change icon based on name
-            String s = values[position];
-
-            System.out.println(s);
-
-            if (s.equals("WindowsMobile")) {
-                imageView.setImageResource(R.mipmap.ic_launcher);
-            } else if (s.equals("iOS")) {
-                imageView.setImageResource(R.mipmap.ic_launcher);
-            } else if (s.equals("Blackberry")) {
-                imageView.setImageResource(R.mipmap.ic_launcher);
-            } else {
-                imageView.setImageResource(R.mipmap.ic_launcher);
-            }
 
             return rowView;
         }
+
 
 
 

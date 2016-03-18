@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -56,7 +57,14 @@ public class Testing extends Activity {
             }
         });
 
+        Product_listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(Testing.this, "Test", Toast.LENGTH_LONG).show();
+            }
+        });
     }
+
 
     public void Set_Referash_Data() {
         contact_data.clear();
@@ -134,7 +142,7 @@ public class Testing extends Activity {
             user = data.get(position);
             holder.edit.setTag(user.getID());
             holder.delete.setTag(user.getID());
-            holder.name.setText(user.getName());
+            holder.name.setText(user.getName() + " " + user.getID());
             holder.email.setText(user.getEmail());
             holder.number.setText(user.getPhoneNumber());
             holder.edit.setOnClickListener(new OnClickListener() {

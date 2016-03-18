@@ -68,17 +68,20 @@ public class DBHandler extends SQLiteOpenHelper {
     }
 
     // Getting single contact
-    Product Get_Product(int id) {
+    Product Get_Product(long id) {
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor cursor = db.query(TABLE_CONTACTS, new String[] { KEY_ID,
                         KEY_NAME, KEY_PH_NO, KEY_EMAIL }, KEY_ID + "=?",
                 new String[] { String.valueOf(id) }, null, null, null, null);
-        if (cursor != null)
-            cursor.moveToFirst();
 
-        Product contact = new Product(Integer.parseInt(cursor.getString(0)),
-                cursor.getString(1), cursor.getString(2), cursor.getString(3));
+        Product contact = null;
+
+        if (cursor != null && cursor.moveToFirst()) {
+            contact = new Product(Integer.parseInt(cursor.getString(0)),
+                    cursor.getString(1), cursor.getString(2), cursor.getString(3));
+        }
+
         // return contact
         cursor.close();
         db.close();

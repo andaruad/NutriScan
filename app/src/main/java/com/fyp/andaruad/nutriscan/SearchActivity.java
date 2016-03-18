@@ -9,19 +9,25 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 /*
  * Created by Andaruad on 14/02/2016.
  */
 public class SearchActivity extends ListActivity {
 
-    static final String[] MOBILE_OS =
-            new String[] { "Product1", "Product2", "Product3", "Product4"};
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setListAdapter(new SearchArrayAdapter(this, MOBILE_OS));
+        ArrayList<Product> products = new ArrayList<Product>();
+        products.add(new Product(1,"Product1","",""));
+        products.add(new Product(2,"Product2","",""));
+        products.add(new Product(3,"Product3","",""));
+        products.add(new Product(4,"Product4","",""));
+
+        setListAdapter(new SearchArrayAdapter(this, products));
     }
 
 
@@ -29,17 +35,13 @@ public class SearchActivity extends ListActivity {
     protected void onListItemClick(ListView l, View v, int position, long id) {
 
         //get selected items
-        String selectedValue = (String) getListAdapter().getItem(position);
-        if(selectedValue == "Product1"){
-            //Toast.makeText(getApplicationContext(),"Traaaai",Toast.LENGTH_SHORT).show();
-//            TextView textView = (TextView) findViewById(R.id.textView26);
-//            ProductsDB product1 = new ProductsDB("Product Name trial 1",10);
-//            textView.setText(product1.getp_name());
+        long  selectedValue = getListAdapter().getItemId(position);
+
             Intent intent = new Intent(v.getContext(),ResultActivity.class);
+            intent.putExtra("productid", selectedValue);
             startActivity(intent);
 
 
-        }
         //Toast.makeText(this, selectedValue, Toast.LENGTH_SHORT).show();
     }
 

@@ -2,6 +2,7 @@ package com.fyp.andaruad.nutriscan;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 /*
@@ -14,6 +15,19 @@ public class ResultActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.result_main);
 
+        TextView pname = (TextView)findViewById(R.id.pname);
+        DBHandler dbHandler = new DBHandler(this);
+        long productid  = getIntent().getLongExtra("productid", 0);
+        Product product = dbHandler.Get_Product(productid);
+
+        if(product != null){
+            pname.setText(product.getName());
+        } else {
+            pname.setText("Product not found");
+        }
     }
+
+
+
 
 }
