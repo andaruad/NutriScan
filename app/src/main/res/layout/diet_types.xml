@@ -14,103 +14,109 @@
             android:text="Diet Types"
             android:id="@+id/diettypes"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="42dp"
+            android:layout_marginTop="40dp"
             android:textSize="35dp"
             android:layout_alignParentTop="true"
-            android:layout_alignLeft="@+id/radioButton"
-            android:layout_alignStart="@+id/radioButton" />
+            android:layout_alignLeft="@+id/dietgroup"
+            android:layout_alignStart="@+id/dietgroup" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Choose one diet types from the list below"
+            android:layout_marginTop="85dp"
+            android:id="@+id/textView26" />
+
+        <RadioGroup
+        android:id="@+id/dietgroup"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Vegetarian (Lacto-Ovo)*"
-            android:id="@+id/radioButton"
-            android:layout_marginTop="40dp"
+            android:id="@+id/vegetarian"
             android:checked="false"
-            android:layout_below="@+id/diettypes"
+            android:layout_marginTop="120dp"
+            android:layout_below="@+id/vegan"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginLeft="44dp"
-            android:layout_marginStart="44dp" />
+            android:layout_alignParentStart="true" />
 
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Vegan"
-            android:id="@+id/radioButton2"
-            android:layout_below="@+id/radioButton"
-            android:layout_alignLeft="@+id/radioButton"
-            android:layout_alignStart="@+id/radioButton"
-            android:checked="false" />
-
-        <RadioButton
+            <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Halal"
-            android:id="@+id/radioButton3"
-            android:layout_below="@+id/radioButton2"
-            android:layout_alignLeft="@+id/radioButton2"
-            android:layout_alignStart="@+id/radioButton2"
+            android:id="@+id/halal"
+            android:layout_below="@+id/vegan"
+            android:layout_alignLeft="@+id/vegan"
+            android:layout_alignStart="@+id/vegan"
             android:checked="false" />
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Soy Allergy"
-            android:id="@+id/radioButton4"
-            android:layout_below="@+id/radioButton3"
-            android:layout_alignLeft="@+id/radioButton3"
-            android:layout_alignStart="@+id/radioButton3"
+            android:id="@+id/soy"
+            android:layout_below="@+id/halal"
+            android:layout_alignLeft="@+id/halal"
+            android:layout_alignStart="@+id/halal"
             android:checked="false" />
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Shellfish Allergy"
-            android:id="@+id/radioButton5"
-            android:layout_below="@+id/radioButton4"
-            android:layout_alignLeft="@+id/radioButton4"
-            android:layout_alignStart="@+id/radioButton4"
+            android:id="@+id/shellfish"
+            android:layout_below="@+id/soy"
+            android:layout_alignLeft="@+id/soy"
+            android:layout_alignStart="@+id/soy"
             android:checked="false" />
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Peanut Allergy"
-            android:id="@+id/radioButton6"
-            android:layout_below="@+id/radioButton5"
-            android:layout_alignLeft="@+id/radioButton5"
-            android:layout_alignStart="@+id/radioButton5"
+            android:id="@+id/peanut"
+            android:layout_below="@+id/shellfish"
+            android:layout_alignLeft="@+id/shellfish"
+            android:layout_alignStart="@+id/shellfish"
+            android:checked="false" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vegan"
+            android:id="@+id/vegan"
+            android:layout_below="@+id/vegetarian"
+            android:layout_alignLeft="@+id/vegetarian"
+            android:layout_alignStart="@+id/vegetarian"
             android:checked="false" />
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="High Cholesterol"
-            android:id="@+id/radioButton7"
-            android:layout_below="@+id/radioButton6"
-            android:layout_alignLeft="@+id/radioButton6"
-            android:layout_alignStart="@+id/radioButton6"
+            android:id="@+id/cholesterol"
+            android:layout_below="@+id/peanut"
+            android:layout_alignLeft="@+id/peanut"
+            android:layout_alignStart="@+id/peanut"
             android:checked="false" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Choose one or more diet types below"
-            android:id="@+id/textView27"
-            android:layout_below="@+id/diettypes"
-            android:layout_alignLeft="@+id/diettypes"
-            android:layout_alignStart="@+id/diettypes" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Done"
-            android:id="@+id/button"
-            android:layout_below="@+id/radioButton7"
+            android:id="@+id/Done"
+
             android:layout_toRightOf="@+id/diettypes"
-            android:layout_toEndOf="@+id/diettypes" />
+            android:layout_toEndOf="@+id/diettypes"
+            android:layout_gravity="center_horizontal" />
+    </RadioGroup>
 
     </RelativeLayout>
 
