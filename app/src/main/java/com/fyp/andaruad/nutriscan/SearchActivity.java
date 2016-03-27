@@ -22,7 +22,7 @@ public class SearchActivity extends ListActivity {
         super.onCreate(savedInstanceState);
 
         ArrayList<Product> products = new ArrayList<Product>();
-        products.add(new Product(1,"Product1","",""));
+        products.add(new Product(1,"Skippy","",""));
         products.add(new Product(2,"Product2","",""));
         products.add(new Product(3,"Product3","",""));
         products.add(new Product(4,"Product4","",""));
@@ -40,8 +40,6 @@ public class SearchActivity extends ListActivity {
             Intent intent = new Intent(v.getContext(),ResultActivity.class);
             intent.putExtra("productid", selectedValue);
             startActivity(intent);
-
-
         //Toast.makeText(this, selectedValue, Toast.LENGTH_SHORT).show();
     }
 

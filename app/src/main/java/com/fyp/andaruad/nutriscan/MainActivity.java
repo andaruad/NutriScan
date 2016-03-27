@@ -16,6 +16,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
@@ -94,7 +95,9 @@ public class MainActivity extends AppCompatActivity
         bhistory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),"bhistory button",Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(v.getContext(),SearchActivity.class);
+                startActivity(intent);
+//       Toast.makeText(getApplicationContext(),"bhistory button",Toast.LENGTH_SHORT).show();
             }
         });
         //Text View
@@ -102,17 +105,14 @@ public class MainActivity extends AppCompatActivity
             //tvresult.setText("Apa kek");
             }
 
+
+
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent intent){
         IntentResult scanResult = IntentIntegrator.parseActivityResult(requestCode,resultCode, intent);
             if (scanResult != null){
                 String re = scanResult.getContents();
-                //re = scanResult.getContents();
                 Log.d("code", re);
-//                if(re != null){
-//                    StoreValue value =  (StoreValue) StoreValue.setValue1(re);
-//
-//                }
                 TextView tvresult = (TextView) findViewById(R.id.tvresult);
                 tvresult.setText("Your scanned barcode is:\n" + re);
                 Intent compare = new Intent(this, CompareMain.class);
@@ -160,9 +160,18 @@ public class MainActivity extends AppCompatActivity
             relativeLayout = (RelativeLayout) findViewById(R.id.main);
             ViewGroup container = (ViewGroup) pop.inflate(R.layout.help,null);
             popupWindow = new PopupWindow(container, RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT,true);
-            popupWindow.showAtLocation(relativeLayout, Gravity.CENTER,0,0);
+            popupWindow.showAtLocation(relativeLayout, Gravity.CENTER, 0, 0);
+            ImageButton close = (ImageButton)findViewById(R.id.ic_exit);
+//
+//            close.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    popupWindow.dismiss();
+//
+//                }
+//            });
             }
-        return super.onOptionsItemSelected(item);
+       return super.onOptionsItemSelected(item);
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
