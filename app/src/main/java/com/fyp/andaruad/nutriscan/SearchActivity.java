@@ -20,16 +20,13 @@ public class SearchActivity extends ListActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         ArrayList<Product> products = new ArrayList<Product>();
         products.add(new Product(11,"Skippy Creamy","",""));
         products.add(new Product(12,"Jif Chunky","",""));
         products.add(new Product(13,"Peter Pan","",""));
         products.add(new Product(14,"P28 Peanut Butter Spread","",""));
-
         setListAdapter(new SearchArrayAdapter(this, products));
     }
-
 
     @Override
     protected void onListItemClick(ListView l, View v, int position, long id) {

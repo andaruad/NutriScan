@@ -1,7 +1,9 @@
 package com.fyp.andaruad.nutriscan;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -121,7 +123,7 @@ public class MainActivity extends AppCompatActivity
                 String re = scanResult.getContents();
                 Log.d("code", re);
                 TextView tvresult = (TextView) findViewById(R.id.tvresult);
-                tvresult.setText("Your scanned barcode is:\n" + re);
+                tvresult.setText("");
                 Intent compare = new Intent(this, CompareMain.class);
                 compare.putExtra("barcode_num1", re);
                 startActivity(compare);
@@ -135,11 +137,32 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+
+        if(drawer.isDrawerOpen(GravityCompat.START)==false){
+        new AlertDialog.Builder(this)
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .setTitle("Closing Activity")
+                .setMessage("Are you sure you want to close this program?")
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener()
+                {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                    }
+
+                })
+                .setNegativeButton("No", null)
+                .show();
+        }
+
+
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
         }
+//        else {
+//            super.onBackPressed();
+//        }
+
 
     }
 
