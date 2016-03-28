@@ -1,6 +1,7 @@
 package com.fyp.andaruad.nutriscan;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -23,7 +24,7 @@ import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import android.view.View.OnClickListener;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
@@ -32,13 +33,15 @@ import java.net.URI;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    ImageButton close;
+    MenuItem popup;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -103,10 +106,11 @@ public class MainActivity extends AppCompatActivity
 //       Toast.makeText(getApplicationContext(),"bhistory button",Toast.LENGTH_SHORT).show();
             }
         });
-        //Text View
-            //TextView tvresult = (TextView) findViewById(R.id.tvresult);
-            //tvresult.setText("Apa kek");
-            }
+
+
+
+
+    }
 
 
 
@@ -157,25 +161,10 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            //startActivity(new Intent(MainActivity.this,Help.class));
-            pop = (LayoutInflater) getApplicationContext().getSystemService(LAYOUT_INFLATER_SERVICE);
-            relativeLayout = (RelativeLayout) findViewById(R.id.main);
-            ViewGroup container = (ViewGroup) pop.inflate(R.layout.help,null);
-            popupWindow = new PopupWindow(container, RelativeLayout.LayoutParams
-                    .WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT,true);
-            popupWindow.showAtLocation(relativeLayout, Gravity.CENTER, 0, 0);
-            ImageButton close = (ImageButton)findViewById(R.id.ic_exit);
-//
-//            close.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    popupWindow.dismiss();
-//
-//                }
-//            });
-            }
-       return super.onOptionsItemSelected(item);
+      if (id == R.id.action_settings) {
+          initiatePopupWindow();
+          }
+      return super.onOptionsItemSelected(item);
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -204,4 +193,34 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
+
+    private PopupWindow pwindo;
+
+    private void initiatePopupWindow() {
+        try {
+// We need to get the instance of the LayoutInflater
+            LayoutInflater inflater = (LayoutInflater) MainActivity.this
+                    .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            View layout = inflater.inflate(R.layout.help,
+                    (ViewGroup) findViewById(R.id.action_settings));
+            pwindo = new PopupWindow(layout, 700, 1200, true);
+            pwindo.showAtLocation(layout, Gravity.CENTER, 0, 0);
+
+            close = (ImageButton) layout.findViewById(R.id.ic_exit);
+            close.setOnClickListener(cancel_button_click_listener);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private OnClickListener cancel_button_click_listener = new OnClickListener() {
+        public void onClick(View v) {
+            pwindo.dismiss();
+
+        }
+    };
+
 }
+
+

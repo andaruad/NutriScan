@@ -60,7 +60,8 @@ public class Testing extends Activity {
         Product_listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(Testing.this, "Test", Toast.LENGTH_LONG).show();
+                startActivity(new Intent(getApplicationContext(), ResultActivity.class));
+                //Toast.makeText(Testing.this, "Test", Toast.LENGTH_LONG).show();
             }
         });
     }
