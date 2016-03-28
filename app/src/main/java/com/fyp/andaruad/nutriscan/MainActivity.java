@@ -2,6 +2,7 @@ package com.fyp.andaruad.nutriscan;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
@@ -25,6 +26,8 @@ import android.widget.Toast;
 
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
+
+import java.net.URI;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -159,7 +162,8 @@ public class MainActivity extends AppCompatActivity
             pop = (LayoutInflater) getApplicationContext().getSystemService(LAYOUT_INFLATER_SERVICE);
             relativeLayout = (RelativeLayout) findViewById(R.id.main);
             ViewGroup container = (ViewGroup) pop.inflate(R.layout.help,null);
-            popupWindow = new PopupWindow(container, RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT,true);
+            popupWindow = new PopupWindow(container, RelativeLayout.LayoutParams
+                    .WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT,true);
             popupWindow.showAtLocation(relativeLayout, Gravity.CENTER, 0, 0);
             ImageButton close = (ImageButton)findViewById(R.id.ic_exit);
 //
@@ -188,6 +192,9 @@ public class MainActivity extends AppCompatActivity
             startActivity(new Intent(getApplicationContext(),About.class));
         }
         else if (id == R.id.nav_share) {
+            Uri uri = Uri.parse("https://www.facebook.com");
+            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            startActivity(intent);
 
         }else if (id == R.id.testing) {
             startActivity(new Intent(getApplicationContext(),Testing.class));}

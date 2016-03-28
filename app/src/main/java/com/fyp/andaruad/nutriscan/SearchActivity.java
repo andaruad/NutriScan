@@ -22,10 +22,10 @@ public class SearchActivity extends ListActivity {
         super.onCreate(savedInstanceState);
 
         ArrayList<Product> products = new ArrayList<Product>();
-        products.add(new Product(1,"Skippy","",""));
-        products.add(new Product(2,"Product2","",""));
-        products.add(new Product(3,"Product3","",""));
-        products.add(new Product(4,"Product4","",""));
+        products.add(new Product(11,"Skippy Creamy","",""));
+        products.add(new Product(12,"Jif Chunky","",""));
+        products.add(new Product(13,"Peter Pan","",""));
+        products.add(new Product(14,"P28 Peanut Butter Spread","",""));
 
         setListAdapter(new SearchArrayAdapter(this, products));
     }
@@ -36,10 +36,9 @@ public class SearchActivity extends ListActivity {
 
         //get selected items
         long  selectedValue = getListAdapter().getItemId(position);
-
-            Intent intent = new Intent(v.getContext(),ResultActivity.class);
-            intent.putExtra("productid", selectedValue);
-            startActivity(intent);
+        Intent intent = new Intent(v.getContext(),ResultActivity.class);
+        intent.putExtra("productid", selectedValue);
+        startActivity(intent);
         //Toast.makeText(this, selectedValue, Toast.LENGTH_SHORT).show();
     }
 

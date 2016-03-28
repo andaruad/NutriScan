@@ -61,9 +61,9 @@ public class CompareMain extends Activity {
 //                }
             TextView tvresult3 = (TextView) findViewById(R.id.tvresult3);
             tvresult3.setText(re2);
-//            Intent compare = new Intent(this, CompareMain.class);
-//            compare.putExtra("barcode_num2", re2);
-//            startActivity(compare);
+            Intent compare = new Intent(this, CompareFinal.class);
+            compare.putExtra("barcode_num2", re2);
+            startActivity(compare);
         }else {
             Toast toast = Toast.makeText(getApplicationContext(),
                     "No scan data received!", Toast.LENGTH_LONG);

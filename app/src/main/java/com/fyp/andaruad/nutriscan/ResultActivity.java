@@ -14,11 +14,11 @@ public class ResultActivity extends Activity {
     public void onCreate (Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.result_main);
-
         TextView pname = (TextView)findViewById(R.id.pname);
         DBHandler dbHandler = new DBHandler(this);
         long productid  = getIntent().getLongExtra("productid", 0);
         Product product = dbHandler.Get_Product(productid);
+
 
         if(product != null){
             pname.setText(product.getName());

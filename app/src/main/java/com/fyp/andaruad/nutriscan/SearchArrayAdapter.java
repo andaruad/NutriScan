@@ -15,6 +15,7 @@ import java.util.Objects;
 /*
  * Created by Andaruad on 14/02/2016.
  */
+
 public class SearchArrayAdapter extends ArrayAdapter<Product>{
 
         private Context context;
@@ -43,13 +44,12 @@ public class SearchArrayAdapter extends ArrayAdapter<Product>{
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            LayoutInflater inflater = (LayoutInflater) context
-                    .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
             Product currentProduct = getItem(position);
             View rowView = inflater.inflate(R.layout.search_main, parent, false);
             TextView textView = (TextView) rowView.findViewById(R.id.listlabel);
-            ImageView imageView = (ImageView) rowView.findViewById(R.id.icon);
+//            ImageView imageView = (ImageView) rowView.findViewById(R.id.icon);
             textView.setText(currentProduct.getName());
 
 
