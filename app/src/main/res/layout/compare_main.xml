@@ -12,8 +12,8 @@
         android:layout_above="@+id/textView29"
         android:layout_marginBottom="10dp">
 
-        <include layout="@layout/result_small" android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+        <include layout="@layout/result_small" android:layout_width="385dp"
+            android:layout_height="319dp" />
 
 
 

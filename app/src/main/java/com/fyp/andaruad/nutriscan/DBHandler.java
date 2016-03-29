@@ -19,14 +19,14 @@ public class DBHandler extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "contactsManager";
 
     // Products table name
-    private static final String TABLE_CONTACTS = "contacts";
+    private static final String TABLE_PRODUCTS = "contacts";
 
     // Products Table Columns names
     private static final String KEY_ID = "id";
     private static final String KEY_NAME = "name";
-    private static final String KEY_PH_NO = "phone_number";
-    private static final String KEY_EMAIL = "email";
-    private final ArrayList<Product> contact_list = new ArrayList<Product>();
+    private static final String KEY_BR_NO = "phone_number";
+    private static final String KEY_CATE = "email";
+    private final ArrayList<Product> product_list = new ArrayList<Product>();
 
     public DBHandler(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -35,9 +35,9 @@ public class DBHandler extends SQLiteOpenHelper {
     // Creating Tables
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String CREATE_CONTACTS_TABLE = "CREATE TABLE " + TABLE_CONTACTS + "("
+        String CREATE_CONTACTS_TABLE = "CREATE TABLE " + TABLE_PRODUCTS + "("
                 + KEY_ID + " INTEGER PRIMARY KEY," + KEY_NAME + " TEXT,"
-                + KEY_PH_NO + " TEXT," + KEY_EMAIL + " TEXT" + ")";
+                + KEY_BR_NO + " TEXT," + KEY_CATE + " TEXT" + ")";
         db.execSQL(CREATE_CONTACTS_TABLE);
     }
 
@@ -45,7 +45,7 @@ public class DBHandler extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         // Drop older table if existed
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_CONTACTS);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_PRODUCTS);
 
         // Create tables again
         onCreate(db);
@@ -60,10 +60,10 @@ public class DBHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(KEY_NAME, contact.getName()); // Product Name
-        values.put(KEY_PH_NO, contact.getPhoneNumber()); // Product Phone
-        values.put(KEY_EMAIL, contact.getEmail()); // Product Email
+        values.put(KEY_BR_NO, contact.getPhoneNumber()); // Product Phone
+        values.put(KEY_CATE, contact.getEmail()); // Product Email
         // Inserting Row
-        db.insert(TABLE_CONTACTS, null, values);
+        db.insert(TABLE_PRODUCTS, null, values);
         db.close(); // Closing database connection
     }
 
@@ -71,8 +71,8 @@ public class DBHandler extends SQLiteOpenHelper {
     Product Get_Product(long id) {
         SQLiteDatabase db = this.getReadableDatabase();
 
-        Cursor cursor = db.query(TABLE_CONTACTS, new String[] { KEY_ID,
-                        KEY_NAME, KEY_PH_NO, KEY_EMAIL }, KEY_ID + "=?",
+        Cursor cursor = db.query(TABLE_PRODUCTS, new String[] { KEY_ID,
+                        KEY_NAME, KEY_BR_NO, KEY_CATE}, KEY_ID + "=?",
                 new String[] { String.valueOf(id) }, null, null, null, null);
 
         Product contact = null;
@@ -92,10 +92,10 @@ public class DBHandler extends SQLiteOpenHelper {
     // Getting All Products
     public ArrayList<Product> Get_Products() {
         try {
-            contact_list.clear();
+            product_list.clear();
 
             // Select All Query
-            String selectQuery = "SELECT  * FROM " + TABLE_CONTACTS;
+            String selectQuery = "SELECT  * FROM " + TABLE_PRODUCTS;
 
             SQLiteDatabase db = this.getWritableDatabase();
             Cursor cursor = db.rawQuery(selectQuery, null);
@@ -103,26 +103,26 @@ public class DBHandler extends SQLiteOpenHelper {
             // looping through all rows and adding to list
             if (cursor.moveToFirst()) {
                 do {
-                    Product contact = new Product();
-                    contact.setID(Integer.parseInt(cursor.getString(0)));
-                    contact.setName(cursor.getString(1));
-                    contact.setPhoneNumber(cursor.getString(2));
-                    contact.setEmail(cursor.getString(3));
-                    // Adding contact to list
-                    contact_list.add(contact);
+                    Product product = new Product();
+                    product.setID(Integer.parseInt(cursor.getString(0)));
+                    product.setName(cursor.getString(1));
+                    product.setPhoneNumber(cursor.getString(2));
+                    product.setEmail(cursor.getString(3));
+                    // Adding product to list
+                    product_list.add(product);
                 } while (cursor.moveToNext());
             }
 
             // return contact list
             cursor.close();
             db.close();
-            return contact_list;
+            return product_list;
         } catch (Exception e) {
             // TODO: handle exception
             Log.e("all_contact", "" + e);
         }
 
-        return contact_list;
+        return product_list;
     }
 
     // Updating single contact
@@ -131,25 +131,25 @@ public class DBHandler extends SQLiteOpenHelper {
 
         ContentValues values = new ContentValues();
         values.put(KEY_NAME, contact.getName());
-        values.put(KEY_PH_NO, contact.getPhoneNumber());
-        values.put(KEY_EMAIL, contact.getEmail());
+        values.put(KEY_BR_NO, contact.getPhoneNumber());
+        values.put(KEY_CATE, contact.getEmail());
 
         // updating row
-        return db.update(TABLE_CONTACTS, values, KEY_ID + " = ?",
+        return db.update(TABLE_PRODUCTS, values, KEY_ID + " = ?",
                 new String[] { String.valueOf(contact.getID()) });
     }
 
     // Deleting single contact
     public void Delete_Product(int id) {
         SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(TABLE_CONTACTS, KEY_ID + " = ?",
+        db.delete(TABLE_PRODUCTS, KEY_ID + " = ?",
                 new String[] { String.valueOf(id) });
         db.close();
     }
 
     // Getting contacts Count
     public int Get_Total_Products() {
-        String countQuery = "SELECT  * FROM " + TABLE_CONTACTS;
+        String countQuery = "SELECT  * FROM " + TABLE_PRODUCTS;
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(countQuery, null);
         cursor.close();
