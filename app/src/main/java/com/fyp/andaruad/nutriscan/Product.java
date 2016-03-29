@@ -12,18 +12,18 @@ public class Product {
     }
 
     // constructor
-    public Product(int id, String name, String _barcode, String _email) {
+    public Product(int id, String name, String barcode, String _email) {
         this._id = id;
         this._name = name;
-        this._barcode = _barcode;
+        this._barcode = barcode;
         this._email = _email;
 
     }
 
     // constructor
-    public Product(String name, String _barcode, String _email) {
+    public Product(String name, String barcode, String _email) {
         this._name = name;
-        this._barcode = _barcode;
+        this._barcode = barcode;
         this._email = _email;
     }
 
@@ -53,8 +53,8 @@ public class Product {
     }
 
     // setting phone number
-    public void setPhoneNumber(String phone_number) {
-        this._barcode = _barcode;
+    public void setPhoneNumber(String barcode) {
+        this._barcode = barcode;
     }
 
     // getting email

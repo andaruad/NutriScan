@@ -16,16 +16,16 @@ public class DBHandler extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
 
     // Database Name
-    private static final String DATABASE_NAME = "contactsManager";
+    private static final String DATABASE_NAME = "productManager";
 
     // Products table name
-    private static final String TABLE_PRODUCTS = "contacts";
+    private static final String TABLE_PRODUCTS = "products";
 
     // Products Table Columns names
     private static final String KEY_ID = "id";
     private static final String KEY_NAME = "name";
-    private static final String KEY_BR_NO = "phone_number";
-    private static final String KEY_CATE = "email";
+    private static final String KEY_BR_NO = "barcode_number";
+    private static final String KEY_CATE = "category";
     private final ArrayList<Product> product_list = new ArrayList<Product>();
 
     public DBHandler(Context context) {
