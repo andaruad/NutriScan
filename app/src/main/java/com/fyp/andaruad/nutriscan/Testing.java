@@ -11,7 +11,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -57,13 +56,13 @@ public class Testing extends Activity {
             }
         });
 
-        Product_listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                startActivity(new Intent(getApplicationContext(), ResultActivity.class));
-                //Toast.makeText(Testing.this, "Test", Toast.LENGTH_LONG).show();
-            }
-        });
+//        Product_listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                startActivity(new Intent(getApplicationContext(), ResultActivity.class));
+//                //Toast.makeText(Testing.this, "Test", Toast.LENGTH_LONG).show();
+//            }
+//        });
     }
 
 
@@ -76,13 +75,13 @@ public class Testing extends Activity {
 
             int tidno = contact_array_from_db.get(i).getID();
             String name = contact_array_from_db.get(i).getName();
-            String mobile = contact_array_from_db.get(i).getPhoneNumber();
-            String email = contact_array_from_db.get(i).getEmail();
+            String barcodeNumber = contact_array_from_db.get(i).getBarcodeNumber();
+            String cate = contact_array_from_db.get(i).getCate();
             Product cnt = new Product();
             cnt.setID(tidno);
             cnt.setName(name);
-            cnt.setEmail(email);
-            cnt.setPhoneNumber(mobile);
+            cnt.setCate(cate);
+            cnt.setBarcodeNumber(barcodeNumber);
 
             contact_data.add(cnt);
         }
@@ -144,8 +143,8 @@ public class Testing extends Activity {
             holder.edit.setTag(user.getID());
             holder.delete.setTag(user.getID());
             holder.name.setText(user.getName() + " " + user.getID());
-            holder.email.setText(user.getEmail());
-            holder.number.setText(user.getPhoneNumber());
+            holder.email.setText(user.getCate());
+            holder.number.setText(user.getBarcodeNumber());
             holder.edit.setOnClickListener(new OnClickListener() {
 
                 @Override

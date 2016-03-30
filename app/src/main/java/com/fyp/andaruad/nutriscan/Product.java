@@ -6,25 +6,25 @@ public class Product {
     public int _id;
     public String _name;
     public String _barcode;
-    public String _email;
+    public String _cate;
 
     public Product() {
     }
 
     // constructor
-    public Product(int id, String name, String barcode, String _email) {
+    public Product(int id, String name, String barcode, String _cate) {
         this._id = id;
         this._name = name;
         this._barcode = barcode;
-        this._email = _email;
+        this._cate = _cate;
 
     }
 
     // constructor
-    public Product(String name, String barcode, String _email) {
+    public Product(String name, String barcode, String _cate) {
         this._name = name;
         this._barcode = barcode;
-        this._email = _email;
+        this._cate = _cate;
     }
 
     // getting ID
@@ -48,23 +48,23 @@ public class Product {
     }
 
     // getting phone number
-    public String getPhoneNumber() {
+    public String getBarcodeNumber() {
         return this._barcode;
     }
 
     // setting phone number
-    public void setPhoneNumber(String barcode) {
+    public void setBarcodeNumber(String barcode) {
         this._barcode = barcode;
     }
 
-    // getting email
-    public String getEmail() {
-        return this._email;
+    // getting category
+    public String getCate() {
+        return this._cate;
     }
 
-    // setting email
-    public void setEmail(String email) {
-        this._email = email;
+    // setting category
+    public void setCate(String cate) {
+        this._cate = cate;
     }
 
 }

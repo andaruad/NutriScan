@@ -103,9 +103,9 @@ public class MainActivity extends AppCompatActivity
         bhistory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(),SearchActivity.class);
-                startActivity(intent);
-//       Toast.makeText(getApplicationContext(),"bhistory button",Toast.LENGTH_SHORT).show();
+//                Intent intent = new Intent(v.getContext(),SearchActivity.class);
+//                startActivity(intent);
+      Toast.makeText(getApplicationContext(),"Bhistory button",Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -140,7 +140,6 @@ public class MainActivity extends AppCompatActivity
 
         if(drawer.isDrawerOpen(GravityCompat.START)==false){
         new AlertDialog.Builder(this)
-                .setIcon(android.R.drawable.ic_dialog_alert)
                 .setTitle("Closing Activity")
                 .setMessage("Are you sure you want to close this program?")
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener()

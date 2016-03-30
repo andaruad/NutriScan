@@ -60,8 +60,8 @@ public class DBHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(KEY_NAME, contact.getName()); // Product Name
-        values.put(KEY_BR_NO, contact.getPhoneNumber()); // Product Phone
-        values.put(KEY_CATE, contact.getEmail()); // Product Email
+        values.put(KEY_BR_NO, contact.getBarcodeNumber()); // Product barcode
+        values.put(KEY_CATE, contact.getCate()); // Product category
         // Inserting Row
         db.insert(TABLE_PRODUCTS, null, values);
         db.close(); // Closing database connection
@@ -106,8 +106,8 @@ public class DBHandler extends SQLiteOpenHelper {
                     Product product = new Product();
                     product.setID(Integer.parseInt(cursor.getString(0)));
                     product.setName(cursor.getString(1));
-                    product.setPhoneNumber(cursor.getString(2));
-                    product.setEmail(cursor.getString(3));
+                    product.setBarcodeNumber(cursor.getString(2));
+                    product.setCate(cursor.getString(3));
                     // Adding product to list
                     product_list.add(product);
                 } while (cursor.moveToNext());
@@ -131,8 +131,8 @@ public class DBHandler extends SQLiteOpenHelper {
 
         ContentValues values = new ContentValues();
         values.put(KEY_NAME, contact.getName());
-        values.put(KEY_BR_NO, contact.getPhoneNumber());
-        values.put(KEY_CATE, contact.getEmail());
+        values.put(KEY_BR_NO, contact.getBarcodeNumber());
+        values.put(KEY_CATE, contact.getCate());
 
         // updating row
         return db.update(TABLE_PRODUCTS, values, KEY_ID + " = ?",

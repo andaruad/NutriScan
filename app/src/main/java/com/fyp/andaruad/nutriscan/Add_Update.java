@@ -43,8 +43,8 @@ public class Add_Update extends Activity {
             Product c = dbHandler.Get_Product(USER_ID);
 
             add_name.setText(c.getName());
-            add_mobile.setText(c.getPhoneNumber());
-            add_email.setText(c.getEmail());
+            add_mobile.setText(c.getBarcodeNumber());
+            add_email.setText(c.getCate());
             // dbHandler.close();
         }
         add_mobile.addTextChangedListener(new TextWatcher() {
