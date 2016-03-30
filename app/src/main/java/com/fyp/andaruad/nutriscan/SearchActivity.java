@@ -3,6 +3,7 @@ package com.fyp.andaruad.nutriscan;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ListView;
@@ -20,6 +21,7 @@ public class SearchActivity extends ListActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         ArrayList<Product> products = new ArrayList<Product>();
         products.add(new Product(1,"Skippy Creamy","","",""));
         products.add(new Product(2,"Jif Chunky","","",""));

@@ -298,13 +298,11 @@ public class Add_Update extends Activity {
 
     public void Is_Valid_Cal_Name(EditText edt) throws NumberFormatException {
         if (edt.getText().toString().length() <= 0) {
-            edt.setError("Accept Alphabets Only.");
-            valid_cal = null;
-        } else if (!edt.getText().toString().matches("[a-zA-Z ]+")) {
-            edt.setError("Accept Alphabets Only.");
+            edt.setError("Number Only");
             valid_cal = null;
         } else {
             valid_cal = edt.getText().toString();
+
         }
 
     }
