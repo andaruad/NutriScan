@@ -12,10 +12,10 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 public class Add_Update extends Activity {
-    EditText add_name, add_mobile, add_email;
+    EditText add_name, add_barcode, add_cate;
     Button add_save_btn, add_view_all, update_btn, update_view_all;
     LinearLayout add_view, update_view;
-    String valid_mob_number = null, valid_email = null, valid_name = null,
+    String valid_bar_number = null, valid_cate = null, valid_name = null,
             Toast_msg = null, valid_user_id = "";
     int USER_ID;
     DBHandler dbHandler = new DBHandler(this);
@@ -43,11 +43,11 @@ public class Add_Update extends Activity {
             Product c = dbHandler.Get_Product(USER_ID);
 
             add_name.setText(c.getName());
-            add_mobile.setText(c.getBarcodeNumber());
-            add_email.setText(c.getCate());
+            add_barcode.setText(c.getBarcodeNumber());
+            add_cate.setText(c.getCate());
             // dbHandler.close();
         }
-        add_mobile.addTextChangedListener(new TextWatcher() {
+        add_barcode.addTextChangedListener(new TextWatcher() {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before,
@@ -68,12 +68,12 @@ public class Add_Update extends Activity {
                 // TODO Auto-generated method stub
                 // min lenth 10 and max lenth 12 (2 extra for - as per phone
                 // matcher format)
-                Is_Valid_Sign_Number_Validation(8, 13, add_mobile);
+                Is_Valid_Sign_Number_Validation(8, 13, add_barcode);
             }
         });
-        add_mobile.addTextChangedListener(new PhoneNumberFormattingTextWatcher());
+        add_barcode.addTextChangedListener(new PhoneNumberFormattingTextWatcher());
 
-        add_email.addTextChangedListener(new TextWatcher() {
+        add_cate.addTextChangedListener(new TextWatcher() {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before,
@@ -92,7 +92,7 @@ public class Add_Update extends Activity {
             @Override
             public void afterTextChanged(Editable s) {
                 // TODO Auto-generated method stub
-                Is_Valid_Email(add_email);
+                Is_Valid_Cate(add_cate);
             }
         });
 
@@ -115,7 +115,7 @@ public class Add_Update extends Activity {
             @Override
             public void afterTextChanged(Editable s) {
                 // TODO Auto-generated method stub
-                Is_Valid_Person_Name(add_name);
+                Is_Valid_Product_Name(add_name);
             }
         });
 
@@ -125,13 +125,13 @@ public class Add_Update extends Activity {
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 // check the value state is null or not
-                if (valid_name != null && valid_mob_number != null
-                        && valid_email != null && valid_name.length() != 0
-                        && valid_mob_number.length() != 0
-                        && valid_email.length() != 0) {
+                if (valid_name != null && valid_bar_number != null
+                        && valid_cate != null && valid_name.length() != 0
+                        && valid_bar_number.length() != 0
+                        && valid_cate.length() != 0) {
 
                     dbHandler.Add_Product(new Product(valid_name,
-                            valid_mob_number, valid_email));
+                            valid_bar_number, valid_cate));
                     Toast_msg = "Data inserted successfully";
                     Show_Toast(Toast_msg);
                     Reset_Text();
@@ -148,17 +148,17 @@ public class Add_Update extends Activity {
                 // TODO Auto-generated method stub
 
                 valid_name = add_name.getText().toString();
-                valid_mob_number = add_mobile.getText().toString();
-                valid_email = add_email.getText().toString();
+                valid_bar_number = add_barcode.getText().toString();
+                valid_cate = add_cate.getText().toString();
 
                 // check the value state is null or not
-                if (valid_name != null && valid_mob_number != null
-                        && valid_email != null && valid_name.length() != 0
-                        && valid_mob_number.length() != 0
-                        && valid_email.length() != 0) {
+                if (valid_name != null && valid_bar_number != null
+                        && valid_cate != null && valid_name.length() != 0
+                        && valid_bar_number.length() != 0
+                        && valid_cate.length() != 0) {
 
                     dbHandler.Update_Product(new Product(USER_ID, valid_name,
-                            valid_mob_number, valid_email));
+                            valid_bar_number, valid_cate));
                     dbHandler.close();
                     Toast_msg = "Data Update successfully";
                     Show_Toast(Toast_msg);
@@ -203,8 +203,8 @@ public class Add_Update extends Activity {
     public void Set_Add_Update_Screen() {
 
         add_name = (EditText) findViewById(R.id.add_name);
-        add_mobile = (EditText) findViewById(R.id.add_mobile);
-        add_email = (EditText) findViewById(R.id.add_email);
+        add_barcode = (EditText) findViewById(R.id.add_mobile);
+        add_cate = (EditText) findViewById(R.id.add_email);
 
         add_save_btn = (Button) findViewById(R.id.add_save_btn);
         update_btn = (Button) findViewById(R.id.update_btn);
@@ -223,39 +223,36 @@ public class Add_Update extends Activity {
                                                 EditText edt) throws NumberFormatException {
         if (edt.getText().toString().length() <= 0) {
             edt.setError("Number Only");
-            valid_mob_number = null;
+            valid_bar_number = null;
         } else if (edt.getText().toString().length() < MinLen) {
             edt.setError("Minimum length " + MinLen);
-            valid_mob_number = null;
+            valid_bar_number = null;
 
         } else if (edt.getText().toString().length() > MaxLen) {
             edt.setError("Maximum length " + MaxLen);
-            valid_mob_number = null;
+            valid_bar_number = null;
 
         } else {
-            valid_mob_number = edt.getText().toString();
+            valid_bar_number = edt.getText().toString();
 
         }
 
     } // END OF Edittext validation
 
-    public void Is_Valid_Email(EditText edt)throws NumberFormatException {
+    public void Is_Valid_Cate(EditText edt)throws NumberFormatException {
         if (edt.getText().toString().length() <= 0) {
             edt.setError("Accept Alphabets Only.");
-            valid_email = null;
+            valid_cate = null;
         } else if (!edt.getText().toString().matches("[a-zA-Z ]+")) {
             edt.setError("Accept Alphabets Only.");
-            valid_email = null;
+            valid_cate = null;
         } else {
-            valid_email = edt.getText().toString();
+            valid_cate = edt.getText().toString();
         }
     }
 
-    boolean isEmailValid(CharSequence email) {
-        return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
-    } // end of email matcher
 
-    public void Is_Valid_Person_Name(EditText edt) throws NumberFormatException {
+    public void Is_Valid_Product_Name(EditText edt) throws NumberFormatException {
         if (edt.getText().toString().length() <= 0) {
             edt.setError("Accept Alphabets Only.");
             valid_name = null;
@@ -275,8 +272,8 @@ public class Add_Update extends Activity {
     public void Reset_Text() {
 
         add_name.getText().clear();
-        add_mobile.getText().clear();
-        add_email.getText().clear();
+        add_barcode.getText().clear();
+        add_cate.getText().clear();
 
     }
 
