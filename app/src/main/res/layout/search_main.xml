@@ -21,7 +21,8 @@
             android:layout_height="wrap_content"
             android:text="@string/listlabel"
             android:textSize="20dp"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="7dp"
+            android:layout_marginBottom="7dp">
         </TextView>
 
     </LinearLayout>
