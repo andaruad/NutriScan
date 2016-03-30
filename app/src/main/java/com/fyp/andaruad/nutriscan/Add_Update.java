@@ -203,8 +203,8 @@ public class Add_Update extends Activity {
     public void Set_Add_Update_Screen() {
 
         add_name = (EditText) findViewById(R.id.add_name);
-        add_barcode = (EditText) findViewById(R.id.add_mobile);
-        add_cate = (EditText) findViewById(R.id.add_email);
+        add_barcode = (EditText) findViewById(R.id.add_barcode);
+        add_cate = (EditText) findViewById(R.id.add_cate);
 
         add_save_btn = (Button) findViewById(R.id.add_save_btn);
         update_btn = (Button) findViewById(R.id.update_btn);

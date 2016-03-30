@@ -7,6 +7,7 @@ public class Product {
     public String _name;
     public String _barcode;
     public String _cate;
+    public String _cal;
 
     public Product() {
     }
@@ -20,11 +21,27 @@ public class Product {
 
     }
 
+    public Product(int id, String name, String barcode, String _cate, String _cal) {
+        this._id = id;
+        this._name = name;
+        this._barcode = barcode;
+        this._cate = _cate;
+        this._cal = _cal;
+
+    }
+
     // constructor
     public Product(String name, String barcode, String _cate) {
         this._name = name;
         this._barcode = barcode;
         this._cate = _cate;
+    }
+    // constructor
+    public Product(String name, String barcode, String _cate, String _cal) {
+        this._name = name;
+        this._barcode = barcode;
+        this._cate = _cate;
+        this._cal = _cal;
     }
 
     // getting ID
@@ -67,4 +84,11 @@ public class Product {
         this._cate = cate;
     }
 
+    public String get_cal() {
+        return this._cal;
+    }
+
+    public void set_cal(String _cal) {
+        this._cal = _cal;
+    }
 }
