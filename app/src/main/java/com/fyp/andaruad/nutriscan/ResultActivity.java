@@ -15,6 +15,7 @@ public class ResultActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.result_main);
         TextView pname = (TextView)findViewById(R.id.pname);
+        TextView cal = (TextView)findViewById(R.id.calories);
         DBHandler dbHandler = new DBHandler(this);
         long productid  = getIntent().getLongExtra("productid", 0);
         Product product = dbHandler.Get_Product(productid);
@@ -22,6 +23,7 @@ public class ResultActivity extends Activity {
 
         if(product != null){
             pname.setText(product.getName());
+            cal.setText(product.getCal());
         } else {
             pname.setText("Product not found");
         }

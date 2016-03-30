@@ -13,13 +13,13 @@ public class Product {
     }
 
     // constructor
-    public Product(int id, String name, String barcode, String _cate) {
-        this._id = id;
-        this._name = name;
-        this._barcode = barcode;
-        this._cate = _cate;
-
-    }
+//    public Product(int id, String name, String barcode, String _cate) {
+//        this._id = id;
+//        this._name = name;
+//        this._barcode = barcode;
+//        this._cate = _cate;
+//
+//    }
 
     public Product(int id, String name, String barcode, String _cate, String _cal) {
         this._id = id;
@@ -30,13 +30,14 @@ public class Product {
 
     }
 
-    // constructor
-    public Product(String name, String barcode, String _cate) {
-        this._name = name;
-        this._barcode = barcode;
-        this._cate = _cate;
-    }
-    // constructor
+//    // constructor
+//    public Product(String name, String barcode, String _cate) {
+//        this._name = name;
+//        this._barcode = barcode;
+//        this._cate = _cate;
+//    }
+
+     //constructor
     public Product(String name, String barcode, String _cate, String _cal) {
         this._name = name;
         this._barcode = barcode;
@@ -84,11 +85,11 @@ public class Product {
         this._cate = cate;
     }
 
-    public String get_cal() {
+    public String getCal() {
         return this._cal;
     }
 
-    public void set_cal(String _cal) {
+    public void setCal(String _cal) {
         this._cal = _cal;
     }
 }

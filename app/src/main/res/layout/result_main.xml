@@ -8,8 +8,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Small Text"
-        android:id="@+id/textView"
+        android:text=""
+        android:id="@+id/calories"
         android:layout_marginTop="41dp"
         android:layout_below="@+id/textView2"
         android:layout_alignLeft="@+id/textView3"
@@ -32,7 +32,7 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Small Text"
         android:id="@+id/textView3"
-        android:layout_below="@+id/textView"
+        android:layout_below="@+id/calories"
         android:layout_centerHorizontal="true" />
 
     <TextView

@@ -12,10 +12,10 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 public class Add_Update extends Activity {
-    EditText add_name, add_barcode, add_cate;
+    EditText add_name, add_barcode, add_cate, add_cal;
     Button add_save_btn, add_view_all, update_btn, update_view_all;
     LinearLayout add_view, update_view;
-    String valid_bar_number = null, valid_cate = null, valid_name = null,
+    String valid_bar_number = null, valid_cate = null, valid_name = null,valid_cal = null,
             Toast_msg = null, valid_user_id = "";
     int USER_ID;
     DBHandler dbHandler = new DBHandler(this);
@@ -45,6 +45,7 @@ public class Add_Update extends Activity {
             add_name.setText(c.getName());
             add_barcode.setText(c.getBarcodeNumber());
             add_cate.setText(c.getCate());
+            add_cal.setText(c.getCal());
             // dbHandler.close();
         }
         add_barcode.addTextChangedListener(new TextWatcher() {
@@ -119,6 +120,31 @@ public class Add_Update extends Activity {
             }
         });
 
+        add_cal.addTextChangedListener(new TextWatcher() {
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before,
+                                      int count) {
+                // TODO Auto-generated method stub
+
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count,
+                                          int after) {
+                // TODO Auto-generated method stub
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                // TODO Auto-generated method stub
+                Is_Valid_Cal_Name(add_cal);                                                            // do something
+            }
+        });
+
+
+
         add_save_btn.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -128,10 +154,12 @@ public class Add_Update extends Activity {
                 if (valid_name != null && valid_bar_number != null
                         && valid_cate != null && valid_name.length() != 0
                         && valid_bar_number.length() != 0
-                        && valid_cate.length() != 0) {
+                        && valid_cate.length() != 0
+                        && valid_cal.length() != 0
+                        ) {
 
                     dbHandler.Add_Product(new Product(valid_name,
-                            valid_bar_number, valid_cate));
+                            valid_bar_number, valid_cate, valid_cal));
                     Toast_msg = "Data inserted successfully";
                     Show_Toast(Toast_msg);
                     Reset_Text();
@@ -150,15 +178,17 @@ public class Add_Update extends Activity {
                 valid_name = add_name.getText().toString();
                 valid_bar_number = add_barcode.getText().toString();
                 valid_cate = add_cate.getText().toString();
+                valid_cal = add_cal.getText().toString();
 
                 // check the value state is null or not
                 if (valid_name != null && valid_bar_number != null
                         && valid_cate != null && valid_name.length() != 0
                         && valid_bar_number.length() != 0
-                        && valid_cate.length() != 0) {
+                        && valid_cate.length() != 0
+                        && valid_cal.length() !=0) {
 
                     dbHandler.Update_Product(new Product(USER_ID, valid_name,
-                            valid_bar_number, valid_cate));
+                            valid_bar_number, valid_cate, valid_cal));
                     dbHandler.close();
                     Toast_msg = "Data Update successfully";
                     Show_Toast(Toast_msg);
@@ -205,6 +235,7 @@ public class Add_Update extends Activity {
         add_name = (EditText) findViewById(R.id.add_name);
         add_barcode = (EditText) findViewById(R.id.add_barcode);
         add_cate = (EditText) findViewById(R.id.add_cate);
+        add_cal = (EditText) findViewById(R.id.add_calories);
 
         add_save_btn = (Button) findViewById(R.id.add_save_btn);
         update_btn = (Button) findViewById(R.id.update_btn);
@@ -265,6 +296,19 @@ public class Add_Update extends Activity {
 
     }
 
+    public void Is_Valid_Cal_Name(EditText edt) throws NumberFormatException {
+        if (edt.getText().toString().length() <= 0) {
+            edt.setError("Accept Alphabets Only.");
+            valid_cal = null;
+        } else if (!edt.getText().toString().matches("[a-zA-Z ]+")) {
+            edt.setError("Accept Alphabets Only.");
+            valid_cal = null;
+        } else {
+            valid_cal = edt.getText().toString();
+        }
+
+    }
+
     public void Show_Toast(String msg) {
         Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG).show();
     }
@@ -274,6 +318,7 @@ public class Add_Update extends Activity {
         add_name.getText().clear();
         add_barcode.getText().clear();
         add_cate.getText().clear();
+        add_cal.getText().clear();
 
     }
 

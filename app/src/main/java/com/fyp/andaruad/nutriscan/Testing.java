@@ -77,11 +77,13 @@ public class Testing extends Activity {
             String name = contact_array_from_db.get(i).getName();
             String barcodeNumber = contact_array_from_db.get(i).getBarcodeNumber();
             String cate = contact_array_from_db.get(i).getCate();
+            String cal = contact_array_from_db.get(i).getCal();
             Product cnt = new Product();
             cnt.setID(tidno);
             cnt.setName(name);
             cnt.setCate(cate);
             cnt.setBarcodeNumber(barcodeNumber);
+            cnt.setCal(cal);
 
             contact_data.add(cnt);
         }
@@ -132,6 +134,7 @@ public class Testing extends Activity {
                 holder.name = (TextView) row.findViewById(R.id.user_name_txt);
                 holder.email = (TextView) row.findViewById(R.id.user_email_txt);
                 holder.number = (TextView) row.findViewById(R.id.user_mob_txt);
+                holder.cal = (TextView) row.findViewById(R.id.user_cal_txt);                           // do something
                 holder.edit = (Button) row.findViewById(R.id.btn_update);
                 holder.delete = (Button) row.findViewById(R.id.btn_delete);
                 holder.showproduct = (ListView) row.findViewById(R.id.list);
@@ -199,6 +202,7 @@ public class Testing extends Activity {
             TextView name;
             TextView email;
             TextView number;
+            TextView cal;
             Button edit;
             Button delete;
             ListView showproduct;

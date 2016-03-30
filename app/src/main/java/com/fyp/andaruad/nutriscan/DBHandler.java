@@ -26,6 +26,7 @@ public class DBHandler extends SQLiteOpenHelper {
     private static final String KEY_NAME = "name";
     private static final String KEY_BR_NO = "barcode_number";
     private static final String KEY_CATE = "category";
+    private static final String KEY_CAL = "calories";
     private final ArrayList<Product> product_list = new ArrayList<Product>();
 
     public DBHandler(Context context) {
@@ -37,7 +38,7 @@ public class DBHandler extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String CREATE_CONTACTS_TABLE = "CREATE TABLE " + TABLE_PRODUCTS + "("
                 + KEY_ID + " INTEGER PRIMARY KEY," + KEY_NAME + " TEXT,"
-                + KEY_BR_NO + " TEXT," + KEY_CATE + " TEXT" + ")";
+                + KEY_BR_NO + " TEXT," + KEY_CATE + " TEXT," + KEY_CAL + " TEXT" + ");";
         db.execSQL(CREATE_CONTACTS_TABLE);
     }
 
@@ -62,6 +63,7 @@ public class DBHandler extends SQLiteOpenHelper {
         values.put(KEY_NAME, contact.getName()); // Product Name
         values.put(KEY_BR_NO, contact.getBarcodeNumber()); // Product barcode
         values.put(KEY_CATE, contact.getCate()); // Product category
+        values.put(KEY_CAL, contact.getCal());
         // Inserting Row
         db.insert(TABLE_PRODUCTS, null, values);
         db.close(); // Closing database connection
@@ -71,15 +73,15 @@ public class DBHandler extends SQLiteOpenHelper {
     Product Get_Product(long id) {
         SQLiteDatabase db = this.getReadableDatabase();
 
-        Cursor cursor = db.query(TABLE_PRODUCTS, new String[] { KEY_ID,
-                        KEY_NAME, KEY_BR_NO, KEY_CATE}, KEY_ID + "=?",
-                new String[] { String.valueOf(id) }, null, null, null, null);
+        Cursor cursor = db.query(TABLE_PRODUCTS, new String[] {
+                        KEY_ID, KEY_NAME, KEY_BR_NO, KEY_CATE, KEY_CAL}, KEY_ID + "=?",
+                new String[] { String.valueOf(id) }, null, null, null, null);               //YOU MAY NEED TO ADD ONE MORE NULL
 
         Product contact = null;
 
         if (cursor != null && cursor.moveToFirst()) {
             contact = new Product(Integer.parseInt(cursor.getString(0)),
-                    cursor.getString(1), cursor.getString(2), cursor.getString(3));
+                    cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4));
         }
 
         // return contact
@@ -108,6 +110,7 @@ public class DBHandler extends SQLiteOpenHelper {
                     product.setName(cursor.getString(1));
                     product.setBarcodeNumber(cursor.getString(2));
                     product.setCate(cursor.getString(3));
+                    product.setCal(cursor.getString(4));
                     // Adding product to list
                     product_list.add(product);
                 } while (cursor.moveToNext());
@@ -133,6 +136,7 @@ public class DBHandler extends SQLiteOpenHelper {
         values.put(KEY_NAME, contact.getName());
         values.put(KEY_BR_NO, contact.getBarcodeNumber());
         values.put(KEY_CATE, contact.getCate());
+        values.put(KEY_CAL, contact.getCal());
 
         // updating row
         return db.update(TABLE_PRODUCTS, values, KEY_ID + " = ?",
