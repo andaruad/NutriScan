@@ -30,6 +30,16 @@ public class DBHandler extends SQLiteOpenHelper {
     private static final String KEY_TOFAT = "total_fat";
     private static final String KEY_SFAT = "saturated_fat";
     private static final String KEY_TRFAT = "trans_fat";
+    private static final String KEY_CHOLE = "cholesterol";
+    private static final String KEY_SODIU = "sodium";
+    private static final String KEY_CARBS = "carbohydrate";
+    private static final String KEY_DIEFI = "dietary_fibre";
+    private static final String KEY_SUGR = "sugar";
+    private static final String KEY_PROTE = "protein";
+    private static final String KEY_VITD = "vitamin_d";
+    private static final String KEY_CALC = "calcium";
+    private static final String KEY_IRON = "iron";
+    private static final String KEY_POTAS = "potassium";
     private final ArrayList<Product> product_list = new ArrayList<Product>();
 
     public DBHandler(Context context) {
@@ -42,7 +52,10 @@ public class DBHandler extends SQLiteOpenHelper {
         String CREATE_CONTACTS_TABLE = "CREATE TABLE " + TABLE_PRODUCTS + "("
                 + KEY_ID + " INTEGER PRIMARY KEY," + KEY_NAME + " TEXT,"
                 + KEY_BR_NO + " TEXT," + KEY_CATE + " TEXT," + KEY_CAL + " TEXT,"
-                + KEY_TOFAT + " TEXT," + KEY_SFAT + " TEXT," + KEY_TRFAT+ " TEXT"
+                + KEY_TOFAT + " TEXT," + KEY_SFAT + " TEXT," + KEY_TRFAT+ " TEXT,"
+                + KEY_CHOLE + " TEXT," + KEY_SODIU + " TEXT," + KEY_CARBS + " TEXT,"
+                + KEY_DIEFI + " TEXT," + KEY_SUGR + " TEXT," + KEY_PROTE + " TEXT,"
+                + KEY_VITD +  " TEXT," + KEY_CALC + " TEXT," + KEY_IRON + " TEXT," + KEY_POTAS + " TEXT"
                 + ");";
         db.execSQL(CREATE_CONTACTS_TABLE);
     }
@@ -72,6 +85,17 @@ public class DBHandler extends SQLiteOpenHelper {
         values.put(KEY_TOFAT, contact.get_tofat());
         values.put(KEY_SFAT, contact.get_sfat());
         values.put(KEY_TRFAT, contact.get_trfat());
+
+        values.put(KEY_CHOLE, contact.get_chole());
+        values.put(KEY_SODIU, contact.get_sodiu());
+        values.put(KEY_CARBS, contact.get_carbs());
+        values.put(KEY_DIEFI, contact.get_diefi());
+        values.put(KEY_SUGR, contact.get_sugr());
+        values.put(KEY_PROTE, contact.get_prote());
+        values.put(KEY_VITD, contact.get_vitd());
+        values.put(KEY_CALC,contact.get_calc());
+        values.put(KEY_IRON, contact.get_iron());
+        values.put(KEY_POTAS, contact.get_potas());
         // Inserting Row
         db.insert(TABLE_PRODUCTS, null, values);
         db.close(); // Closing database connection
@@ -82,7 +106,10 @@ public class DBHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor cursor = db.query(TABLE_PRODUCTS, new String[] {
-                        KEY_ID, KEY_NAME, KEY_BR_NO, KEY_CATE, KEY_CAL, KEY_TOFAT, KEY_SFAT, KEY_TRFAT}, KEY_ID + "=?",
+                        KEY_ID, KEY_NAME, KEY_BR_NO, KEY_CATE, KEY_CAL, KEY_TOFAT, KEY_SFAT, KEY_TRFAT,
+                        KEY_CHOLE,KEY_SODIU,KEY_CARBS,KEY_DIEFI,KEY_SUGR,KEY_PROTE,KEY_VITD,KEY_CALC,KEY_IRON,KEY_POTAS
+
+                }, KEY_ID + "=?",
                 new String[] { String.valueOf(id) }, null, null, null, null);               //YOU MAY NEED TO ADD ONE MORE NULL
 
         Product contact = null;
@@ -90,7 +117,8 @@ public class DBHandler extends SQLiteOpenHelper {
         if (cursor != null && cursor.moveToFirst()) {
             contact = new Product(Integer.parseInt(cursor.getString(0)),
                     cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5), cursor.getString(6)
-                    , cursor.getString(7));
+                    ,cursor.getString(7),cursor.getString(8),cursor.getString(9),cursor.getString(10),cursor.getString(11),cursor.getString(12)
+                    ,cursor.getString(13),cursor.getString(14),cursor.getString(15),cursor.getString(16),cursor.getString(17));
         }
 
         // return contact
@@ -123,6 +151,17 @@ public class DBHandler extends SQLiteOpenHelper {
                     product.set_tofat(cursor.getString(5));
                     product.set_sfat(cursor.getString(6));
                     product.set_trfat(cursor.getString(7));
+
+                    product.set_chole(cursor.getString(8));
+                    product.set_sodiu(cursor.getString(9));
+                    product.set_carbs(cursor.getString(10));
+                    product.set_diefi(cursor.getString(11));
+                    product.set_sugr(cursor.getString(12));
+                    product.set_prote(cursor.getString(13));
+                    product.set_vitd(cursor.getString(14));
+                    product.set_calc(cursor.getString(15));
+                    product.set_iron(cursor.getString(16));
+                    product.set_potas(cursor.getString(17));
                     // Adding product to list
                     product_list.add(product);
                 } while (cursor.moveToNext());
@@ -152,6 +191,17 @@ public class DBHandler extends SQLiteOpenHelper {
         values.put(KEY_TOFAT, contact.get_tofat());
         values.put(KEY_SFAT, contact.get_sfat());
         values.put(KEY_TRFAT, contact.get_trfat());
+
+        values.put(KEY_CHOLE, contact.get_chole());
+        values.put(KEY_SODIU, contact.get_sodiu());
+        values.put(KEY_CARBS, contact.get_carbs());
+        values.put(KEY_DIEFI, contact.get_diefi());
+        values.put(KEY_SUGR, contact.get_sugr());
+        values.put(KEY_PROTE, contact.get_prote());
+        values.put(KEY_VITD, contact.get_vitd());
+        values.put(KEY_CALC, contact.get_calc());
+        values.put(KEY_IRON, contact.get_iron());
+        values.put(KEY_POTAS, contact.get_potas());
 
         // updating row
         return db.update(TABLE_PRODUCTS, values, KEY_ID + " = ?",

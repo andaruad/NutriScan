@@ -81,15 +81,29 @@ public class Testing extends Activity {
             String tofat = contact_array_from_db.get(i).get_tofat();
             String sfat = contact_array_from_db.get(i).get_sfat();
             String trfat = contact_array_from_db.get(i).get_trfat();
+
+            String chole = contact_array_from_db.get(i).get_chole();
+            String sodiu = contact_array_from_db.get(i).get_sodiu();
+            String carbs = contact_array_from_db.get(i).get_carbs();
+            String dietfi = contact_array_from_db.get(i).get_diefi();
+            String sugr = contact_array_from_db.get(i).get_sugr();
+            String prote = contact_array_from_db.get(i).get_prote();
+            String vitd = contact_array_from_db.get(i).get_vitd();
+            String calc = contact_array_from_db.get(i).get_calc();
+            String iron = contact_array_from_db.get(i).get_iron();
+            String potas = contact_array_from_db.get(i).get_potas();
+
             Product pdct = new Product();
             pdct.setID(tidno);
             pdct.setName(name);
             pdct.setCate(cate);
             pdct.setBarcodeNumber(barcodeNumber);
             pdct.setCal(cal);
-            pdct.set_tofat(tofat);
-            pdct.set_sfat(sfat);
-            pdct.set_trfat(trfat);
+            pdct.set_tofat(tofat);pdct.set_sfat(sfat);pdct.set_trfat(trfat);
+
+            pdct.set_chole(chole);pdct.set_sodiu(sodiu);pdct.set_carbs(carbs);pdct.set_diefi(dietfi);
+            pdct.set_sugr(sugr);pdct.set_prote(prote);pdct.set_vitd(vitd);
+            pdct.set_calc(calc);pdct.set_iron(iron);pdct.set_potas(potas);
 
             contact_data.add(pdct);
         }
@@ -141,10 +155,7 @@ public class Testing extends Activity {
                 holder.cate = (TextView) row.findViewById(R.id.user_email_txt);
                 holder.number = (TextView) row.findViewById(R.id.user_mob_txt);
                 holder.cal = (TextView) row.findViewById(R.id.user_cal_txt);                           // do something
-//                holder.tofat = (TextView) row.findViewById(R.id.user_tofat_txt);
-//                holder.sfat = (TextView) row.findViewById(R.id.user_sfat_txt);
-//                holder.trfat = (TextView) row.findViewById(R.id.user_trfat_txt);
-
+//
 
 
                 holder.edit = (Button) row.findViewById(R.id.btn_update);
@@ -215,7 +226,6 @@ public class Testing extends Activity {
             TextView cate;
             TextView number;
             TextView cal;
-            TextView tofat, sfat, trfat;
             Button edit;
             Button delete;
             ListView showproduct;
