@@ -3,21 +3,23 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_above="@+id/textView29"
-        android:layout_marginBottom="10dp">
+        <include layout="@layout/result_small" android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:layout_marginBottom="0dp"
+            android:layout_marginTop="10dp"/>
 
-        <include layout="@layout/result_small" android:layout_width="385dp"
-            android:layout_height="319dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Small Text"
+            android:id="@+id/textView3"
+            android:layout_marginTop="87dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
 
 
-
-    </FrameLayout>
 
 
     <ImageButton
@@ -59,6 +61,8 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Your Scanned product is:"
+        android:ems="10"
+        android:textSize="15dp"
         android:id="@+id/textView29"
         android:layout_above="@+id/tvresult2"
         android:layout_centerHorizontal="true" />
@@ -66,17 +70,18 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="_____________"
+        android:text=""
         android:id="@+id/tvresult2"
         android:layout_gravity="right"
         android:layout_above="@+id/brescan"
         android:layout_toLeftOf="@+id/bcompare2"
-        android:layout_toStartOf="@+id/bcompare2" />
+        android:layout_toStartOf="@+id/bcompare2"
+        android:layout_marginBottom="0dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="_____________"
+        android:text=""
         android:id="@+id/tvresult3"
         android:layout_below="@+id/textView29"
         android:layout_alignRight="@+id/bcompare2"

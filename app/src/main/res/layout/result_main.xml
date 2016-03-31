@@ -12,8 +12,8 @@
         android:id="@+id/calories"
         android:layout_marginTop="41dp"
         android:layout_below="@+id/textView2"
-        android:layout_alignLeft="@+id/textView3"
-        android:layout_alignStart="@+id/textView3" />
+        android:layout_alignLeft="@+id/tofat"
+        android:layout_alignStart="@+id/tofat" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Small Text"
-        android:id="@+id/textView3"
+        android:id="@+id/tofat"
         android:layout_below="@+id/calories"
         android:layout_centerHorizontal="true" />
 
@@ -40,8 +40,8 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Small Text"
-        android:id="@+id/textView4"
-        android:layout_below="@+id/textView3"
+        android:id="@+id/sfat"
+        android:layout_below="@+id/tofat"
         android:layout_centerHorizontal="true" />
 
     <TextView
@@ -49,8 +49,8 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Small Text"
-        android:id="@+id/textView5"
-        android:layout_below="@+id/textView4"
+        android:id="@+id/trfat"
+        android:layout_below="@+id/sfat"
         android:layout_centerHorizontal="true" />
 
     <TextView
@@ -58,8 +58,8 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Small Text"
-        android:id="@+id/textView6"
-        android:layout_below="@+id/textView5"
+        android:id="@+id/chloe"
+        android:layout_below="@+id/trfat"
         android:layout_centerHorizontal="true" />
 
     <TextView
@@ -67,28 +67,28 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Small Text"
-        android:id="@+id/textView7"
-        android:layout_below="@+id/textView6"
-        android:layout_alignLeft="@+id/textView6"
-        android:layout_alignStart="@+id/textView6" />
+        android:id="@+id/sodiu"
+        android:layout_below="@+id/chloe"
+        android:layout_alignLeft="@+id/chloe"
+        android:layout_alignStart="@+id/chloe" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Small Text"
-        android:id="@+id/textView8"
-        android:layout_below="@+id/textView7"
-        android:layout_alignLeft="@+id/textView7"
-        android:layout_alignStart="@+id/textView7" />
+        android:id="@+id/carbs"
+        android:layout_below="@+id/sodiu"
+        android:layout_alignLeft="@+id/sodiu"
+        android:layout_alignStart="@+id/sodiu" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Small Text"
-        android:id="@+id/textView9"
-        android:layout_below="@+id/textView8"
+        android:id="@+id/sugr"
+        android:layout_below="@+id/carbs"
         android:layout_centerHorizontal="true" />
 
     <TextView
@@ -96,20 +96,20 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Small Text"
-        android:id="@+id/textView10"
-        android:layout_below="@+id/textView9"
-        android:layout_alignLeft="@+id/textView9"
-        android:layout_alignStart="@+id/textView9" />
+        android:id="@+id/prote"
+        android:layout_below="@+id/sugr"
+        android:layout_alignLeft="@+id/sugr"
+        android:layout_alignStart="@+id/sugr" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Small Text"
-        android:id="@+id/textView11"
-        android:layout_below="@+id/textView10"
-        android:layout_alignLeft="@+id/textView12"
-        android:layout_alignStart="@+id/textView12"
+        android:id="@+id/vitd"
+        android:layout_below="@+id/prote"
+        android:layout_alignLeft="@+id/calc"
+        android:layout_alignStart="@+id/calc"
         android:layout_marginTop="20dp" />
 
     <TextView
@@ -117,18 +117,18 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Small Text"
-        android:id="@+id/textView12"
-        android:layout_below="@+id/textView11"
-        android:layout_alignLeft="@+id/textView9" />
+        android:id="@+id/calc"
+        android:layout_below="@+id/vitd"
+        android:layout_alignLeft="@+id/sugr" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Small Text"
-        android:id="@+id/textView13"
-        android:layout_below="@+id/textView12"
-        android:layout_alignLeft="@+id/textView9" />
+        android:id="@+id/iron"
+        android:layout_below="@+id/calc"
+        android:layout_alignLeft="@+id/sugr" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -136,7 +136,7 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Small Text"
         android:id="@+id/calories2"
-        android:layout_above="@+id/textView3"
+        android:layout_above="@+id/tofat"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_marginRight="75dp"
@@ -158,7 +158,7 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Small Text"
         android:id="@+id/textView16"
-        android:layout_above="@+id/textView5"
+        android:layout_above="@+id/trfat"
         android:layout_alignLeft="@+id/textView15"
         android:layout_alignStart="@+id/textView15" />
 
@@ -168,7 +168,7 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Small Text"
         android:id="@+id/textView17"
-        android:layout_alignTop="@+id/textView5"
+        android:layout_alignTop="@+id/trfat"
         android:layout_alignLeft="@+id/textView16"
         android:layout_alignStart="@+id/textView16" />
 
@@ -188,7 +188,7 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Small Text"
         android:id="@+id/textView19"
-        android:layout_alignTop="@+id/textView7"
+        android:layout_alignTop="@+id/sodiu"
         android:layout_alignLeft="@+id/textView18"
         android:layout_alignStart="@+id/textView18" />
 
@@ -198,7 +198,7 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Small Text"
         android:id="@+id/textView20"
-        android:layout_above="@+id/textView9"
+        android:layout_above="@+id/sugr"
         android:layout_alignLeft="@+id/textView19"
         android:layout_alignStart="@+id/textView19" />
 
@@ -218,7 +218,7 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Small Text"
         android:id="@+id/textView22"
-        android:layout_alignTop="@+id/textView10"
+        android:layout_alignTop="@+id/prote"
         android:layout_alignLeft="@+id/textView21"
         android:layout_alignStart="@+id/textView21" />
 
@@ -228,7 +228,7 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Small Text"
         android:id="@+id/textView23"
-        android:layout_alignTop="@+id/textView11"
+        android:layout_alignTop="@+id/vitd"
         android:layout_alignLeft="@+id/textView22"
         android:layout_alignStart="@+id/textView22" />
 
@@ -238,7 +238,7 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Small Text"
         android:id="@+id/textView24"
-        android:layout_above="@+id/textView13"
+        android:layout_above="@+id/iron"
         android:layout_alignLeft="@+id/textView23"
         android:layout_alignStart="@+id/textView23" />
 
@@ -248,7 +248,7 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Small Text"
         android:id="@+id/textView25"
-        android:layout_alignTop="@+id/textView13"
+        android:layout_alignTop="@+id/iron"
         android:layout_alignLeft="@+id/textView24"
         android:layout_alignStart="@+id/textView24" />
 
@@ -267,8 +267,8 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Small Text"
-        android:id="@+id/textView27"
-        android:layout_below="@+id/textView13"
+        android:id="@+id/potas"
+        android:layout_below="@+id/iron"
         android:layout_centerHorizontal="true" />
 
     <TextView
