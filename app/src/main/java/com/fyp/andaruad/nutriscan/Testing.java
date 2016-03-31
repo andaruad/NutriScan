@@ -78,14 +78,20 @@ public class Testing extends Activity {
             String barcodeNumber = contact_array_from_db.get(i).getBarcodeNumber();
             String cate = contact_array_from_db.get(i).getCate();
             String cal = contact_array_from_db.get(i).getCal();
-            Product cnt = new Product();
-            cnt.setID(tidno);
-            cnt.setName(name);
-            cnt.setCate(cate);
-            cnt.setBarcodeNumber(barcodeNumber);
-            cnt.setCal(cal);
+            String tofat = contact_array_from_db.get(i).get_tofat();
+            String sfat = contact_array_from_db.get(i).get_sfat();
+            String trfat = contact_array_from_db.get(i).get_trfat();
+            Product pdct = new Product();
+            pdct.setID(tidno);
+            pdct.setName(name);
+            pdct.setCate(cate);
+            pdct.setBarcodeNumber(barcodeNumber);
+            pdct.setCal(cal);
+            pdct.set_tofat(tofat);
+            pdct.set_sfat(sfat);
+            pdct.set_trfat(trfat);
 
-            contact_data.add(cnt);
+            contact_data.add(pdct);
         }
         db.close();
         cAdapter = new Product_Adapter(Testing.this, R.layout.list_view_row,
@@ -132,9 +138,15 @@ public class Testing extends Activity {
                 row = inflater.inflate(layoutResourceId, parent, false);
                 holder = new UserHolder();
                 holder.name = (TextView) row.findViewById(R.id.user_name_txt);
-                holder.email = (TextView) row.findViewById(R.id.user_email_txt);
+                holder.cate = (TextView) row.findViewById(R.id.user_email_txt);
                 holder.number = (TextView) row.findViewById(R.id.user_mob_txt);
                 holder.cal = (TextView) row.findViewById(R.id.user_cal_txt);                           // do something
+//                holder.tofat = (TextView) row.findViewById(R.id.user_tofat_txt);
+//                holder.sfat = (TextView) row.findViewById(R.id.user_sfat_txt);
+//                holder.trfat = (TextView) row.findViewById(R.id.user_trfat_txt);
+
+
+
                 holder.edit = (Button) row.findViewById(R.id.btn_update);
                 holder.delete = (Button) row.findViewById(R.id.btn_delete);
                 holder.showproduct = (ListView) row.findViewById(R.id.list);
@@ -146,7 +158,7 @@ public class Testing extends Activity {
             holder.edit.setTag(user.getID());
             holder.delete.setTag(user.getID());
             holder.name.setText(user.getName() + " " + user.getID());
-            holder.email.setText(user.getCate());
+            holder.cate.setText(user.getCate());
             holder.number.setText(user.getBarcodeNumber());
             holder.edit.setOnClickListener(new OnClickListener() {
 
@@ -200,9 +212,10 @@ public class Testing extends Activity {
 
         class UserHolder {
             TextView name;
-            TextView email;
+            TextView cate;
             TextView number;
             TextView cal;
+            TextView tofat, sfat, trfat;
             Button edit;
             Button delete;
             ListView showproduct;

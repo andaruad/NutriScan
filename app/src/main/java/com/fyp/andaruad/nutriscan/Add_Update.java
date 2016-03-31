@@ -12,10 +12,11 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 public class Add_Update extends Activity {
-    EditText add_name, add_barcode, add_cate, add_cal;
+    EditText add_name, add_barcode, add_cate, add_cal, add_tofat, add_sfat, add_trfat;
     Button add_save_btn, add_view_all, update_btn, update_view_all;
     LinearLayout add_view, update_view;
-    String valid_bar_number = null, valid_cate = null, valid_name = null,valid_cal = null,
+    String valid_bar_number = null, valid_cate = null, valid_name = null,valid_cal = null,valid_tofat = null, valid_sfat = null,
+            valid_trfat = null,
             Toast_msg = null, valid_user_id = "";
     int USER_ID;
     DBHandler dbHandler = new DBHandler(this);
@@ -46,6 +47,9 @@ public class Add_Update extends Activity {
             add_barcode.setText(c.getBarcodeNumber());
             add_cate.setText(c.getCate());
             add_cal.setText(c.getCal());
+            add_tofat.setText(c.get_tofat());
+            add_sfat.setText(c.get_sfat());
+            add_trfat.setText(c.get_trfat());
             // dbHandler.close();
         }
         add_barcode.addTextChangedListener(new TextWatcher() {
@@ -144,6 +148,75 @@ public class Add_Update extends Activity {
         });
 
 
+        add_tofat.addTextChangedListener(new TextWatcher() {
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before,
+                                      int count) {
+                // TODO Auto-generated method stub
+
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count,
+                                          int after) {
+                // TODO Auto-generated method stub
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                // TODO Auto-generated method stub
+                Is_Valid_tofat_Name(add_tofat);                                                            // do something
+            }
+        });
+
+
+        add_sfat.addTextChangedListener(new TextWatcher() {
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before,
+                                      int count) {
+                // TODO Auto-generated method stub
+
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count,
+                                          int after) {
+                // TODO Auto-generated method stub
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                // TODO Auto-generated method stub
+                Is_Valid_sfat_Name(add_sfat);                                                            // do something
+            }
+        });
+
+        add_trfat.addTextChangedListener(new TextWatcher() {
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before,
+                                      int count) {
+                // TODO Auto-generated method stub
+
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count,
+                                          int after) {
+                // TODO Auto-generated method stub
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                // TODO Auto-generated method stub
+                Is_Valid_trfat_Name(add_trfat);                                                            // do something
+            }
+        });
 
         add_save_btn.setOnClickListener(new View.OnClickListener() {
 
@@ -156,10 +229,13 @@ public class Add_Update extends Activity {
                         && valid_bar_number.length() != 0
                         && valid_cate.length() != 0
                         && valid_cal.length() != 0
+                        && valid_tofat.length() != 0
+                        && valid_sfat.length() != 0
+                        && valid_trfat.length() != 0
                         ) {
 
                     dbHandler.Add_Product(new Product(valid_name,
-                            valid_bar_number, valid_cate, valid_cal));
+                            valid_bar_number, valid_cate, valid_cal, valid_tofat, valid_sfat, valid_trfat));
                     Toast_msg = "Data inserted successfully";
                     Show_Toast(Toast_msg);
                     Reset_Text();
@@ -179,16 +255,26 @@ public class Add_Update extends Activity {
                 valid_bar_number = add_barcode.getText().toString();
                 valid_cate = add_cate.getText().toString();
                 valid_cal = add_cal.getText().toString();
+                valid_tofat = add_tofat.getText().toString();
+                valid_sfat = add_sfat.getText().toString();
+                valid_trfat = add_trfat.getText().toString();
+
+
 
                 // check the value state is null or not
                 if (valid_name != null && valid_bar_number != null
                         && valid_cate != null && valid_name.length() != 0
                         && valid_bar_number.length() != 0
                         && valid_cate.length() != 0
-                        && valid_cal.length() !=0) {
+                        && valid_cal.length() !=0
+                        && valid_tofat.length() != 0
+                        && valid_sfat.length() != 0
+                        && valid_trfat.length() != 0
+
+                        ) {
 
                     dbHandler.Update_Product(new Product(USER_ID, valid_name,
-                            valid_bar_number, valid_cate, valid_cal));
+                            valid_bar_number, valid_cate, valid_cal, valid_tofat, valid_sfat, valid_trfat));
                     dbHandler.close();
                     Toast_msg = "Data Update successfully";
                     Show_Toast(Toast_msg);
@@ -236,6 +322,9 @@ public class Add_Update extends Activity {
         add_barcode = (EditText) findViewById(R.id.add_barcode);
         add_cate = (EditText) findViewById(R.id.add_cate);
         add_cal = (EditText) findViewById(R.id.add_calories);
+        add_tofat = (EditText) findViewById(R.id.add_tofat);
+        add_sfat = (EditText) findViewById(R.id.add_sfat);
+        add_trfat = (EditText) findViewById(R.id.add_trfat);
 
         add_save_btn = (Button) findViewById(R.id.add_save_btn);
         update_btn = (Button) findViewById(R.id.update_btn);
@@ -307,6 +396,39 @@ public class Add_Update extends Activity {
 
     }
 
+
+    public void Is_Valid_tofat_Name(EditText edt) throws NumberFormatException {
+        if (edt.getText().toString().length() <= 0) {
+            edt.setError("Number Only");
+            valid_tofat = null;
+        } else {
+            valid_tofat = edt.getText().toString();
+
+        }
+
+    }
+
+    public void Is_Valid_sfat_Name(EditText edt) throws NumberFormatException {
+        if (edt.getText().toString().length() <= 0) {
+            edt.setError("Number Only");
+            valid_sfat = null;
+        } else {
+            valid_sfat = edt.getText().toString();
+
+        }
+
+    }
+
+    public void Is_Valid_trfat_Name(EditText edt) throws NumberFormatException {
+        if (edt.getText().toString().length() <= 0) {
+            edt.setError("Number Only");
+            valid_trfat = null;
+        } else {
+            valid_trfat = edt.getText().toString();
+
+        }
+
+    }
     public void Show_Toast(String msg) {
         Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG).show();
     }
@@ -317,6 +439,9 @@ public class Add_Update extends Activity {
         add_barcode.getText().clear();
         add_cate.getText().clear();
         add_cal.getText().clear();
+        add_tofat.getText().clear();
+        add_sfat.getText().clear();
+        add_trfat.getText().clear();
 
     }
 

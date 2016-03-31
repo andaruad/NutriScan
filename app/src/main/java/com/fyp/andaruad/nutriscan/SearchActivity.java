@@ -23,10 +23,10 @@ public class SearchActivity extends ListActivity {
         super.onCreate(savedInstanceState);
 
         ArrayList<Product> products = new ArrayList<Product>();
-        products.add(new Product(1,"Skippy Creamy","","",""));
-        products.add(new Product(2,"Jif Chunky","","",""));
-        products.add(new Product(3,"Peter Pan","","",""));
-        products.add(new Product(4,"P28 Peanut Butter Spread","","",""));
+        products.add(new Product(1,"Skippy Creamy","","","","","",""));
+        products.add(new Product(2,"Jif Chunky","","","","","",""));
+        products.add(new Product(3,"Peter Pan","","","","","",""));
+        products.add(new Product(4,"P28 Peanut Butter Spread","","","","","",""));
         setListAdapter(new SearchArrayAdapter(this, products));
     }
 
