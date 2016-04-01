@@ -16,16 +16,32 @@ import com.google.zxing.integration.android.IntentResult;
 // Created by Andaruad on 22/02/2016.
 
 public class CompareMain extends Activity {
+Product product = this.product;
 
 
     String result1;
+    long resultx1;
 
     @Override
     public void onCreate (Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.compare_main);
 
+        DBHandler dbHandler = new DBHandler(this);
         result1 = getIntent().getStringExtra("barcode_num1");
+        resultx1 = Long.parseLong(getIntent().getStringExtra("barcode_num1"));
+        Product product = dbHandler.Get_Product(resultx1);
+
+        if(product == null ){
+            Toast toast = Toast.makeText(getApplicationContext(),
+                    "Data IS on DB", Toast.LENGTH_LONG);
+            toast.show();
+
+        } else{
+            Toast toast = Toast.makeText(getApplicationContext(),
+                    "Data not on DB", Toast.LENGTH_LONG);
+            toast.show();
+        }
 
         ImageButton rescan = (ImageButton) findViewById(R.id.brescan);
         rescan.setOnClickListener(new View.OnClickListener(){
@@ -59,6 +75,8 @@ public class CompareMain extends Activity {
 //                    StoreValue value =  (StoreValue) StoreValue.setValue1(re);
 //
 //                }
+
+
             TextView tvresult3 = (TextView) findViewById(R.id.tvresult3);
             tvresult3.setText(re2);
             Intent compare = new Intent(this, CompareFinal.class);
@@ -70,8 +88,6 @@ public class CompareMain extends Activity {
             toast.show();
         }
     }
-
-
 
 
 
