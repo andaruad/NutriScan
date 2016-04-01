@@ -7,19 +7,8 @@
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:layout_marginBottom="0dp"
-            android:layout_marginTop="10dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="Small Text"
-            android:id="@+id/textView3"
-            android:layout_marginTop="87dp"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true" />
-
-
+            android:layout_marginTop="5dp"
+            android:id="@+id/include" />
 
 
     <ImageButton
@@ -60,23 +49,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Your Scanned product is:"
+        android:text="Your Scanned barcode is:"
         android:ems="10"
         android:textSize="15dp"
         android:id="@+id/textView29"
-        android:layout_above="@+id/tvresult2"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignBottom="@+id/tvresult2"
+        android:layout_alignLeft="@+id/brescan"
+        android:layout_alignStart="@+id/brescan" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=""
         android:id="@+id/tvresult2"
         android:layout_gravity="right"
-        android:layout_above="@+id/brescan"
-        android:layout_toLeftOf="@+id/bcompare2"
-        android:layout_toStartOf="@+id/bcompare2"
-        android:layout_marginBottom="0dp"/>
+        android:hint="not found"
+        android:layout_above="@+id/bcompare2"
+        android:layout_toRightOf="@+id/textView29"
+        android:layout_toEndOf="@+id/textView29" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -86,6 +75,341 @@
         android:layout_below="@+id/textView29"
         android:layout_alignRight="@+id/bcompare2"
         android:layout_alignEnd="@+id/bcompare2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Medium Text"
+        android:id="@+id/pnamesmall"
+        android:layout_alignBaseline="@+id/servesmall"
+        android:layout_alignBottom="@+id/servesmall"
+        android:layout_alignRight="@+id/carbssmall"
+        android:layout_alignEnd="@+id/carbssmall" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Small Text"
+        android:id="@+id/servesmall"
+        android:layout_alignTop="@+id/include"
+        android:layout_alignLeft="@+id/brescan"
+        android:layout_alignStart="@+id/brescan"
+        android:layout_marginTop="68dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="1"
+        android:id="@+id/caloriessmall"
+        android:layout_below="@+id/servesmall"
+        android:layout_alignLeft="@+id/tofatsmall"
+        android:layout_alignStart="@+id/tofatsmall"
+        android:layout_marginTop="35dp"
+        android:textSize="@dimen/txtsizesmall"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="2"
+        android:id="@+id/tofatsmall"
+        android:layout_below="@+id/caloriessmall"
+        android:layout_centerHorizontal="true"
+        android:textSize="@dimen/txtsizesmall"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="3"
+        android:id="@+id/sfatsmall"
+        android:layout_below="@+id/tofatsmall"
+        android:layout_alignLeft="@+id/tofatsmall"
+        android:layout_alignStart="@+id/tofatsmall"
+        android:textSize="@dimen/txtsizesmall"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="4"
+        android:id="@+id/trfatsmall"
+        android:layout_below="@+id/sfatsmall"
+        android:layout_alignLeft="@+id/sfatsmall"
+        android:layout_alignStart="@+id/sfatsmall"
+        android:textSize="@dimen/txtsizesmall"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="5"
+        android:id="@+id/chloesmall"
+        android:layout_below="@+id/trfatsmall"
+        android:layout_alignLeft="@+id/trfatsmall"
+        android:layout_alignStart="@+id/trfatsmall"
+        android:textSize="@dimen/txtsizesmall"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="6"
+        android:id="@+id/sodiusmall"
+        android:layout_below="@+id/chloesmall"
+        android:layout_alignLeft="@+id/chloesmall"
+        android:layout_alignStart="@+id/chloesmall"
+        android:textSize="@dimen/txtsizesmall"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="7"
+        android:id="@+id/carbssmall"
+        android:layout_below="@+id/sodiusmall"
+        android:layout_alignLeft="@+id/sodiusmall"
+        android:layout_alignStart="@+id/sodiusmall"
+        android:textSize="@dimen/txtsizesmall"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="8"
+        android:id="@+id/sugrsmall"
+        android:layout_below="@+id/carbssmall"
+        android:layout_alignLeft="@+id/carbssmall"
+        android:layout_alignStart="@+id/carbssmall"
+        android:textSize="@dimen/txtsizesmall"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="9"
+        android:id="@+id/diefismall"
+        android:layout_below="@+id/sugrsmall"
+        android:layout_alignLeft="@+id/sugrsmall"
+        android:layout_alignStart="@+id/sugrsmall"
+        android:textSize="@dimen/txtsizesmall"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="10"
+        android:id="@+id/protesmall"
+        android:layout_below="@+id/diefismall"
+        android:layout_alignLeft="@+id/diefismall"
+        android:layout_alignStart="@+id/diefismall"
+        android:layout_marginTop="0dp"
+        android:textSize="@dimen/txtsizesmall"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="11"
+        android:id="@+id/vitdsmall"
+        android:layout_below="@+id/protesmall"
+        android:layout_alignLeft="@+id/protesmall"
+        android:layout_alignStart="@+id/protesmall"
+        android:textSize="@dimen/txtsizesmall"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="12"
+        android:id="@+id/calcsmall"
+        android:layout_below="@+id/vitdsmall"
+        android:layout_alignLeft="@+id/vitdsmall"
+        android:layout_alignStart="@+id/vitdsmall"
+        android:textSize="@dimen/txtsizesmall"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="13"
+        android:id="@+id/ironsmall"
+        android:layout_below="@+id/calcsmall"
+        android:layout_alignLeft="@+id/calcsmall"
+        android:layout_alignStart="@+id/calcsmall"
+        android:textSize="@dimen/txtsizesmall"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="14"
+        android:id="@+id/potassmall"
+        android:layout_below="@+id/ironsmall"
+        android:layout_alignLeft="@+id/calcsmall"
+        android:layout_alignStart="@+id/calcsmall"
+        android:textSize="@dimen/txtsizesmall"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="15"
+        android:id="@+id/caloriessmall2"
+        android:layout_alignBottom="@+id/caloriessmall"
+        android:layout_toRightOf="@+id/tvresult2"
+        android:layout_toEndOf="@+id/tvresult2"
+        android:layout_marginLeft="40dp"
+        android:textSize="@dimen/txtsizesmall"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="16"
+        android:id="@+id/tofatsmall2"
+        android:layout_below="@+id/caloriessmall2"
+        android:layout_alignLeft="@+id/caloriessmall2"
+        android:layout_alignStart="@+id/caloriessmall2"
+        android:textSize="@dimen/txtsizesmall"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="17"
+        android:id="@+id/sfatsmall2"
+        android:layout_below="@+id/tofatsmall2"
+        android:layout_alignLeft="@+id/tofatsmall2"
+        android:layout_alignStart="@+id/tofatsmall2"
+        android:textSize="@dimen/txtsizesmall"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="18"
+        android:id="@+id/trfatsmall2"
+        android:layout_below="@+id/sfatsmall2"
+        android:layout_alignLeft="@+id/sfatsmall2"
+        android:layout_alignStart="@+id/sfatsmall2"
+        android:textSize="@dimen/txtsizesmall"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="19"
+        android:id="@+id/chloesmall2"
+        android:layout_below="@+id/trfatsmall2"
+        android:layout_alignLeft="@+id/trfatsmall2"
+        android:layout_alignStart="@+id/trfatsmall2"
+        android:textSize="@dimen/txtsizesmall"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="20"
+        android:id="@+id/sodiusmall2"
+        android:layout_below="@+id/chloesmall2"
+        android:layout_alignLeft="@+id/chloesmall2"
+        android:layout_alignStart="@+id/chloesmall2"
+        android:textSize="@dimen/txtsizesmall"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="21"
+        android:id="@+id/carbssmall2"
+        android:layout_below="@+id/sodiusmall2"
+        android:layout_alignLeft="@+id/sodiusmall2"
+        android:layout_alignStart="@+id/sodiusmall2"
+        android:textSize="@dimen/txtsizesmall"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="22"
+        android:id="@+id/sugrsmall2"
+        android:layout_below="@+id/carbssmall2"
+        android:layout_alignLeft="@+id/carbssmall2"
+        android:layout_alignStart="@+id/carbssmall2"
+        android:textSize="@dimen/txtsizesmall"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="23"
+        android:id="@+id/diefismall2"
+        android:layout_below="@+id/sugrsmall2"
+        android:layout_alignLeft="@+id/sugrsmall2"
+        android:layout_alignStart="@+id/sugrsmall2"
+        android:textSize="@dimen/txtsizesmall"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="24"
+        android:id="@+id/protesmall2"
+        android:layout_below="@+id/diefismall2"
+        android:layout_alignLeft="@+id/diefismall2"
+        android:layout_alignStart="@+id/diefismall2"
+        android:textSize="@dimen/txtsizesmall"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="25"
+        android:id="@+id/vitdsmall2"
+        android:layout_below="@+id/protesmall2"
+        android:layout_alignLeft="@+id/protesmall2"
+        android:layout_alignStart="@+id/protesmall2"
+        android:textSize="@dimen/txtsizesmall"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="26"
+        android:id="@+id/calcsmall2"
+        android:layout_below="@+id/vitdsmall2"
+        android:layout_alignLeft="@+id/vitdsmall2"
+        android:layout_alignStart="@+id/vitdsmall2"
+        android:textSize="@dimen/txtsizesmall"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="27"
+        android:id="@+id/ironsmall2"
+        android:layout_below="@+id/calcsmall2"
+        android:layout_alignLeft="@+id/calcsmall2"
+        android:layout_alignStart="@+id/calcsmall2"
+        android:textSize="@dimen/txtsizesmall"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="28"
+        android:id="@+id/potassmall2"
+        android:layout_below="@+id/ironsmall2"
+        android:layout_alignLeft="@+id/ironsmall2"
+        android:layout_alignStart="@+id/ironsmall2"
+        android:textSize="@dimen/txtsizesmall"/>
 
 
 </RelativeLayout>

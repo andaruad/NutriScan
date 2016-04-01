@@ -11,7 +11,7 @@
         android:text=""
         android:id="@+id/calories"
         android:layout_marginTop="41dp"
-        android:layout_below="@+id/textView2"
+        android:layout_below="@+id/serve"
         android:layout_alignLeft="@+id/tofat"
         android:layout_alignStart="@+id/tofat" />
 
@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Text"
-        android:id="@+id/textView2"
+        android:id="@+id/serve"
         android:layout_marginTop="23dp"
         android:layout_below="@+id/pname"
         android:layout_alignParentLeft="true"

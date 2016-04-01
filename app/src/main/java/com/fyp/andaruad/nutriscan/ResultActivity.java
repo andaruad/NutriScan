@@ -2,9 +2,8 @@ package com.fyp.andaruad.nutriscan;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.widget.ImageButton;
 import android.widget.TextView;
-import java.math.*;
+
 /*
  * Created by Andaruad on 16/02/2016.
  */
