@@ -1,6 +1,8 @@
 package com.fyp.andaruad.nutriscan;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -30,17 +32,27 @@ Product product = this.product;
         DBHandler dbHandler = new DBHandler(this);
         result1 = getIntent().getStringExtra("barcode_num1");
         resultx1 = Long.parseLong(getIntent().getStringExtra("barcode_num1"));
-        Product product = dbHandler.Get_Product(resultx1);
+        Product product = dbHandler.Get_Bar(resultx1);
 
         if(product == null ){
             Toast toast = Toast.makeText(getApplicationContext(),
-                    "Data IS on DB", Toast.LENGTH_LONG);
+                    "The product you scanned exist in the Database", Toast.LENGTH_LONG);
             toast.show();
 
         } else{
-            Toast toast = Toast.makeText(getApplicationContext(),
-                    "Data not on DB", Toast.LENGTH_LONG);
-            toast.show();
+            new AlertDialog.Builder(this)
+                    .setTitle("Product Not Available")
+                    .setMessage("Do you want to add product")
+                    .setPositiveButton("Yes", new DialogInterface.OnClickListener()
+                    {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            finish();
+                        }
+
+                    })
+                    .setNegativeButton("No", null)
+                    .show();
         }
 
         ImageButton rescan = (ImageButton) findViewById(R.id.brescan);
@@ -61,7 +73,7 @@ Product product = this.product;
 
 
         TextView tv =(TextView) findViewById(R.id.tvresult2);
-        tv.setText(result1);
+        tv.setText("   "+result1);
     }
 
     @Override

@@ -53,7 +53,7 @@
         android:ems="10"
         android:textSize="15dp"
         android:id="@+id/textView29"
-        android:layout_alignBottom="@+id/tvresult2"
+        android:layout_above="@+id/brescan"
         android:layout_alignLeft="@+id/brescan"
         android:layout_alignStart="@+id/brescan" />
 
@@ -63,7 +63,7 @@
         android:id="@+id/tvresult2"
         android:layout_gravity="right"
         android:hint="not found"
-        android:layout_above="@+id/bcompare2"
+        android:layout_alignTop="@+id/textView29"
         android:layout_toRightOf="@+id/textView29"
         android:layout_toEndOf="@+id/textView29" />
 
@@ -82,10 +82,11 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Medium Text"
         android:id="@+id/pnamesmall"
-        android:layout_alignBaseline="@+id/servesmall"
-        android:layout_alignBottom="@+id/servesmall"
-        android:layout_alignRight="@+id/carbssmall"
-        android:layout_alignEnd="@+id/carbssmall" />
+        android:layout_alignTop="@+id/include"
+        android:layout_alignRight="@+id/tvresult2"
+        android:layout_alignEnd="@+id/tvresult2"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="40dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -264,7 +265,8 @@
         android:layout_alignBottom="@+id/caloriessmall"
         android:layout_toRightOf="@+id/tvresult2"
         android:layout_toEndOf="@+id/tvresult2"
-        android:layout_marginLeft="40dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="5dp"
         android:textSize="@dimen/txtsizesmall"/>
 
     <TextView

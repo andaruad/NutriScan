@@ -128,6 +128,32 @@ public class DBHandler extends SQLiteOpenHelper {
         return contact;
     }
 
+    Product Get_Bar(long id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = db.query(TABLE_PRODUCTS, new String[] {
+                        KEY_ID, KEY_NAME, KEY_BR_NO, KEY_CATE, KEY_CAL, KEY_TOFAT, KEY_SFAT, KEY_TRFAT,
+                        KEY_CHOLE,KEY_SODIU,KEY_CARBS,KEY_DIEFI,KEY_SUGR,KEY_PROTE,KEY_VITD,KEY_CALC,KEY_IRON,KEY_POTAS
+
+                }, KEY_BR_NO + "=?",
+                new String[] { String.valueOf(id) }, null, null, null, null);               //YOU MAY NEED TO ADD ONE MORE NULL
+
+        Product contact = null;
+
+        if (cursor != null && cursor.moveToFirst()) {
+            contact = new Product(Integer.parseInt(cursor.getString(0)),
+                    cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5), cursor.getString(6)
+                    ,cursor.getString(7),cursor.getString(8),cursor.getString(9),cursor.getString(10),cursor.getString(11),cursor.getString(12)
+                    ,cursor.getString(13),cursor.getString(14),cursor.getString(15),cursor.getString(16),cursor.getString(17));
+        }
+
+        // return contact
+        cursor.close();
+        db.close();
+
+        return contact;
+    }
+
     // Getting All Products
     public ArrayList<Product> Get_Products() {
         try {
