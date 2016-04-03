@@ -18,7 +18,8 @@ import com.google.zxing.integration.android.IntentResult;
 // Created by Andaruad on 22/02/2016.
 
 public class CompareMain extends Activity {
-Product product = this.product;
+
+    Product product;
 
 
     String result1;
@@ -32,14 +33,9 @@ Product product = this.product;
         DBHandler dbHandler = new DBHandler(this);
         result1 = getIntent().getStringExtra("barcode_num1");
         resultx1 = Long.parseLong(getIntent().getStringExtra("barcode_num1"));
-        Product product = dbHandler.Get_Bar(resultx1);
+        product = dbHandler.Get_Bar(resultx1);
 
         if(product == null ){
-            Toast toast = Toast.makeText(getApplicationContext(),
-                    "The product you scanned exist in the Database", Toast.LENGTH_LONG);
-            toast.show();
-
-        } else{
             new AlertDialog.Builder(this)
                     .setTitle("Product Not Available")
                     .setMessage("Do you want to add product")
@@ -53,6 +49,15 @@ Product product = this.product;
                     })
                     .setNegativeButton("No", null)
                     .show();
+
+        } else{
+
+            Toast toast = Toast.makeText(getApplicationContext(),
+                    "The product you scanned exist in the Database", Toast.LENGTH_LONG);
+            toast.show();
+
+            TextView calori = (TextView) findViewById(R.id.caloriessmall);
+            calori.setText(product.getCal());
         }
 
         ImageButton rescan = (ImageButton) findViewById(R.id.brescan);
@@ -64,19 +69,21 @@ Product product = this.product;
             }});
 
         ImageButton compare = (ImageButton) findViewById(R.id.bcompare2);
-        compare.setOnClickListener(new View.OnClickListener(){
+        compare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 IntentIntegrator integrator = new IntentIntegrator(CompareMain.this);
                 integrator.initiateScan();
-            }});
+            }
+        });
 
 
         TextView tv =(TextView) findViewById(R.id.tvresult2);
-        tv.setText("   "+result1);
+        tv.setText("   " + result1);
+
+
     }
 
-    @Override
     public void onActivityResult(int requestCode, int resultCode, Intent intent){
         IntentResult scanResult = IntentIntegrator.parseActivityResult(requestCode,resultCode, intent);
         if (scanResult != null){
@@ -91,6 +98,9 @@ Product product = this.product;
 
             TextView tvresult3 = (TextView) findViewById(R.id.tvresult3);
             tvresult3.setText(re2);
+
+
+
             Intent compare = new Intent(this, CompareFinal.class);
             compare.putExtra("barcode_num2", re2);
             startActivity(compare);

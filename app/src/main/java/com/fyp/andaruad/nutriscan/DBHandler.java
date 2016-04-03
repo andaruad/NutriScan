@@ -13,7 +13,7 @@ public class DBHandler extends SQLiteOpenHelper {
 
     // All Static variables
     // Database Version
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
 
     // Database Name
     private static final String DATABASE_NAME = "productManager";
@@ -51,7 +51,7 @@ public class DBHandler extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String CREATE_CONTACTS_TABLE = "CREATE TABLE " + TABLE_PRODUCTS + "("
                 + KEY_ID + " INTEGER PRIMARY KEY," + KEY_NAME + " TEXT,"
-                + KEY_BR_NO + " TEXT," + KEY_CATE + " TEXT," + KEY_CAL + " TEXT,"
+                + KEY_BR_NO + " INTEGER," + KEY_CATE + " TEXT," + KEY_CAL + " TEXT,"
                 + KEY_TOFAT + " TEXT," + KEY_SFAT + " TEXT," + KEY_TRFAT+ " TEXT,"
                 + KEY_CHOLE + " TEXT," + KEY_SODIU + " TEXT," + KEY_CARBS + " TEXT,"
                 + KEY_DIEFI + " TEXT," + KEY_SUGR + " TEXT," + KEY_PROTE + " TEXT,"
