@@ -13,7 +13,7 @@ public class DBHandler extends SQLiteOpenHelper {
 
     // All Static variables
     // Database Version
-    private static final int DATABASE_VERSION = 2;
+    private static final int DATABASE_VERSION = 1;
 
     // Database Name
     private static final String DATABASE_NAME = "productManager";
@@ -51,11 +51,11 @@ public class DBHandler extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String CREATE_CONTACTS_TABLE = "CREATE TABLE " + TABLE_PRODUCTS + "("
                 + KEY_ID + " INTEGER PRIMARY KEY," + KEY_NAME + " TEXT,"
-                + KEY_BR_NO + " INTEGER," + KEY_CATE + " TEXT," + KEY_CAL + " TEXT,"
-                + KEY_TOFAT + " TEXT," + KEY_SFAT + " TEXT," + KEY_TRFAT+ " TEXT,"
-                + KEY_CHOLE + " TEXT," + KEY_SODIU + " TEXT," + KEY_CARBS + " TEXT,"
-                + KEY_DIEFI + " TEXT," + KEY_SUGR + " TEXT," + KEY_PROTE + " TEXT,"
-                + KEY_VITD +  " TEXT," + KEY_CALC + " TEXT," + KEY_IRON + " TEXT," + KEY_POTAS + " TEXT"
+                + KEY_BR_NO + " INTEGER," + KEY_CATE + " TEXT," + KEY_CAL + " INTEGER,"
+                + KEY_TOFAT + " INTEGER," + KEY_SFAT + " INTEGER," + KEY_TRFAT+ " INTEGER,"
+                + KEY_CHOLE + " INTEGER," + KEY_SODIU + " INTEGER," + KEY_CARBS + " INTEGER,"
+                + KEY_DIEFI + " INTEGER," + KEY_SUGR + " INTEGER," + KEY_PROTE + " INTEGER,"
+                + KEY_VITD +  " INTEGER," + KEY_CALC + " INTEGER," + KEY_IRON + " INTEGER," + KEY_POTAS + " INTEGER"
                 + ");";
         db.execSQL(CREATE_CONTACTS_TABLE);
     }

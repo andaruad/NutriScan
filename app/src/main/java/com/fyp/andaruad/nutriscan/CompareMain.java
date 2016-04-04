@@ -20,10 +20,9 @@ import com.google.zxing.integration.android.IntentResult;
 public class CompareMain extends Activity {
 
     Product product;
-
-
     String result1;
     long resultx1;
+    TextView calori, pname, cate, tfat, sfat,trfat, chloe, sodiu, carbs, diefi, sugar, protein, vitd, calc, iron, potas;
 
     @Override
     public void onCreate (Bundle savedInstanceState){
@@ -44,7 +43,6 @@ public class CompareMain extends Activity {
                         public void onClick(DialogInterface dialog, int which) {
                             Intent intent = new Intent(getApplicationContext(), Testing.class);
                             startActivity(intent);
-//                            finish();
                         }
 
                     })
@@ -57,10 +55,37 @@ public class CompareMain extends Activity {
                     "The product you scanned exist in the Database", Toast.LENGTH_LONG);
             toast.show();
 
-            TextView calori = (TextView) findViewById(R.id.caloriessmall);
+            calori = (TextView) findViewById(R.id.caloriessmall);
             calori.setText(product.getCal());
-            TextView pname = (TextView) findViewById(R.id.pnamesmall);
+            pname = (TextView) findViewById(R.id.pnamesmall);
             pname.setText(product.getName());
+            tfat= (TextView)findViewById(R.id.tofatsmall);
+            tfat.setText(product.get_tofat());
+            sfat= (TextView)findViewById(R.id.sfatsmall);
+            sfat.setText(product.get_sfat());
+            trfat= (TextView)findViewById(R.id.trfatsmall);
+            trfat.setText(product.get_trfat());
+            chloe= (TextView)findViewById(R.id.chloesmall);
+            chloe.setText(product.get_chole());
+            sodiu= (TextView)findViewById(R.id.sodiusmall);
+            sodiu.setText(product.get_sodiu());
+            carbs= (TextView)findViewById(R.id.carbssmall);
+            carbs.setText(product.get_carbs());
+            diefi= (TextView)findViewById(R.id.diefismall);
+            diefi.setText(product.get_diefi());
+            sugar= (TextView)findViewById(R.id.sugrsmall);
+            sugar.setText(product.get_sugr());
+            protein= (TextView)findViewById(R.id.protesmall);
+            protein.setText(product.get_prote());
+            vitd= (TextView)findViewById(R.id.vitdsmall);
+            vitd.setText(product.get_vitd());
+            calc= (TextView)findViewById(R.id.calcsmall);
+            calc.setText(product.get_calc());
+            iron= (TextView)findViewById(R.id.ironsmall);
+            iron.setText(product.get_iron());
+            potas= (TextView)findViewById(R.id.potassmall);
+            potas.setText(product.get_potas());
+
         }
 
         ImageButton rescan = (ImageButton) findViewById(R.id.brescan);
@@ -91,20 +116,8 @@ public class CompareMain extends Activity {
         IntentResult scanResult = IntentIntegrator.parseActivityResult(requestCode,resultCode, intent);
         if (scanResult != null){
             String re2 = scanResult.getContents();
-            //re = scanResult.getContents();
-            Log.d("code", re2);
-//                if(re != null){
-//                    StoreValue value =  (StoreValue) StoreValue.setValue1(re);
-//
-//                }
-
-
-            TextView tvresult3 = (TextView) findViewById(R.id.tvresult3);
-            tvresult3.setText(re2);
-
-
-
             Intent compare = new Intent(this, CompareFinal.class);
+
             compare.putExtra("barcode_num2", re2);
             startActivity(compare);
         }else {

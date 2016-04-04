@@ -70,15 +70,6 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=""
-        android:id="@+id/tvresult3"
-        android:layout_below="@+id/textView29"
-        android:layout_alignRight="@+id/bcompare2"
-        android:layout_alignEnd="@+id/bcompare2" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="No Product Available"
         android:id="@+id/pnamesmall"
