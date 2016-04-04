@@ -8,4 +8,5 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="txtsizesmall">12dp</dimen>
     <dimen name="margin10">10dp</dimen>
+    <dimen name="testing">0dp</dimen>
 </resources>
