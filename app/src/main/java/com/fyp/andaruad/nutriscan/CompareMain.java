@@ -116,10 +116,9 @@ public class CompareMain extends Activity {
         IntentResult scanResult = IntentIntegrator.parseActivityResult(requestCode,resultCode, intent);
         if (scanResult != null){
             String re2 = scanResult.getContents();
-            Intent compare = new Intent(this, CompareFinal.class);
-
-            compare.putExtra("barcode_num2", re2);
-            startActivity(compare);
+            Intent compare2final = new Intent(this, CompareFinal.class);
+            compare2final.putExtra("barcode_num2", re2);
+            startActivity(compare2final);
         }else {
             Toast toast = Toast.makeText(getApplicationContext(),
                     "No scan data received!", Toast.LENGTH_LONG);
