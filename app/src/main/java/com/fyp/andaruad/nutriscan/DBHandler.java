@@ -40,7 +40,7 @@ public class DBHandler extends SQLiteOpenHelper {
     private static final String KEY_CALC = "calcium";
     private static final String KEY_IRON = "iron";
     private static final String KEY_POTAS = "potassium";
-    private final ArrayList<Product> product_list = new ArrayList<Product>();
+    private final ArrayList<Product> product_list = new ArrayList<>();
 
     public DBHandler(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);

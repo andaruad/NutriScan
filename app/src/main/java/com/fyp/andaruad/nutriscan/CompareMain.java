@@ -39,11 +39,12 @@ public class CompareMain extends Activity {
             new AlertDialog.Builder(this)
                     .setTitle("Product Not Available")
                     .setMessage("Do you want to add product")
-                    .setPositiveButton("Yes", new DialogInterface.OnClickListener()
-                    {
+                    .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            finish();
+                            Intent intent = new Intent(getApplicationContext(), Testing.class);
+                            startActivity(intent);
+//                            finish();
                         }
 
                     })
@@ -58,6 +59,8 @@ public class CompareMain extends Activity {
 
             TextView calori = (TextView) findViewById(R.id.caloriessmall);
             calori.setText(product.getCal());
+            TextView pname = (TextView) findViewById(R.id.pnamesmall);
+            pname.setText(product.getName());
         }
 
         ImageButton rescan = (ImageButton) findViewById(R.id.brescan);

@@ -59,7 +59,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Calories"
-        android:id="@+id/textView35" />
+        android:id="@+id/textView35"
+        android:layout_marginLeft="@dimen/margin10"/>
 
     <EditText
         android:id="@+id/add_calories"
@@ -74,7 +75,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Total Fat"
-        android:id="@+id/textView14" />
+        android:id="@+id/textView14"
+        android:layout_marginLeft="@dimen/margin10"/>
 
     <EditText
         android:id="@+id/add_tofat"
@@ -83,13 +85,15 @@
         android:layout_marginTop="5dp"
         android:ems="10"
         android:hint=""
-        android:inputType="number" />
+        android:inputType="number"
+        />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Saturated fat"
-        android:id="@+id/textView" />
+        android:id="@+id/textView"
+        android:layout_marginLeft="@dimen/margin10"/>
 
     <EditText
         android:id="@+id/add_sfat"
@@ -104,7 +108,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Trans Fat"
-        android:id="@+id/trfat" />
+        android:id="@+id/trfat"
+        android:layout_marginLeft="@dimen/margin10"/>
 
     <EditText
         android:id="@+id/add_trfat"
@@ -118,8 +123,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Trans Fat"
-        android:id="@+id/chloe" />
+        android:text="Cholesterol"
+        android:id="@+id/chloe"
+        android:layout_marginLeft="@dimen/margin10"/>
 
     <EditText
         android:id="@+id/add_chloe"
@@ -133,8 +139,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Trans Fat"
-        android:id="@+id/sodiu" />
+        android:text="Sodium"
+        android:id="@+id/sodiu"
+        android:layout_marginLeft="@dimen/margin10"/>
 
     <EditText
         android:id="@+id/add_sodiu"
@@ -148,8 +155,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Trans Fat"
-        android:id="@+id/carbs" />
+        android:text="Carbohydrate"
+        android:id="@+id/carbs"
+        android:layout_marginLeft="@dimen/margin10"/>
 
     <EditText
         android:id="@+id/add_carbs"
@@ -163,8 +171,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Trans Fat"
-        android:id="@+id/diefi" />
+        android:text="Dietary Fibre"
+        android:id="@+id/diefi"
+        android:layout_marginLeft="@dimen/margin10"/>
 
     <EditText
         android:id="@+id/add_diefi"
@@ -178,8 +187,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Trans Fat"
-        android:id="@+id/sugr" />
+        android:text="Sugar"
+        android:id="@+id/sugr"
+        android:layout_marginLeft="@dimen/margin10"/>
 
     <EditText
         android:id="@+id/add_sugr"
@@ -192,8 +202,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Trans Fat"
-        android:id="@+id/prote" />
+        android:text="Protein"
+        android:id="@+id/prote"
+        android:layout_marginLeft="@dimen/margin10"/>
 
     <EditText
         android:id="@+id/add_prote"
@@ -202,13 +213,15 @@
         android:layout_marginTop="5dp"
         android:ems="10"
         android:hint=""
-        android:inputType="number" />
+        android:inputType="number"
+        />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Trans Fat"
-        android:id="@+id/vitd" />
+        android:text="Vitamin D"
+        android:id="@+id/vitd"
+        android:layout_marginLeft="@dimen/margin10"/>
 
     <EditText
         android:id="@+id/add_vitd"
@@ -222,8 +235,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Trans Fat"
-        android:id="@+id/calc" />
+        android:text="Calcium"
+        android:id="@+id/calc"
+        android:layout_marginLeft="@dimen/margin10"/>
 
     <EditText
         android:id="@+id/add_calc"
@@ -237,8 +251,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Trans Fat"
-        android:id="@+id/iron" />
+        android:text="Iron"
+        android:id="@+id/iron"
+        android:layout_marginLeft="@dimen/margin10"/>
 
     <EditText
         android:id="@+id/add_iron"
@@ -252,8 +267,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Trans Fat"
-        android:id="@+id/potas" />
+        android:text="Potassium"
+        android:id="@+id/potas"
+        android:layout_marginLeft="@dimen/margin10"/>
 
     <EditText
         android:id="@+id/add_potas"
