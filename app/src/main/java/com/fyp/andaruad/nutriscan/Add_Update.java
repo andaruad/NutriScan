@@ -60,6 +60,7 @@ public class Add_Update extends Activity {
             add_diefi.setText(c.get_diefi());
             add_sugr.setText(c.get_sugr());
             add_prote.setText(c.get_prote());
+            add_calc.setText(c.get_calc());
             add_vitd.setText(c.get_vitd());
             add_iron.setText(c.get_iron());
             add_potas.setText(c.get_potas());

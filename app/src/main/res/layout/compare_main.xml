@@ -82,11 +82,10 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="No Product Available"
         android:id="@+id/pnamesmall"
-        android:layout_alignTop="@+id/include"
-        android:layout_alignRight="@+id/tvresult2"
-        android:layout_alignEnd="@+id/tvresult2"
+        android:gravity="center"
         android:layout_marginTop="40dp"
-        android:layout_marginRight="45dp"/>
+        android:layout_alignTop="@+id/include"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -97,8 +96,8 @@
         android:layout_alignTop="@+id/include"
         android:layout_alignLeft="@+id/brescan"
         android:layout_alignStart="@+id/brescan"
-        android:layout_marginTop="73dp"
-        android:layout_marginLeft="5dp"
+        android:layout_marginTop="77dp"
+        android:layout_marginLeft="12dp"
         android:textSize="@dimen/txtsizesmall"/>
 
     <TextView
@@ -110,7 +109,7 @@
         android:layout_below="@+id/servesmall"
         android:layout_alignLeft="@+id/tofatsmall"
         android:layout_alignStart="@+id/tofatsmall"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="30dp"
         android:textSize="@dimen/txtsizesmall"
         />
 
