@@ -92,6 +92,7 @@ public class Testing extends Activity {
             String calc = contact_array_from_db.get(i).get_calc();
             String iron = contact_array_from_db.get(i).get_iron();
             String potas = contact_array_from_db.get(i).get_potas();
+            String sersi = contact_array_from_db.get(i).get_sersi();
 
             Product pdct = new Product();
             pdct.setID(tidno);
@@ -104,6 +105,7 @@ public class Testing extends Activity {
             pdct.set_chole(chole);pdct.set_sodiu(sodiu);pdct.set_carbs(carbs);pdct.set_diefi(dietfi);
             pdct.set_sugr(sugr);pdct.set_prote(prote);pdct.set_vitd(vitd);
             pdct.set_calc(calc);pdct.set_iron(iron);pdct.set_potas(potas);
+            pdct.set_sersi(sersi);
 
             contact_data.add(pdct);
         }

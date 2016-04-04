@@ -22,7 +22,7 @@ public class CompareMain extends Activity {
     Product product;
     String result1;
     long resultx1;
-    TextView calori, pname, cate, tfat, sfat,trfat, chloe, sodiu, carbs, diefi, sugar, protein, vitd, calc, iron, potas;
+    TextView calori,sersi, pname, cate, tfat, sfat,trfat, chloe, sodiu, carbs, diefi, sugar, protein, vitd, calc, iron, potas;
 
     @Override
     public void onCreate (Bundle savedInstanceState){
@@ -85,6 +85,9 @@ public class CompareMain extends Activity {
             iron.setText(product.get_iron());
             potas= (TextView)findViewById(R.id.potassmall);
             potas.setText(product.get_potas());
+            sersi=(TextView)findViewById(R.id.servesmall);
+            sersi.setText(product.get_sersi());
+
 
         }
 

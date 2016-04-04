@@ -74,6 +74,22 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Serving size"
+        android:id="@+id/sersi"
+        android:layout_marginLeft="@dimen/margin10"/>
+
+    <EditText
+        android:id="@+id/add_sersi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:hint=""
+        android:inputType="number" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="Total Fat"
         android:id="@+id/textView14"
         android:layout_marginLeft="@dimen/margin10"/>
@@ -171,12 +187,12 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Dietary Fibre"
-        android:id="@+id/diefi"
+        android:text="Sugar"
+        android:id="@+id/sugr"
         android:layout_marginLeft="@dimen/margin10"/>
 
     <EditText
-        android:id="@+id/add_diefi"
+        android:id="@+id/add_sugr"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
@@ -187,12 +203,12 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sugar"
-        android:id="@+id/sugr"
+        android:text="Diet Fibre"
+        android:id="@+id/diefi"
         android:layout_marginLeft="@dimen/margin10"/>
 
     <EditText
-        android:id="@+id/add_sugr"
+        android:id="@+id/add_diefi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"

@@ -30,6 +30,7 @@ public class ResultActivity extends Activity {
         TextView iron = (TextView)findViewById(R.id.iron);
         TextView potas = (TextView)findViewById(R.id.potas);
         TextView barcode = (TextView)findViewById(R.id.barcode);
+        TextView sersi = (TextView)findViewById(R.id.serve);
 //        TextView tofat2 = (TextView)findViewById(R.id.calories2);
 
 
@@ -57,6 +58,7 @@ public class ResultActivity extends Activity {
             iron.setText(product.get_iron());
             potas.setText(product.get_potas());
             barcode.setText(product.getBarcodeNumber());
+            sersi.setText(product.get_sersi());
 
         } else {
             pname.setText("Product not found");

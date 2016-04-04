@@ -11,6 +11,7 @@ public class Product {
     public String _tofat, _sfat, _trfat;
     public String _chole, _sodiu, _carbs, _diefi, _sugr, _prote;
     public String _vitd, _calc, _iron, _potas;
+    public String _sersi;
     public Product() {
     }
 
@@ -26,7 +27,7 @@ public class Product {
 
     public Product(int id, String name, String barcode, String _cate, String _cal, String _tofat, String _sfat, String _trfat
                    ,String _chole,String _sodiu,String _carbs,String _diefi,String _sugr,String _prote
-                   ,String _vitd,String _calc,String _iron,String _potas
+                   ,String _vitd,String _calc,String _iron,String _potas, String _sersi
     ) {
         this._id = id;
         this._name = name;
@@ -46,6 +47,7 @@ public class Product {
         this._calc=_calc;
         this._iron=_iron;
         this._potas=_potas;
+        this._sersi=_sersi;
 
     }
 
@@ -59,7 +61,7 @@ public class Product {
     }
     public Product(String name, String barcode, String _cate, String _cal, String _tofat, String _sfat, String _trfat
             ,String _chole,String _sodiu,String _carbs,String _diefi,String _sugr,String _prote
-            ,String _vitd,String _calc,String _iron,String _potas
+            ,String _vitd,String _calc,String _iron,String _potas, String _sersi
     ) {
         this._name = name;
         this._barcode = barcode;
@@ -78,6 +80,7 @@ public class Product {
         this._calc=_calc;
         this._iron=_iron;
         this._potas=_potas;
+        this._sersi=_sersi;
 
     }
 
@@ -231,5 +234,13 @@ public class Product {
 
     public void set_potas(String _potas) {
         this._potas = _potas;
+    }
+
+    public String get_sersi() {
+        return _sersi;
+    }
+
+    public void set_sersi(String _sersi) {
+        this._sersi = _sersi;
     }
 }

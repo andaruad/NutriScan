@@ -12,14 +12,14 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 public class Add_Update extends Activity {
-    EditText add_name, add_barcode, add_cate, add_cal, add_tofat, add_sfat, add_trfat;
+    EditText add_name, add_barcode, add_cate, add_cal, add_tofat, add_sfat, add_trfat, add_sersi;
     EditText add_chloe, add_sodiu, add_carbs, add_diefi, add_sugr, add_prote, add_vitd, add_calc, add_iron, add_potas;
     Button add_save_btn, add_view_all, update_btn, update_view_all;
     LinearLayout add_view, update_view;
     String valid_bar_number = null, valid_cate = null, valid_name = null,valid_cal = null,
             valid_tofat = null, valid_sfat = null, valid_trfat = null,
             valid_chloe=null, valid_sodiu=null, valid_carbs=null, valid_dietfi=null, valid_sugr=null, valid_prote=null, valid_vitd=null,
-            valid_calc=null, valid_iron=null, valid_potas=null,
+            valid_calc=null, valid_iron=null, valid_potas=null, valid_sersi=null,
             Toast_msg = null, valid_user_id = "";
     int USER_ID;
     DBHandler dbHandler = new DBHandler(this);
@@ -64,6 +64,7 @@ public class Add_Update extends Activity {
             add_vitd.setText(c.get_vitd());
             add_iron.setText(c.get_iron());
             add_potas.setText(c.get_potas());
+            add_sersi.setText(c.get_sersi());
             // dbHandler.close();
         }
         add_barcode.addTextChangedListener(new TextWatcher() {
@@ -461,6 +462,29 @@ public class Add_Update extends Activity {
             }
         });
 
+        add_sersi.addTextChangedListener(new TextWatcher() {
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before,
+                                      int count) {
+                // TODO Auto-generated method stub
+
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count,
+                                          int after) {
+                // TODO Auto-generated method stub
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                // TODO Auto-generated method stub
+                Is_Valid_sersi_Name(add_sersi);                                                            // do something
+            }
+        });
+
 
         add_save_btn.setOnClickListener(new View.OnClickListener() {
 
@@ -487,12 +511,13 @@ public class Add_Update extends Activity {
                         && valid_calc.length() != 0
                         && valid_iron.length() != 0
                         && valid_potas.length() != 0
+                        && valid_sersi.length() !=0
                         ) {
 
                     dbHandler.Add_Product(new Product(valid_name,
                             valid_bar_number, valid_cate, valid_cal, valid_tofat, valid_sfat, valid_trfat,
                             valid_chloe,valid_sodiu,valid_carbs,valid_dietfi,valid_sugr,valid_prote,valid_vitd,
-                            valid_calc,valid_iron,valid_potas
+                            valid_calc,valid_iron,valid_potas,valid_sersi
                     ));
                     Toast_msg = "Data inserted successfully";
                     Show_Toast(Toast_msg);
@@ -527,6 +552,7 @@ public class Add_Update extends Activity {
                 valid_calc = add_calc.getText().toString();
                 valid_iron = add_iron.getText().toString();
                 valid_potas = add_potas.getText().toString();
+                valid_sersi = add_sersi.getText().toString();
 
 
 
@@ -551,12 +577,13 @@ public class Add_Update extends Activity {
                         && valid_calc.length() != 0
                         && valid_iron.length() != 0
                         && valid_potas.length() != 0
+                        && valid_sersi.length() !=0
                         ) {
 
                     dbHandler.Update_Product(new Product(USER_ID, valid_name,
                             valid_bar_number, valid_cate, valid_cal, valid_tofat, valid_sfat, valid_trfat,
                             valid_chloe,valid_sodiu,valid_carbs,valid_dietfi,valid_sugr,valid_prote,valid_vitd,
-                            valid_calc,valid_iron,valid_potas
+                            valid_calc,valid_iron,valid_potas, valid_sersi
                     ));
                     dbHandler.close();
                     Toast_msg = "Data Update successfully";
@@ -619,6 +646,7 @@ public class Add_Update extends Activity {
         add_chloe = (EditText) findViewById(R.id.add_chloe);
         add_sodiu = (EditText) findViewById(R.id.add_sodiu);
         add_vitd = (EditText) findViewById(R.id.add_vitd);
+        add_sersi = (EditText) findViewById(R.id.add_sersi);
 
 
         add_save_btn = (Button) findViewById(R.id.add_save_btn);
@@ -835,6 +863,16 @@ public class Add_Update extends Activity {
         }
 
     }
+    public void Is_Valid_sersi_Name(EditText edt) throws NumberFormatException {
+        if (edt.getText().toString().length() <= 0) {
+            edt.setError("Number Only");
+            valid_sersi = null;
+        } else {
+            valid_sersi = edt.getText().toString();
+
+        }
+
+    }
 
     public void Show_Toast(String msg) {
         Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG).show();
@@ -858,7 +896,7 @@ public class Add_Update extends Activity {
         add_calc.getText().clear();
         add_iron.getText().clear();
         add_potas.getText().clear();
-
+        add_sersi.getText().clear();
     }
 
 }
