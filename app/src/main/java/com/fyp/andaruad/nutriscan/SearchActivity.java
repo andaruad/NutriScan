@@ -16,17 +16,20 @@ import java.util.ArrayList;
  * Created by Andaruad on 14/02/2016.
  */
 public class SearchActivity extends ListActivity {
-
+    DBHandler db;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        ArrayList<Product> products = new ArrayList<Product>();
-        products.add(new Product(1,"Skippy Creamy","","","","","","","","","","","","","","","","",""));
-        products.add(new Product(2,"Jif Chunky","","","","","","","","","","","","","","","","",""));
-        products.add(new Product(3,"Peter Pan","","","","","","","","","","","","","","","","",""));
-        products.add(new Product(4,"P28 Peanut Butter Spread","","","","","","","","","","","","","","","","",""));
+        db = new DBHandler(this);
+        ArrayList<Product> products = db.Get_Products();
+
+//        ArrayList<Product> products = new ArrayList<Product>();
+//        products.add(new Product(1,"Skippy Creamy","","","","","","","","","","","","","","","","",""));
+//        products.add(new Product(2,"Jif Chunky","","","","","","","","","","","","","","","","",""));
+//        products.add(new Product(3,"Peter Pan","","","","","","","","","","","","","","","","",""));
+//        products.add(new Product(4,"P28 Peanut Butter Spread","","","","","","","","","","","","","","","","",""));
         setListAdapter(new SearchArrayAdapter(this, products));
     }
 

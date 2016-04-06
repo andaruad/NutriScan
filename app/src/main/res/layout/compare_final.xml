@@ -425,7 +425,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="0"
-        android:id="@+id/textView77"
+        android:id="@+id/proteiB1"
         android:layout_alignTop="@+id/proteiA2"
         android:layout_alignLeft="@+id/diefiB1"
         android:layout_alignStart="@+id/diefiB1"         android:textSize="@dimen/txtsizesmall"
@@ -436,10 +436,10 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="0"
-        android:id="@+id/textView78"
-        android:layout_below="@+id/textView77"
-        android:layout_alignLeft="@+id/textView77"
-        android:layout_alignStart="@+id/textView77" 
+        android:id="@+id/vitdB1"
+        android:layout_below="@+id/proteiB1"
+        android:layout_alignLeft="@+id/proteiB1"
+        android:layout_alignStart="@+id/proteiB1"
         android:layout_marginTop="25dp"        android:textSize="@dimen/txtsizesmall"
         />
 
@@ -448,10 +448,10 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="0"
-        android:id="@+id/textView79"
-        android:layout_below="@+id/textView78"
-        android:layout_alignLeft="@+id/textView78"
-        android:layout_alignStart="@+id/textView78"         android:textSize="@dimen/txtsizesmall"
+        android:id="@+id/calcB1"
+        android:layout_below="@+id/vitdB1"
+        android:layout_alignLeft="@+id/vitdB1"
+        android:layout_alignStart="@+id/vitdB1"         android:textSize="@dimen/txtsizesmall"
         />
 
     <TextView
@@ -459,10 +459,10 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="0"
-        android:id="@+id/textView80"
-        android:layout_below="@+id/textView79"
-        android:layout_alignLeft="@+id/textView79"
-        android:layout_alignStart="@+id/textView79"         android:textSize="@dimen/txtsizesmall"
+        android:id="@+id/ironB1"
+        android:layout_below="@+id/calcB1"
+        android:layout_alignLeft="@+id/calcB1"
+        android:layout_alignStart="@+id/calcB1"         android:textSize="@dimen/txtsizesmall"
         />
 
     <TextView
@@ -470,10 +470,10 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="0"
-        android:id="@+id/textView81"
-        android:layout_below="@+id/textView80"
-        android:layout_alignLeft="@+id/textView80"
-        android:layout_alignStart="@+id/textView80"         android:textSize="@dimen/txtsizesmall"
+        android:id="@+id/potasB1"
+        android:layout_below="@+id/ironB1"
+        android:layout_alignLeft="@+id/ironB1"
+        android:layout_alignStart="@+id/ironB1"         android:textSize="@dimen/txtsizesmall"
         />
 
     <TextView
@@ -481,10 +481,10 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="0"
-        android:id="@+id/textView82"
+        android:id="@+id/calB2"
         android:layout_alignTop="@+id/calB1"
-        android:layout_toRightOf="@+id/textView78"
-        android:layout_toEndOf="@+id/textView78"
+        android:layout_toRightOf="@+id/vitdB1"
+        android:layout_toEndOf="@+id/vitdB1"
         android:layout_marginLeft="37dp"
         android:layout_marginStart="37dp"         android:textSize="@dimen/txtsizesmall"
         />
@@ -494,10 +494,10 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="0"
-        android:id="@+id/textView83"
+        android:id="@+id/tofatB2"
         android:layout_alignTop="@+id/tfatB1"
-        android:layout_alignLeft="@+id/textView82"
-        android:layout_alignStart="@+id/textView82"         android:textSize="@dimen/txtsizesmall"
+        android:layout_alignLeft="@+id/calB2"
+        android:layout_alignStart="@+id/calB2"         android:textSize="@dimen/txtsizesmall"
         />
 
     <TextView
@@ -505,10 +505,10 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="0"
-        android:id="@+id/textView84"
-        android:layout_below="@+id/textView83"
-        android:layout_alignLeft="@+id/textView83"
-        android:layout_alignStart="@+id/textView83"         android:textSize="@dimen/txtsizesmall"
+        android:id="@+id/sfatB2"
+        android:layout_below="@+id/tofatB2"
+        android:layout_alignLeft="@+id/tofatB2"
+        android:layout_alignStart="@+id/tofatB2"         android:textSize="@dimen/txtsizesmall"
         />
 
     <TextView
@@ -516,10 +516,10 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="0"
-        android:id="@+id/textView85"
-        android:layout_below="@+id/textView84"
-        android:layout_alignLeft="@+id/textView84"
-        android:layout_alignStart="@+id/textView84"         android:textSize="@dimen/txtsizesmall"
+        android:id="@+id/trfatB2"
+        android:layout_below="@+id/sfatB2"
+        android:layout_alignLeft="@+id/sfatB2"
+        android:layout_alignStart="@+id/sfatB2"         android:textSize="@dimen/txtsizesmall"
         />
 
     <TextView
@@ -527,10 +527,10 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="0"
-        android:id="@+id/textView86"
-        android:layout_below="@+id/textView85"
-        android:layout_alignLeft="@+id/textView85"
-        android:layout_alignStart="@+id/textView85"         android:textSize="@dimen/txtsizesmall"
+        android:id="@+id/chloeB2"
+        android:layout_below="@+id/trfatB2"
+        android:layout_alignLeft="@+id/trfatB2"
+        android:layout_alignStart="@+id/trfatB2"         android:textSize="@dimen/txtsizesmall"
         />
 
     <TextView
@@ -538,10 +538,10 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="0"
-        android:id="@+id/textView87"
-        android:layout_below="@+id/textView86"
-        android:layout_alignLeft="@+id/textView86"
-        android:layout_alignStart="@+id/textView86"         android:textSize="@dimen/txtsizesmall"
+        android:id="@+id/sodiuB2"
+        android:layout_below="@+id/chloeB2"
+        android:layout_alignLeft="@+id/chloeB2"
+        android:layout_alignStart="@+id/chloeB2"         android:textSize="@dimen/txtsizesmall"
         />
 
     <TextView
@@ -549,10 +549,10 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="0"
-        android:id="@+id/textView88"
-        android:layout_below="@+id/textView87"
-        android:layout_alignLeft="@+id/textView87"
-        android:layout_alignStart="@+id/textView87"         android:textSize="@dimen/txtsizesmall"
+        android:id="@+id/carbsB2"
+        android:layout_below="@+id/sodiuB2"
+        android:layout_alignLeft="@+id/sodiuB2"
+        android:layout_alignStart="@+id/sodiuB2"         android:textSize="@dimen/txtsizesmall"
         />
 
     <TextView
@@ -560,10 +560,10 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="0"
-        android:id="@+id/textView89"
-        android:layout_below="@+id/textView88"
-        android:layout_alignLeft="@+id/textView88"
-        android:layout_alignStart="@+id/textView88"         android:textSize="@dimen/txtsizesmall"
+        android:id="@+id/sugarB2"
+        android:layout_below="@+id/carbsB2"
+        android:layout_alignLeft="@+id/carbsB2"
+        android:layout_alignStart="@+id/carbsB2"         android:textSize="@dimen/txtsizesmall"
         />
 
     <TextView
@@ -571,10 +571,10 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="0"
-        android:id="@+id/textView90"
-        android:layout_below="@+id/textView89"
-        android:layout_alignLeft="@+id/textView89"
-        android:layout_alignStart="@+id/textView89"         android:textSize="@dimen/txtsizesmall"
+        android:id="@+id/diefiB2"
+        android:layout_below="@+id/sugarB2"
+        android:layout_alignLeft="@+id/sugarB2"
+        android:layout_alignStart="@+id/sugarB2"         android:textSize="@dimen/txtsizesmall"
         />
 
     <TextView
@@ -582,10 +582,10 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="0"
-        android:id="@+id/textView91"
-        android:layout_alignTop="@+id/textView77"
-        android:layout_alignLeft="@+id/textView90"
-        android:layout_alignStart="@+id/textView90"         android:textSize="@dimen/txtsizesmall"
+        android:id="@+id/proteiB2"
+        android:layout_alignTop="@+id/proteiB1"
+        android:layout_alignLeft="@+id/diefiB2"
+        android:layout_alignStart="@+id/diefiB2"         android:textSize="@dimen/txtsizesmall"
         />
 
     <TextView
@@ -593,10 +593,10 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="0"
-        android:id="@+id/textView92"
-        android:layout_below="@+id/textView91"
-        android:layout_alignLeft="@+id/textView91"
-        android:layout_alignStart="@+id/textView91"
+        android:id="@+id/vitdB2"
+        android:layout_below="@+id/proteiB2"
+        android:layout_alignLeft="@+id/proteiB2"
+        android:layout_alignStart="@+id/proteiB2"
         android:layout_marginTop="25dp"        android:textSize="@dimen/txtsizesmall"
         />
 
@@ -605,10 +605,10 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="0"
-        android:id="@+id/textView93"
-        android:layout_below="@+id/textView92"
-        android:layout_alignLeft="@+id/textView92"
-        android:layout_alignStart="@+id/textView92"         android:textSize="@dimen/txtsizesmall"
+        android:id="@+id/calcB2"
+        android:layout_below="@+id/vitdB2"
+        android:layout_alignLeft="@+id/vitdB2"
+        android:layout_alignStart="@+id/vitdB2"         android:textSize="@dimen/txtsizesmall"
         />
 
     <TextView
@@ -616,10 +616,10 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="0"
-        android:id="@+id/textView94"
-        android:layout_below="@+id/textView93"
-        android:layout_alignLeft="@+id/textView93"
-        android:layout_alignStart="@+id/textView93"         android:textSize="@dimen/txtsizesmall"
+        android:id="@+id/ironB2"
+        android:layout_below="@+id/calcB2"
+        android:layout_alignLeft="@+id/calcB2"
+        android:layout_alignStart="@+id/calcB2"         android:textSize="@dimen/txtsizesmall"
         />
 
     <TextView
@@ -627,10 +627,10 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="0"
-        android:id="@+id/textView95"
-        android:layout_below="@+id/textView94"
-        android:layout_alignLeft="@+id/textView94"
-        android:layout_alignStart="@+id/textView94"         android:textSize="@dimen/txtsizesmall"
+        android:id="@+id/potasB2"
+        android:layout_below="@+id/ironB2"
+        android:layout_alignLeft="@+id/ironB2"
+        android:layout_alignStart="@+id/ironB2"         android:textSize="@dimen/txtsizesmall"
         />
 
     <TextView
@@ -671,7 +671,30 @@
         android:text="Small Text"
         android:id="@+id/barcodeF2"
         android:layout_below="@+id/pname2"
-        android:layout_toLeftOf="@+id/textView83"
-        android:layout_toStartOf="@+id/textView83" />
+        android:layout_toLeftOf="@+id/tofatB2"
+        android:layout_toStartOf="@+id/tofatB2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="We Recommend:"
+        android:id="@+id/recommend"
+        android:layout_below="@+id/textView3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="The Product contain:"
+        android:id="@+id/textView3"
+        android:layout_below="@+id/potasA1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="61dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>
