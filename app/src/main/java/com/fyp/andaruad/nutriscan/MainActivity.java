@@ -121,7 +121,6 @@ public class MainActivity extends AppCompatActivity
         IntentResult scanResult = IntentIntegrator.parseActivityResult(requestCode,resultCode, intent);
             if (scanResult != null){
                 String re = scanResult.getContents();
-                Log.d("code", re);
                 TextView tvresult = (TextView) findViewById(R.id.tvresult);
                 tvresult.setText("");
                 Intent compare = new Intent(this, CompareMain.class);

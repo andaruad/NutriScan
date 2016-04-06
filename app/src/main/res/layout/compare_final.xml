@@ -10,13 +10,14 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="0"
-        android:id="@+id/textVieww"
+        android:id="@+id/calA1"
         android:layout_marginTop="160dp"
         android:layout_marginRight="10dp"
         android:layout_marginLeft="165dp"
         android:layout_alignParentTop="true"
         android:textSize="@dimen/txtsizesmall"
-        android:focusableInTouchMode="false" />
+        android:focusableInTouchMode="false"
+        android:layout_alignParentEnd="false" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -24,9 +25,9 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="0"
         android:id="@+id/tofatA1"
-        android:layout_below="@+id/textVieww"
-        android:layout_alignLeft="@+id/textVieww"
-        android:layout_alignStart="@+id/textVieww"         android:textSize="@dimen/txtsizesmall"
+        android:layout_below="@+id/calA1"
+        android:layout_alignLeft="@+id/calA1"
+        android:layout_alignStart="@+id/calA1"         android:textSize="@dimen/txtsizesmall"
         />
 
     <TextView
@@ -171,9 +172,9 @@
         android:layout_marginLeft="33dp"
         android:layout_marginStart="33dp"
         android:layout_marginRight="100dp"
-        android:layout_alignTop="@+id/textVieww"
-        android:layout_toRightOf="@+id/textVieww"
-        android:layout_toEndOf="@+id/textVieww"         android:textSize="@dimen/txtsizesmall"
+        android:layout_alignTop="@+id/calA1"
+        android:layout_toRightOf="@+id/calA1"
+        android:layout_toEndOf="@+id/calA1"         android:textSize="@dimen/txtsizesmall"
         />
 
     <TextView
