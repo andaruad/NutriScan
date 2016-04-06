@@ -5,7 +5,6 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -59,7 +58,7 @@ public class CompareMain extends Activity {
             calori.setText(product.getCal());
             pname = (TextView) findViewById(R.id.pnamesmall);
             pname.setText(product.getName());
-            tfat= (TextView)findViewById(R.id.tofatsmall);
+            tfat= (TextView)findViewById(R.id.tofatA1);
             tfat.setText(product.get_tofat());
             sfat= (TextView)findViewById(R.id.sfatsmall);
             sfat.setText(product.get_sfat());
@@ -120,6 +119,7 @@ public class CompareMain extends Activity {
         if (scanResult != null){
             String re2 = scanResult.getContents();
             Intent compare2final = new Intent(this, CompareFinal.class);
+            compare2final.putExtra("barcode_num1",result1);
             compare2final.putExtra("barcode_num2", re2);
             startActivity(compare2final);
         }else {

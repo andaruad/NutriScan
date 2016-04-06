@@ -25,6 +25,7 @@ public class SearchActivity extends ListActivity {
         db = new DBHandler(this);
         ArrayList<Product> products = db.Get_Products();
 
+            //Dummy Database
 //        ArrayList<Product> products = new ArrayList<Product>();
 //        products.add(new Product(1,"Skippy Creamy","","","","","","","","","","","","","","","","",""));
 //        products.add(new Product(2,"Jif Chunky","","","","","","","","","","","","","","","","",""));

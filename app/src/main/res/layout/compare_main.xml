@@ -98,8 +98,8 @@
         android:text="@string/test"
         android:id="@+id/caloriessmall"
         android:layout_below="@+id/servesmall"
-        android:layout_alignLeft="@+id/tofatsmall"
-        android:layout_alignStart="@+id/tofatsmall"
+        android:layout_alignLeft="@+id/tofatA1"
+        android:layout_alignStart="@+id/tofatA1"
         android:layout_marginTop="30dp"
         android:textSize="@dimen/txtsizesmall"
         />
@@ -109,7 +109,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="@string/test"
-        android:id="@+id/tofatsmall"
+        android:id="@+id/tofatA1"
         android:layout_below="@+id/caloriessmall"
         android:layout_centerHorizontal="true"
         android:textSize="@dimen/txtsizesmall"/>
@@ -120,9 +120,9 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="@string/test"
         android:id="@+id/sfatsmall"
-        android:layout_below="@+id/tofatsmall"
-        android:layout_alignLeft="@+id/tofatsmall"
-        android:layout_alignStart="@+id/tofatsmall"
+        android:layout_below="@+id/tofatA1"
+        android:layout_alignLeft="@+id/tofatA1"
+        android:layout_alignStart="@+id/tofatA1"
         android:textSize="@dimen/txtsizesmall"/>
 
     <TextView

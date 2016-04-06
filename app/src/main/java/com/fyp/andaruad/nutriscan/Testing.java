@@ -170,7 +170,7 @@ public class Testing extends Activity {
             user = data.get(position);
             holder.edit.setTag(user.getID());
             holder.delete.setTag(user.getID());
-            holder.name.setText(user.getName() + " " + user.getID());
+            holder.name.setText(user.getName());
             holder.cate.setText(user.getCate());
             holder.number.setText(user.getBarcodeNumber());
             holder.edit.setOnClickListener(new OnClickListener() {
