@@ -15,6 +15,7 @@
             android:id="@+id/diettypes"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="40dp"
+            android:layout_marginLeft="10dp"
             android:textSize="35dp"
             android:layout_alignParentTop="true"
             android:layout_alignLeft="@+id/dietgroup"
@@ -26,6 +27,7 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Choose one diet types from the list below"
             android:layout_marginTop="85dp"
+            android:layout_marginLeft="10dp"
             android:id="@+id/textView26" />
 
         <RadioGroup
@@ -110,8 +112,8 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Done"
-            android:id="@+id/Done"
+            android:text="done"
+            android:id="@+id/done"
 
             android:layout_toRightOf="@+id/diettypes"
             android:layout_toEndOf="@+id/diettypes"

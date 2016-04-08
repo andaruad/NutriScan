@@ -13,7 +13,7 @@ import android.widget.Toast;
 public class CompareFinal extends Activity{
 TextView barcodeF1, barcodeF2;
 String result1, result2;
-long resultx2;
+long resultx1,resultx2;
 Product product1, product2;
 DBHandler dbHandler;
 TextView calori2,sersi2, pname2, cate2, tfat2, sfat2,trfat2, chloe2, sodiu2, carbs2, diefi2, sugar2, protein2, vitd2, calc2, iron2, potas2;
@@ -26,6 +26,7 @@ TextView calori1,sersi1, pname1, cate1, tfat1, sfat1,trfat1, chloe1, sodiu1, car
 
         DBHandler dbHandler = new DBHandler(this);
         result1 = getIntent().getStringExtra("barcode_num1");
+        resultx1 = Long.parseLong(getIntent().getStringExtra("barcode_num1"));
         result2 = getIntent().getStringExtra("barcode_num2");
         resultx2 = Long.parseLong(getIntent().getStringExtra("barcode_num2"));
         product2 = dbHandler.Get_Bar(resultx2);
@@ -77,6 +78,8 @@ TextView calori1,sersi1, pname1, cate1, tfat1, sfat1,trfat1, chloe1, sodiu1, car
             potas2= (TextView)findViewById(R.id.potasA2);
             potas2.setText(product2.get_potas());
 
+
+            product1 = dbHandler.Get_Bar(resultx1);
             calori1 = (TextView) findViewById(R.id.calA1);
             calori1.setText(product1.getCal());
             tfat1= (TextView)findViewById(R.id.tofatA1);
@@ -105,8 +108,6 @@ TextView calori1,sersi1, pname1, cate1, tfat1, sfat1,trfat1, chloe1, sodiu1, car
             iron1.setText(product1.get_iron());
             potas1= (TextView)findViewById(R.id.potasA1);
             potas1.setText(product1.get_potas());
-
-
         }
 
 
