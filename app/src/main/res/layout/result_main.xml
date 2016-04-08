@@ -153,8 +153,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="2"
-        android:id="@+id/textView15"
+        android:text="0"
+        android:id="@+id/tofat2"
         android:layout_below="@+id/calories2"
         android:layout_alignLeft="@+id/calories2"
         android:layout_alignStart="@+id/calories2" />
@@ -163,101 +163,101 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="3"
-        android:id="@+id/textView16"
+        android:text="0"
+        android:id="@+id/sfat2"
         android:layout_above="@+id/trfat"
-        android:layout_alignLeft="@+id/textView15"
-        android:layout_alignStart="@+id/textView15" />
+        android:layout_alignLeft="@+id/tofat2"
+        android:layout_alignStart="@+id/tofat2" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="4"
-        android:id="@+id/textView17"
+        android:text="0"
+        android:id="@+id/trfat2"
         android:layout_alignTop="@+id/trfat"
-        android:layout_alignLeft="@+id/textView16"
-        android:layout_alignStart="@+id/textView16" />
+        android:layout_alignLeft="@+id/sfat2"
+        android:layout_alignStart="@+id/sfat2" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="5"
-        android:id="@+id/textView18"
-        android:layout_below="@+id/textView17"
-        android:layout_alignLeft="@+id/textView17"
-        android:layout_alignStart="@+id/textView17" />
+        android:text="0"
+        android:id="@+id/chloe2"
+        android:layout_below="@+id/trfat2"
+        android:layout_alignLeft="@+id/trfat2"
+        android:layout_alignStart="@+id/trfat2" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="6"
-        android:id="@+id/textView19"
+        android:id="@+id/sodiu2"
         android:layout_alignTop="@+id/sodiu"
-        android:layout_alignLeft="@+id/textView18"
-        android:layout_alignStart="@+id/textView18" />
+        android:layout_alignLeft="@+id/chloe2"
+        android:layout_alignStart="@+id/chloe2" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="7"
-        android:id="@+id/textView20"
+        android:text="0"
+        android:id="@+id/carbs2"
         android:layout_above="@+id/sugr"
-        android:layout_alignLeft="@+id/textView19"
-        android:layout_alignStart="@+id/textView19" />
+        android:layout_alignLeft="@+id/sodiu2"
+        android:layout_alignStart="@+id/sodiu2" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="8"
-        android:id="@+id/textView21"
-        android:layout_below="@+id/textView20"
-        android:layout_alignLeft="@+id/textView20"
-        android:layout_alignStart="@+id/textView20" />
+        android:text="0"
+        android:id="@+id/sugr2"
+        android:layout_below="@+id/carbs2"
+        android:layout_alignLeft="@+id/carbs2"
+        android:layout_alignStart="@+id/carbs2" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="10"
-        android:id="@+id/textView22"
+        android:text="0"
+        android:id="@+id/protei2"
         android:layout_alignTop="@+id/prote"
-        android:layout_alignLeft="@+id/textView21"
-        android:layout_alignStart="@+id/textView21" />
+        android:layout_alignLeft="@+id/sugr2"
+        android:layout_alignStart="@+id/sugr2" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="11"
-        android:id="@+id/textView23"
+        android:text="0"
+        android:id="@+id/vitd2"
         android:layout_alignTop="@+id/vitd"
-        android:layout_alignLeft="@+id/textView22"
-        android:layout_alignStart="@+id/textView22" />
+        android:layout_alignLeft="@+id/protei2"
+        android:layout_alignStart="@+id/protei2" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="12"
-        android:id="@+id/textView24"
+        android:text="0"
+        android:id="@+id/calc2"
         android:layout_above="@+id/iron"
-        android:layout_alignLeft="@+id/textView23"
-        android:layout_alignStart="@+id/textView23" />
+        android:layout_alignLeft="@+id/vitd2"
+        android:layout_alignStart="@+id/vitd2" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="13"
-        android:id="@+id/textView25"
+        android:text="0"
+        android:id="@+id/iron2"
         android:layout_alignTop="@+id/iron"
-        android:layout_alignLeft="@+id/textView24"
-        android:layout_alignStart="@+id/textView24" />
+        android:layout_alignLeft="@+id/calc2"
+        android:layout_alignStart="@+id/calc2" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -273,7 +273,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="27"
+        android:text="0"
         android:id="@+id/potas"
         android:layout_below="@+id/iron"
         android:layout_centerHorizontal="true" />
@@ -282,11 +282,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="14"
-        android:id="@+id/textView34"
-        android:layout_below="@+id/textView25"
-        android:layout_alignLeft="@+id/textView25"
-        android:layout_alignStart="@+id/textView25" />
+        android:text="0"
+        android:id="@+id/potas2"
+        android:layout_below="@+id/iron2"
+        android:layout_alignLeft="@+id/iron2"
+        android:layout_alignStart="@+id/iron2" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -313,10 +313,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="9"
-        android:id="@+id/textView6"
-        android:layout_below="@+id/textView21"
-        android:layout_alignLeft="@+id/textView21"
-        android:layout_alignStart="@+id/textView21" />
+        android:text="0"
+        android:id="@+id/diefi2"
+        android:layout_below="@+id/sugr2"
+        android:layout_alignLeft="@+id/sugr2"
+        android:layout_alignStart="@+id/sugr2" />
 
 </RelativeLayout>
