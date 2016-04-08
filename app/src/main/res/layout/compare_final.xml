@@ -338,7 +338,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="0"
-        android:id="@+id/tfatB1"
+        android:id="@+id/tofatB1"
         android:layout_below="@+id/calB1"
         android:layout_alignLeft="@+id/calB1"
         android:layout_alignStart="@+id/calB1"         android:textSize="@dimen/txtsizesmall"
@@ -350,9 +350,9 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="0"
         android:id="@+id/sfatB1"
-        android:layout_below="@+id/tfatB1"
-        android:layout_alignLeft="@+id/tfatB1"
-        android:layout_alignStart="@+id/tfatB1"         android:textSize="@dimen/txtsizesmall"
+        android:layout_below="@+id/tofatB1"
+        android:layout_alignLeft="@+id/tofatB1"
+        android:layout_alignStart="@+id/tofatB1"         android:textSize="@dimen/txtsizesmall"
         />
 
     <TextView
@@ -496,7 +496,7 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="0"
         android:id="@+id/tofatB2"
-        android:layout_alignTop="@+id/tfatB1"
+        android:layout_alignTop="@+id/tofatB1"
         android:layout_alignLeft="@+id/calB2"
         android:layout_alignStart="@+id/calB2"         android:textSize="@dimen/txtsizesmall"
         />

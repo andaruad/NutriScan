@@ -18,7 +18,8 @@ Product product1, product2;
 DBHandler dbHandler;
 TextView calori2,sersi2, pname2, cate2, tfat2, sfat2,trfat2, chloe2, sodiu2, carbs2, diefi2, sugar2, protein2, vitd2, calc2, iron2, potas2;
 TextView calori1,sersi1, pname1, cate1, tfat1, sfat1,trfat1, chloe1, sodiu1, carbs1, diefi1, sugar1, protein1, vitd1, calc1, iron1, potas1;
-
+TextView calori3,sersi3, pname3, cate3, tfat3, sfat3,trfat3, chloe3, sodiu3, carbs3, diefi3, sugar3, protein3, vitd3, calc3, iron3, potas3;
+TextView calori4,sersi4, pname4, cate4, tfat4, sfat4,trfat4, chloe4, sodiu4, carbs4, diefi4, sugar4, protein4, vitd4, calc4, iron4, potas4;
     @Override
     public void onCreate (Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -108,6 +109,68 @@ TextView calori1,sersi1, pname1, cate1, tfat1, sfat1,trfat1, chloe1, sodiu1, car
             iron1.setText(product1.get_iron());
             potas1= (TextView)findViewById(R.id.potasA1);
             potas1.setText(product1.get_potas());
+
+            int divider1 = 100/(Integer.parseInt(product1.get_sersi().toString()));
+            calori3 = (TextView) findViewById(R.id.calB1);
+            calori3.setText(product1.getCal());
+            tfat3= (TextView)findViewById(R.id.tofatB1);
+            tfat3.setText(product1.get_tofat());
+            sfat3= (TextView)findViewById(R.id.sfatB1);
+            sfat3.setText(product1.get_sfat());
+            trfat3= (TextView)findViewById(R.id.trfatB1);
+            trfat3.setText(product1.get_trfat());
+            chloe3= (TextView)findViewById(R.id.chloeB1);
+            chloe3.setText(product1.get_chole());
+            sodiu3= (TextView)findViewById(R.id.sodiuB1);
+            sodiu3.setText(product1.get_sodiu());
+            carbs3= (TextView)findViewById(R.id.carbsB1);
+            carbs3.setText(product1.get_carbs());
+            diefi3= (TextView)findViewById(R.id.diefiB1);
+            diefi3.setText(product1.get_diefi());
+            sugar3= (TextView)findViewById(R.id.sugarB1);
+            sugar3.setText(product1.get_sugr());
+            protein3= (TextView)findViewById(R.id.proteiB1);
+            protein3.setText(product1.get_prote());
+            vitd3= (TextView)findViewById(R.id.vitdB1);
+            vitd3.setText(product1.get_vitd());
+            calc3= (TextView)findViewById(R.id.calcB1);
+            calc3.setText(product1.get_calc());
+            iron3= (TextView)findViewById(R.id.ironB1);
+            iron3.setText(product1.get_iron());
+            potas3= (TextView)findViewById(R.id.potasB1);
+            potas3.setText(product1.get_potas());
+
+
+            int divider2 = 100/(Integer.parseInt(product2.get_sersi().toString()));
+            calori4 = (TextView) findViewById(R.id.calB2);
+            calori4.setText(product1.getCal());
+            tfat4= (TextView)findViewById(R.id.tofatB2);
+            tfat4.setText(product1.get_tofat());
+            sfat4= (TextView)findViewById(R.id.sfatB2);
+            sfat4.setText(product1.get_sfat());
+            trfat4= (TextView)findViewById(R.id.trfatB2);
+            trfat4.setText(product1.get_trfat());
+            chloe4= (TextView)findViewById(R.id.chloeB2);
+            chloe4.setText(product1.get_chole());
+            sodiu4= (TextView)findViewById(R.id.sodiuB2);
+            sodiu4.setText(product1.get_sodiu());
+            carbs4= (TextView)findViewById(R.id.carbsB2);
+            carbs4.setText(product1.get_carbs());
+            diefi4= (TextView)findViewById(R.id.diefiB2);
+            diefi4.setText(product1.get_diefi());
+            sugar4= (TextView)findViewById(R.id.sugarB2);
+            sugar4.setText(product1.get_sugr());
+            protein4= (TextView)findViewById(R.id.proteiB2);
+            protein4.setText(product1.get_prote());
+            vitd4= (TextView)findViewById(R.id.vitdB2);
+            vitd4.setText(product1.get_vitd());
+            calc4= (TextView)findViewById(R.id.calcB2);
+            calc4.setText(product1.get_calc());
+            iron4= (TextView)findViewById(R.id.ironB2);
+            iron4.setText(product1.get_iron());
+            potas4= (TextView)findViewById(R.id.potasB2);
+            potas4.setText(product1.get_potas());
+
         }
 
 

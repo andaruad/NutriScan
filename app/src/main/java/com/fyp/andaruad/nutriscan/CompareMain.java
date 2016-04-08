@@ -22,7 +22,7 @@ public class CompareMain extends Activity {
     String result1;
     long resultx1;
     TextView calori,sersi, pname, cate, tfat, sfat,trfat, chloe, sodiu, carbs, diefi, sugar, protein, vitd, calc, iron, potas;
-
+    TextView calori2,sersi2, pname2, cate2, tfat2, sfat2,trfat2, chloe2, sodiu2, carbs2, diefi2, sugar2, protein2, vitd2, calc2, iron2, potas2;
     @Override
     public void onCreate (Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -58,7 +58,7 @@ public class CompareMain extends Activity {
             calori.setText(product.getCal());
             pname = (TextView) findViewById(R.id.pnamesmall);
             pname.setText(product.getName());
-            tfat= (TextView)findViewById(R.id.tofatA1);
+            tfat= (TextView)findViewById(R.id.tofatsmall);
             tfat.setText(product.get_tofat());
             sfat= (TextView)findViewById(R.id.sfatsmall);
             sfat.setText(product.get_sfat());
@@ -85,7 +85,37 @@ public class CompareMain extends Activity {
             potas= (TextView)findViewById(R.id.potassmall);
             potas.setText(product.get_potas());
             sersi=(TextView)findViewById(R.id.servesmall);
-            sersi.setText(product.get_sersi());
+            sersi.setText("  "+ product.get_sersi());
+
+            int divider = 100/(Integer.parseInt(product.get_sersi().toString()));
+            calori2 = (TextView) findViewById(R.id.caloriessmall2);
+            calori2.setText((Integer.parseInt(product.getCal().toString()))/divider+"");
+            tfat2= (TextView)findViewById(R.id.tofatsmall2);
+            tfat2.setText((Integer.parseInt(product.get_tofat().toString()))/divider+"");
+            sfat2= (TextView)findViewById(R.id.sfatsmall2);
+            sfat2.setText((Integer.parseInt(product.get_sfat().toString()))/divider+"");
+            trfat2= (TextView)findViewById(R.id.trfatsmall2);
+            trfat2.setText((Integer.parseInt(product.get_trfat().toString()))/divider+"");
+            chloe2= (TextView)findViewById(R.id.chloesmall2);
+            chloe2.setText((Integer.parseInt(product.get_chole().toString()))/divider+"");
+            sodiu2= (TextView)findViewById(R.id.sodiusmall2);
+            sodiu2.setText((Integer.parseInt(product.get_sodiu().toString()))/divider+"");
+            carbs2= (TextView)findViewById(R.id.carbssmall2);
+            carbs2.setText((Integer.parseInt(product.get_carbs().toString()))/divider+"");
+            diefi2= (TextView)findViewById(R.id.diefismall2);
+            diefi2.setText((Integer.parseInt(product.get_diefi().toString()))/divider+"");
+            sugar2= (TextView)findViewById(R.id.sugrsmall2);
+            sugar2.setText(((Integer.parseInt(product.get_sugr().toString()))/divider+""));
+            protein2= (TextView)findViewById(R.id.protesmall2);
+            protein2.setText((Integer.parseInt(product.get_prote().toString()))/divider+"");
+            vitd2= (TextView)findViewById(R.id.vitdsmall2);
+            vitd2.setText((Integer.parseInt(product.get_vitd().toString()))/divider+"");
+            calc2= (TextView)findViewById(R.id.calcsmall2);
+            calc2.setText((Integer.parseInt(product.get_calc().toString()))/divider+"");
+            iron2= (TextView)findViewById(R.id.ironsmall2);
+            iron2.setText((Integer.parseInt(product.get_iron().toString()))/divider+"");
+            potas2= (TextView)findViewById(R.id.potassmall2);
+            potas2.setText((Integer.parseInt(product.get_potas().toString()))/divider+"");
 
 
         }

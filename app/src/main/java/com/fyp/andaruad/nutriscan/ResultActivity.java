@@ -44,7 +44,7 @@ public class ResultActivity extends Activity {
         TextView prote2 = (TextView)findViewById(R.id.protei2);
         TextView vitd2 = (TextView)findViewById(R.id.vitd2);
         TextView calc2 = (TextView)findViewById(R.id.calc2);
-        TextView iron2 = (TextView)findViewById(R.id.iron);
+        TextView iron2 = (TextView)findViewById(R.id.iron2);
         TextView potas2 = (TextView)findViewById(R.id.potas2);
 
 

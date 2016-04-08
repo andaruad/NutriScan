@@ -6,9 +6,10 @@
         <include layout="@layout/result_small" android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:layout_marginBottom="0dp"
-            android:layout_marginTop="5dp"
-            android:id="@+id/include" />
+            android:id="@+id/include"
+            android:layout_alignParentBottom="true"
+            android:layout_alignLeft="@+id/brescan"
+            android:layout_alignStart="@+id/brescan" />
 
 
     <ImageButton
@@ -84,12 +85,11 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="@string/test"
         android:id="@+id/servesmall"
-        android:layout_alignTop="@+id/include"
-        android:layout_alignLeft="@+id/brescan"
-        android:layout_alignStart="@+id/brescan"
-        android:layout_marginTop="77dp"
-        android:layout_marginLeft="12dp"
-        android:textSize="@dimen/txtsizesmall"/>
+        android:textSize="@dimen/txtsizesmall"
+        android:layout_below="@+id/pnamesmall"
+        android:layout_alignLeft="@+id/include"
+        android:layout_alignStart="@+id/include"
+        android:layout_marginTop="33dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -97,19 +97,17 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="@string/test"
         android:id="@+id/caloriessmall"
-        android:layout_below="@+id/servesmall"
-        android:layout_alignLeft="@+id/tofatA1"
-        android:layout_alignStart="@+id/tofatA1"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:textSize="@dimen/txtsizesmall"
-        />
+        android:layout_below="@+id/servesmall"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="@string/test"
-        android:id="@+id/tofatA1"
+        android:id="@+id/tofatsmall"
         android:layout_below="@+id/caloriessmall"
         android:layout_centerHorizontal="true"
         android:textSize="@dimen/txtsizesmall"/>
@@ -120,9 +118,9 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="@string/test"
         android:id="@+id/sfatsmall"
-        android:layout_below="@+id/tofatA1"
-        android:layout_alignLeft="@+id/tofatA1"
-        android:layout_alignStart="@+id/tofatA1"
+        android:layout_below="@+id/tofatsmall"
+        android:layout_alignLeft="@+id/tofatsmall"
+        android:layout_alignStart="@+id/tofatsmall"
         android:textSize="@dimen/txtsizesmall"/>
 
     <TextView
