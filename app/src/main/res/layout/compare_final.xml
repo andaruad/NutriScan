@@ -11,13 +11,14 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="0"
         android:id="@+id/calA1"
-        android:layout_marginTop="160dp"
+        android:layout_marginTop="170dp"
         android:layout_marginRight="10dp"
         android:layout_marginLeft="165dp"
         android:layout_alignParentTop="true"
         android:textSize="@dimen/txtsizesmall"
         android:focusableInTouchMode="false"
-        android:layout_alignParentEnd="false" />
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentRight="false" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -127,7 +128,7 @@
         android:layout_below="@+id/proteiA1"
         android:layout_alignLeft="@+id/proteiA1"
         android:layout_alignStart="@+id/proteiA1"
-        android:layout_marginTop="25dp"         android:textSize="@dimen/txtsizesmall"
+        android:layout_marginTop="20dp"         android:textSize="@dimen/txtsizesmall"
         />
 
     <TextView
@@ -441,7 +442,7 @@
         android:layout_below="@+id/proteiB1"
         android:layout_alignLeft="@+id/proteiB1"
         android:layout_alignStart="@+id/proteiB1"
-        android:layout_marginTop="25dp"        android:textSize="@dimen/txtsizesmall"
+        android:layout_marginTop="20dp"        android:textSize="@dimen/txtsizesmall"
         />
 
     <TextView
@@ -598,7 +599,7 @@
         android:layout_below="@+id/proteiB2"
         android:layout_alignLeft="@+id/proteiB2"
         android:layout_alignStart="@+id/proteiB2"
-        android:layout_marginTop="25dp"        android:textSize="@dimen/txtsizesmall"
+        android:layout_marginTop="20dp"        android:textSize="@dimen/txtsizesmall"
         />
 
     <TextView
@@ -652,8 +653,8 @@
         android:text="Medium Text"
         android:id="@+id/pname2"
         android:layout_alignTop="@+id/pname1"
-        android:layout_toRightOf="@+id/calA2"
-        android:layout_toEndOf="@+id/calA2" />
+        android:layout_alignLeft="@+id/barcodeF2"
+        android:layout_alignStart="@+id/barcodeF2" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -681,9 +682,10 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="We Recommend:"
         android:id="@+id/recommend"
-        android:layout_below="@+id/textView3"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignBaseline="@+id/textView3"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_alignRight="@+id/potasA1"
+        android:layout_alignEnd="@+id/potasA1" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -691,11 +693,9 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="The Product contain:"
         android:id="@+id/textView3"
-        android:layout_below="@+id/potasA1"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="61dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_below="@+id/potasA2"
+        android:layout_toRightOf="@+id/calA1"
+        android:layout_toEndOf="@+id/calA1"
+        android:layout_marginTop="33dp" />
 
 </RelativeLayout>

@@ -9,6 +9,8 @@ import android.view.Gravity;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.w3c.dom.Text;
+
 //Created by Andaruad on 27/03/2016.
 
 public class CompareFinal extends Activity{
@@ -53,38 +55,10 @@ TextView calori4,sersi4, pname4, cate4, tfat4, sfat4,trfat4, chloe4, sodiu4, car
 //            Toast toast = Toast.makeText(getApplicationContext(),
 //                    "The product you scanned exist in the Database", Toast.LENGTH_SHORT);
 //            toast.show();
-            String result = product1.getCal();
-            toastz = Toast.makeText(getApplicationContext(),
-                   (result), Toast.LENGTH_LONG);
-            toastz.show();
 
             TVholder();
+            Calculation();
 
-
-//            int cal = (product1.get_chole()).compareTo(product2.get_chole());
-//            if(cal == 1)
-//            {
-//
-//                Toast.makeText(getApplicationContext(), "cal =1", Toast.LENGTH_LONG)
-//                        .show();
-//            }
-//            else if(cal == -1)
-//            {
-//                Toast.makeText(getApplicationContext(), "cal == -1", Toast.LENGTH_LONG)
-//                        .show();
-//            }
-//            else if (cal==0){
-//                Toast.makeText(getApplicationContext(),"cal == 0", Toast.LENGTH_LONG)
-//                    .show();}
-
-            if((Integer.parseInt(product1.getCal().toString())) == (Integer.parseInt(product2.getCal().toString())))
-            {
-                System.out.println(product1.getCal());
-                System.out.println(product2.getCal());
-
-
-            }
-            else{System.out.println("different");}
 
 
 
@@ -94,6 +68,70 @@ TextView calori4,sersi4, pname4, cate4, tfat4, sfat4,trfat4, chloe4, sodiu4, car
     }
     public void Calculation(){
 
+        int point1 = 1;
+        int point2 = 1;
+        if((Integer.parseInt(product1.get_tofat().toString())) > (Integer.parseInt(product2.get_tofat().toString())))
+        {   point1 += 1;}
+        else if((Integer.parseInt(product2.get_tofat().toString())) > (Integer.parseInt(product1.get_tofat().toString())))
+        { point2 += 1;}
+        System.out.println(point1);
+        System.out.println(point2);
+
+
+
+        if((Integer.parseInt(product1.get_chole().toString())) > (Integer.parseInt(product2.get_chole().toString())))
+        {   point1 += 1;}
+        else if((Integer.parseInt(product2.get_chole().toString())) > (Integer.parseInt(product1.get_chole().toString())))
+        { point2 += 1;}
+        System.out.println(point1);
+        System.out.println(point2);
+
+
+        if((Integer.parseInt(product1.get_sodiu().toString())) > (Integer.parseInt(product2.get_sodiu().toString())))
+        {   point1 += 1;}
+        else if((Integer.parseInt(product2.get_sodiu().toString())) > (Integer.parseInt(product1.get_sodiu().toString())))
+        { point2 += 1;}
+        System.out.println(point1);
+        System.out.println(point2);
+
+        if((Integer.parseInt(product1.get_sugr().toString())) > (Integer.parseInt(product2.get_sugr().toString())))
+        {   point1 += 1;}
+        else if((Integer.parseInt(product2.get_sugr().toString())) > (Integer.parseInt(product1.get_sugr().toString())))
+        { point2 += 1;}
+        System.out.println(point1);
+        System.out.println(point2);
+
+
+        if((Integer.parseInt(product1.get_prote().toString())) > (Integer.parseInt(product2.get_prote().toString())))
+        {   point1 -= 1;}
+        else if((Integer.parseInt(product2.get_prote().toString())) > (Integer.parseInt(product1.get_prote().toString())))
+        { point2 -= 1;}
+        System.out.println(point1);
+        System.out.println(point2);
+
+        if((Integer.parseInt(product1.get_diefi().toString())) > (Integer.parseInt(product2.get_diefi().toString())))
+        {   point1 -= 1;}
+        else if((Integer.parseInt(product2.get_diefi().toString())) > (Integer.parseInt(product1.get_diefi().toString())))
+        { point2 -= 1;}
+        System.out.println(point1);
+        System.out.println(point2);
+
+        if (point1>point2){
+
+
+            TextView recommend = (TextView)findViewById(R.id.recommend);
+            recommend.setText("We Recommend: " + point1 +"point1");
+        }
+        if (point2>point1){
+
+
+            TextView recommend = (TextView)findViewById(R.id.recommend);
+            recommend.setText("We Recommend: " + point2 +"point2");
+        }
+        if(point1==point2){
+            TextView recommend = (TextView)findViewById(R.id.recommend);
+            recommend.setText("The Product is equal");
+        }
 
 
 
