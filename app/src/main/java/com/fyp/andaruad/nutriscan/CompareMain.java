@@ -56,7 +56,7 @@ public class CompareMain extends Activity {
 
             calori = (TextView) findViewById(R.id.caloriessmall);
             calori.setText(product.getCal());
-            pname = (TextView) findViewById(R.id.pnamesmall);
+            pname = (TextView) findViewById(R.id.pname1);
             pname.setText(product.getName());
             tfat= (TextView)findViewById(R.id.tofatsmall);
             tfat.setText(product.get_tofat());

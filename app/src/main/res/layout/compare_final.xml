@@ -639,7 +639,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Medium Text"
-        android:id="@+id/pnamesmall"
+        android:id="@+id/pname1"
         android:layout_alignParentTop="true"
         android:layout_toLeftOf="@+id/calA2"
         android:layout_toStartOf="@+id/calA2"
@@ -651,7 +651,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Medium Text"
         android:id="@+id/pname2"
-        android:layout_alignTop="@+id/pnamesmall"
+        android:layout_alignTop="@+id/pname1"
         android:layout_toRightOf="@+id/calA2"
         android:layout_toEndOf="@+id/calA2" />
 
@@ -661,7 +661,7 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Small Text"
         android:id="@+id/barcodeF1"
-        android:layout_below="@+id/pnamesmall"
+        android:layout_below="@+id/pname1"
         android:layout_toLeftOf="@+id/tofatA1"
         android:layout_toStartOf="@+id/tofatA1" />
 
