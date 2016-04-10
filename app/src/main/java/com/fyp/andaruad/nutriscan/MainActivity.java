@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity
     ImageButton close;
     MenuItem popup;
     TextView tvresult;
-    String choice, halal;
+    String choice, halal, choicemain;
     Toast diet;
 
     @Override
@@ -58,8 +58,9 @@ public class MainActivity extends AppCompatActivity
 
         halal = "Halal";
         choice = getIntent().getStringExtra("diet");
-
-
+        choicemain = choice;
+        tvresult = (TextView) findViewById(R.id.tvresult);
+        tvresult.setText(choice);
 
         //Get Object from StoreValue
         //final StoreValue value1 = new StoreValue();
@@ -128,9 +129,8 @@ public class MainActivity extends AppCompatActivity
         IntentResult scanResult = IntentIntegrator.parseActivityResult(requestCode,resultCode, intent);
             if (scanResult != null){
                 String re = scanResult.getContents();
-//                 tvresult = (TextView) findViewById(R.id.tvresult);
-//                tvresult.setText("");
                 Intent compare = new Intent(this, CompareMain.class);
+                compare.putExtra("dietz",choicemain);
                 compare.putExtra("barcode_num1", re);
                 startActivity(compare);
             }else {
