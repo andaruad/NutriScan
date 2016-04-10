@@ -403,5 +403,15 @@
         android:layout_alignStart="@+id/ironsmall2"
         android:textSize="@dimen/txtsizesmall"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Medium Text"
+        android:id="@+id/diettypes"
+        android:layout_below="@+id/textView29"
+        android:layout_alignLeft="@+id/include"
+        android:layout_alignStart="@+id/include" />
+
 
 </RelativeLayout>

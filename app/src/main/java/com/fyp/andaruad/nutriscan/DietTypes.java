@@ -20,6 +20,7 @@ public class DietTypes extends Activity {
     private String choice;
 
 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +45,11 @@ public class DietTypes extends Activity {
 
         vegan = (RadioButton) findViewById(R.id.vegan);
         halal = (RadioButton) findViewById(R.id.halal);
+        peanut = (RadioButton) findViewById(R.id.peanut);
+        soy = (RadioButton) findViewById(R.id.soy);
+        shell = (RadioButton) findViewById(R.id.shell);
+        high = (RadioButton) findViewById(R.id.high);
+
         done = (Button) findViewById(R.id.done);
         done.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,6 +63,23 @@ public class DietTypes extends Activity {
                 if (selectedId == vegan.getId()) {
                     choice = "vegan";
                 }
+                if (selectedId == peanut.getId()) {
+                    choice = "Peanut Butter";
+                }
+                if (selectedId == soy.getId()) {
+                    choice = "Soy Allergy";
+                }
+                if (selectedId == shell.getId()) {
+                    choice = "sge";
+                }
+                if (selectedId == high.getId()) {
+                    choice = "highCo";
+                }
+                if (selectedId == halal.getId()) {
+                    choice = "Halal";
+                }
+                Intent diet = new Intent(v.getContext(),CompareMain.class);
+                diet.putExtra("diet", choice);
 
                 Intent intent = new Intent(v.getContext(),MainActivity.class);
                 intent.putExtra("diet", choice);

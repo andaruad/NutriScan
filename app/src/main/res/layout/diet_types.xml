@@ -73,7 +73,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Shellfish Allergy"
-            android:id="@+id/shellfish"
+            android:id="@+id/shell"
             android:layout_below="@+id/soy"
             android:layout_alignLeft="@+id/soy"
             android:layout_alignStart="@+id/soy"
@@ -84,9 +84,9 @@
             android:layout_height="wrap_content"
             android:text="Peanut Allergy"
             android:id="@+id/peanut"
-            android:layout_below="@+id/shellfish"
-            android:layout_alignLeft="@+id/shellfish"
-            android:layout_alignStart="@+id/shellfish"
+            android:layout_below="@+id/shell"
+            android:layout_alignLeft="@+id/shell"
+            android:layout_alignStart="@+id/shell"
             android:checked="false" />
 
         <RadioButton
@@ -103,7 +103,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="High Cholesterol"
-            android:id="@+id/cholesterol"
+            android:id="@+id/high"
             android:layout_below="@+id/peanut"
             android:layout_alignLeft="@+id/peanut"
             android:layout_alignStart="@+id/peanut"

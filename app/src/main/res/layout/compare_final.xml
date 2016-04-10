@@ -128,7 +128,7 @@
         android:layout_below="@+id/proteiA1"
         android:layout_alignLeft="@+id/proteiA1"
         android:layout_alignStart="@+id/proteiA1"
-        android:layout_marginTop="20dp"         android:textSize="@dimen/txtsizesmall"
+        android:layout_marginTop="30dp"         android:textSize="@dimen/txtsizesmall"
         />
 
     <TextView
@@ -442,7 +442,7 @@
         android:layout_below="@+id/proteiB1"
         android:layout_alignLeft="@+id/proteiB1"
         android:layout_alignStart="@+id/proteiB1"
-        android:layout_marginTop="20dp"        android:textSize="@dimen/txtsizesmall"
+        android:layout_marginTop="36dp"        android:textSize="@dimen/txtsizesmall"
         />
 
     <TextView
@@ -599,7 +599,7 @@
         android:layout_below="@+id/proteiB2"
         android:layout_alignLeft="@+id/proteiB2"
         android:layout_alignStart="@+id/proteiB2"
-        android:layout_marginTop="20dp"        android:textSize="@dimen/txtsizesmall"
+        android:layout_marginTop="36dp"        android:textSize="@dimen/txtsizesmall"
         />
 
     <TextView
@@ -682,8 +682,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="We Recommend:"
         android:id="@+id/recommend"
-        android:layout_alignBaseline="@+id/textView3"
-        android:layout_alignBottom="@+id/textView3"
+        android:layout_below="@+id/potasB1"
         android:layout_alignRight="@+id/potasA1"
         android:layout_alignEnd="@+id/potasA1" />
 
@@ -691,11 +690,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="The Product contain:"
-        android:id="@+id/textView3"
-        android:layout_below="@+id/potasA2"
-        android:layout_toRightOf="@+id/calA1"
-        android:layout_toEndOf="@+id/calA1"
-        android:layout_marginTop="33dp" />
+        android:text="Diet Types:"
+        android:id="@+id/textView2"
+        android:layout_below="@+id/recommend"
+        android:layout_alignLeft="@+id/recommend"
+        android:layout_alignStart="@+id/recommend" />
 
 </RelativeLayout>

@@ -66,7 +66,7 @@ TextView calori4,sersi4, pname4, cate4, tfat4, sfat4,trfat4, chloe4, sodiu4, car
         //Display
 
     }
-    public void Calculation(){
+    public void Calculation()   {
 
         int point1 = 1;
         int point2 = 1;
@@ -120,13 +120,13 @@ TextView calori4,sersi4, pname4, cate4, tfat4, sfat4,trfat4, chloe4, sodiu4, car
 
 
             TextView recommend = (TextView)findViewById(R.id.recommend);
-            recommend.setText("We Recommend: " + point1 +"point1");
+            recommend.setText("We Recommend: " + product1.getName() );
         }
         if (point2>point1){
 
 
             TextView recommend = (TextView)findViewById(R.id.recommend);
-            recommend.setText("We Recommend: " + point2 +"point2");
+            recommend.setText("We Recommend: " + product2.getName());
         }
         if(point1==point2){
             TextView recommend = (TextView)findViewById(R.id.recommend);
