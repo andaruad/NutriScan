@@ -24,8 +24,7 @@ TextView calori2,sersi2, pname2, cate2, tfat2, sfat2,trfat2, chloe2, sodiu2, car
 TextView calori1,sersi1, pname1, cate1, tfat1, sfat1,trfat1, chloe1, sodiu1, carbs1, diefi1, sugar1, protein1, vitd1, calc1, iron1, potas1;
 TextView calori3,sersi3, pname3, cate3, tfat3, sfat3,trfat3, chloe3, sodiu3, carbs3, diefi3, sugar3, protein3, vitd3, calc3, iron3, potas3;
 TextView calori4,sersi4, pname4, cate4, tfat4, sfat4,trfat4, chloe4, sodiu4, carbs4, diefi4, sugar4, protein4, vitd4, calc4, iron4, potas4;
-int zcal, zsfat, zsugr, zsodiu,zpro, zdiefi;
-double zpoint,zhsr;
+double zpoint,zhsr, zcal, zsfat, zsugr, zsodiu,zpro, zdiefi;;
     @Override
     public void onCreate (Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -62,93 +61,97 @@ double zpoint,zhsr;
 
 
             //Calories in KJ
-            if(Integer.parseInt(product1.getCal())>=2680){
-                zcal=8;
-            }
             if(Integer.parseInt(product1.getCal())>=2345){
                 zcal=7;
             }
-System.out.println(zcal);
+            if(Integer.parseInt(product1.getCal())>=2680){
+                zcal=8;
+            }
+
+System.out.println("zcal: "+zcal);
 
             //Saturated Fat
-            if(Integer.parseInt(product1.get_sfat())>=24.1){
-                zsfat=18;
-            }
-            if(Integer.parseInt(product1.get_sfat())>=21.6){
-                zsfat=17;
-            }
-            if(Integer.parseInt(product1.get_sfat())>=19.3){
-                zsfat=16;
-            }
-            if(Integer.parseInt(product1.get_sfat())>=17.3){
-                zsfat=15;
-            }
-            if(Integer.parseInt(product1.get_sfat())>=15.5){
-                zsfat=14;
-            }
-            if(Integer.parseInt(product1.get_sfat())>=13.9){
-                zsfat=13;
-            }
-            if(Integer.parseInt(product1.get_sfat())>=12.5){
-                zsfat=12;
-            }
-            if(Integer.parseInt(product1.get_sfat())>=11.2){
-                zsfat=11;
-            }
-            if(Integer.parseInt(product1.get_sfat())>=10.0){
-                zsfat=10;
-            }
-            if(Integer.parseInt(product1.get_sfat())>=9){
-                zsfat=9;
-            }
-            if(Integer.parseInt(product1.get_sfat())>=8.0){
-                zsfat=8;
-            }
-            if(Integer.parseInt(product1.get_sfat())>=7){
-                zsfat=7;
-            }
-            if(Integer.parseInt(product1.get_sfat())>=6){
-                zsfat=6;
-            }
-            if(Integer.parseInt(product1.get_sfat())>=5){
-                zsfat=5;
-            }
-            if(Integer.parseInt(product1.get_sfat())>=4){
-                zsfat=4;
-            }
-            if(Integer.parseInt(product1.get_sfat())>=3){
-                zsfat=3;
-            }
-            if(Integer.parseInt(product1.get_sfat())>=2){
-                zsfat=2;
+            if(Integer.parseInt(product1.get_sfat())<1){
+                zsfat=0;
             }
             if(Integer.parseInt(product1.get_sfat())>=1){
                 zsfat=1;
             }
-            if(Integer.parseInt(product1.get_sfat())<1){
-                zsfat=0;
+            if(Integer.parseInt(product1.get_sfat())>=2){
+                zsfat=2;
+            }
+            if(Integer.parseInt(product1.get_sfat())>=3){
+                zsfat=3;
+            }
+            if(Integer.parseInt(product1.get_sfat())>=4){
+                zsfat=4;
+            }
+            if(Integer.parseInt(product1.get_sfat())>=5){
+                zsfat=5;
+            }
+            if(Double.parseDouble(product1.get_sfat())>=6){
+                zsfat=6;
+            }
+            if(Double.parseDouble(product1.get_sfat())>=7){
+                zsfat=7;
+            }
+            if(Double.parseDouble(product1.get_sfat())>=8){
+                zsfat=8;
+            }
+            if(Integer.parseInt(product1.get_sfat())>=9){
+                zsfat=9;
+            }
+            if(Integer.parseInt(product1.get_sfat())>=10.0){
+                zsfat=10;
+            }
+            if(Integer.parseInt(product1.get_sfat())>=11.2){
+                zsfat=11;
+            }
+            if(Integer.parseInt(product1.get_sfat())>=12.5){
+                zsfat=12;
+            }
+            if(Integer.parseInt(product1.get_sfat())>=13.9){
+                zsfat=13;
+            }
+            if(Integer.parseInt(product1.get_sfat())>=15.5){
+                zsfat=14;
+            }
+            if(Double.parseDouble(product1.get_sfat())>=17.3){
+                zsfat=15;
+            }
+            if(Double.parseDouble(product1.get_sfat())>=19.3){
+                zsfat=16;
+            }
+            if(Double.parseDouble(product1.get_sfat())>=21.6){
+                zsfat=17;
+            }
+            if(Double.parseDouble(product1.get_sfat())>=24.1){
+                zsfat=18;
             }
 
-System.out.println(zsfat);
+System.out.println("zsfat: "+ zsfat);
 
 
-
-            if(Integer.parseInt(product1.get_sugr())>=18){
-                zsugr =4;
+            if(Double.parseDouble(product1.get_sugr())<5){
+                zsugr =0;
             }
-            if(Integer.parseInt(product1.get_sugr())>=13.5){
-                zsugr=3;
+            if(Double.parseDouble(product1.get_sugr())>=5){
+                zsugr=1;
             }
             if(Integer.parseInt(product1.get_sugr())>=9){
                 zsugr =2;
             }
-            if(Integer.parseInt(product1.get_sugr())>=5){
-                zsugr=1;
+            if(Integer.parseInt(product1.get_sugr())>=13.5){
+                zsugr=3;
             }
-            if(Integer.parseInt(product1.get_sugr())<5){
-                zsugr =0;
+            if(Integer.parseInt(product1.get_sugr())>=18){
+                zsugr =4;
             }
-System.out.println(zsugr);
+
+
+
+
+System.out.println("zsugr: "+zsugr);
 
 
 
@@ -161,21 +164,44 @@ System.out.println(zsugr);
             if(Integer.parseInt(product1.get_sodiu())>=180){
                 zsodiu =2;
             }
-            if(Integer.parseInt(product1.get_sodiu())>=90){
+            if(Double.parseDouble(product1.get_sodiu())>=90){
                 zsodiu=1;
             }
-            if(Integer.parseInt(product1.get_sodiu())<90){
+            if(Double.parseDouble(product1.get_sodiu())<90){
                 zsodiu =0;
             }
-System.out.println(zsodiu);
+System.out.println("zsodui" +zsodiu);
+zpoint = zcal +zsodiu+zsfat+zsugr;
+System.out.println("zpoint -w/p&f" +zpoint);
 
 
-            if(Integer.parseInt(product1.get_prote())>=28.9){
+
+            if(Double.parseDouble(product1.get_prote())>=50.0){
+                zpro =15;
+            }
+            if(Double.parseDouble(product1.get_prote())>=41.6){
+                zpro=14;
+            }
+            if(Double.parseDouble(product1.get_prote())>=34.7){
+                zpro =13;
+            }
+            if(Double.parseDouble(product1.get_prote())>=28.9){
                 zpro =12;
             }
-            if(Integer.parseInt(product1.get_prote())>=24){
+            if(Double.parseDouble(product1.get_prote())>=24){
                 zpro=11;
             }
+            if(Double.parseDouble(product1.get_prote())>=20){
+                zpro =10;
+            }
+            if(Double.parseDouble(product1.get_prote())>=16.7){
+                zpro=9;
+            }
+            if(Double.parseDouble(product1.get_prote())>=13.9){
+                zpro=8;
+            }
+
+ System.out.println("protein: "+zpro);
 
             if(Integer.parseInt(product1.get_diefi())>=6.3){
                 zdiefi =7;
@@ -183,10 +209,12 @@ System.out.println(zsodiu);
             if(Integer.parseInt(product1.get_diefi())>=5.4){
                 zdiefi=6;
             }
-System.out.println(zdiefi);
+System.out.println("zdiefi: "+ zdiefi);
 
-            zpoint= (zcal+zsfat+zsodiu)-(zpro)-(zdiefi);
-
+            if(zpoint<=13){zpoint= (zpoint)-(zpro);}
+System.out.println("zpoint w/p" +zpoint);
+            zpoint -= zdiefi;
+System.out.println("zpoint w/p+f" +zpoint);
             if(zpoint>=25){
                 zhsr = 0.5;
             }
