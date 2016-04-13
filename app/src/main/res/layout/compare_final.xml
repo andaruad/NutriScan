@@ -680,20 +680,30 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="The Rating of product 1 is "
-        android:id="@+id/recommend"
+        android:text="The Rating1 is "
+        android:id="@+id/recommend1"
         android:layout_below="@+id/potasB1"
-        android:layout_alignRight="@+id/potasA1"
-        android:layout_alignEnd="@+id/potasA1" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Diet Types:"
-        android:id="@+id/textView2"
-        android:layout_below="@+id/recommend"
-        android:layout_alignLeft="@+id/recommend"
-        android:layout_alignStart="@+id/recommend" />
+        android:text="The Rating2 is"
+        android:id="@+id/recommend2"
+        android:layout_below="@+id/recommend1"
+        android:layout_alignLeft="@+id/recommend1"
+        android:layout_alignStart="@+id/recommend1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="We Reccomend "
+        android:id="@+id/frecommend"
+        android:layout_below="@+id/recommend2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>
