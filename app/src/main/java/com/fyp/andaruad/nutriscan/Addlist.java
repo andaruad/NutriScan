@@ -17,7 +17,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Testing extends Activity {
+public class Addlist extends Activity {
     Button add_btn;
     ListView show_product;
     ListView Product_listview;
@@ -46,7 +46,7 @@ public class Testing extends Activity {
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                Intent add_user = new Intent(Testing.this,
+                Intent add_user = new Intent(Addlist.this,
                         Add_Update.class);
                 add_user.putExtra("called", "add");
                 add_user.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
@@ -60,7 +60,7 @@ public class Testing extends Activity {
 //            @Override
 //            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 //                startActivity(new Intent(getApplicationContext(), ResultActivity.class));
-//                //Toast.makeText(Testing.this, "Test", Toast.LENGTH_LONG).show();
+//                //Toast.makeText(Addlist.this, "Test", Toast.LENGTH_LONG).show();
 //            }
 //        });
     }
@@ -110,7 +110,7 @@ public class Testing extends Activity {
             contact_data.add(pdct);
         }
         db.close();
-        cAdapter = new Product_Adapter(Testing.this, R.layout.list_view_row,
+        cAdapter = new Product_Adapter(Addlist.this, R.layout.list_view_row,
                 contact_data);
         Product_listview.setAdapter(cAdapter);
         cAdapter.notifyDataSetChanged();
@@ -210,7 +210,7 @@ public class Testing extends Activity {
                                     DBHandler dBHandler = new DBHandler(
                                             activity.getApplicationContext());
                                     dBHandler.Delete_Product(user_id);
-                                    Testing.this.onResume();
+                                    Addlist.this.onResume();
 
                                 }
                             });
