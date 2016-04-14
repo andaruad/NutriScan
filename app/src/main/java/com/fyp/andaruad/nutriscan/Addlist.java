@@ -35,7 +35,7 @@ public class Addlist extends Activity {
             Product_listview.setItemsCanFocus(false);
             add_btn = (Button) findViewById(R.id.add_btn);
 
-            Set_Referash_Data();
+            Set_Data();
 
         } catch (Exception e) {
             // TODO: handle exception
@@ -46,12 +46,12 @@ public class Addlist extends Activity {
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                Intent add_user = new Intent(Addlist.this,
+                Intent add_product = new Intent(Addlist.this,
                         Add_Update.class);
-                add_user.putExtra("called", "add");
-                add_user.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
+                add_product.putExtra("called", "add");
+                add_product.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
                         | Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(add_user);
+                startActivity(add_product);
                 finish();
             }
         });
@@ -66,7 +66,7 @@ public class Addlist extends Activity {
     }
 
 
-    public void Set_Referash_Data() {
+    public void Set_Data() {
         contact_data.clear();
         db = new DBHandler(this);
         ArrayList<Product> contact_array_from_db = db.Get_Products();
@@ -124,7 +124,7 @@ public class Addlist extends Activity {
     public void onResume() {
         // TODO Auto-generated method stub
         super.onResume();
-        Set_Referash_Data();
+        Set_Data();
 
     }
 

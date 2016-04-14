@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -65,16 +66,75 @@ double zpoint2,zhsr2, zcal2, zsfat2, zsugr2, zsodiu2,zpro2, zdiefi2;
                     "The product you scanned exist in the Database", Toast.LENGTH_SHORT);
             toast.show();
 
-            TextView recommend = (TextView)findViewById(R.id.recommend1);
-                recommend.setText(String.valueOf(zhsr));
-            TextView recommend2 = (TextView)findViewById(R.id.recommend2);
-            recommend2.setText(String.valueOf(zhsr2));
-            TextView recommend3 = (TextView)findViewById(R.id.frecommend);
-
-            if(zhsr>zhsr2) {
-                recommend3.setText(product1.getName());
+            ImageView recommend = (ImageView)findViewById(R.id.recommend1);
+            if (zhsr==0.5){
+                recommend.setImageResource(R.drawable.half);
             }
-            else{recommend3.setText("We recommend " + product2.getName());}
+            if (zhsr==1){
+                recommend.setImageResource(R.drawable.one);
+            }
+            if (zhsr==1.5){
+                recommend.setImageResource(R.drawable.onehalf);
+            }
+            if (zhsr==2){
+                recommend.setImageResource(R.drawable.two);
+            }
+            if (zhsr==2.5){
+                recommend.setImageResource(R.drawable.twohalf);
+            }
+            if (zhsr==3){
+                recommend.setImageResource(R.drawable.three);
+            }
+            if (zhsr==3.5){
+                recommend.setImageResource(R.drawable.threehalf);
+            }
+            if (zhsr==4){
+                recommend.setImageResource(R.drawable.four);
+            }
+            if (zhsr==4.5){
+                recommend.setImageResource(R.drawable.fourhalf);
+            }
+            if (zhsr==5){
+                recommend.setImageResource(R.drawable.five);
+            }
+
+//            ImageView recommend2 = (ImageView)findViewById(R.id.recommend2);
+//            if (zhsr2==0.5){
+//                recommend2.setImageResource(R.drawable.half);
+//            }
+//            if (zhsr2==1){
+//                recommend2.setImageResource(R.drawable.one);
+//            }
+//            if (zhsr2==1.5){
+//                recommend2.setImageResource(R.drawable.onehalf);
+//            }
+//            if (zhsr2==2){
+//                recommend2.setImageResource(R.drawable.two);
+//            }
+//            if (zhsr2==2.5){
+//                recommend2.setImageResource(R.drawable.twohalf);
+//            }
+//            if (zhsr2==3){
+//                recommend2.setImageResource(R.drawable.three);
+//            }
+//            if (zhsr2==3.5){
+//                recommend2.setImageResource(R.drawable.threehalf);
+//            }
+//            if (zhsr2==4){
+//                recommend2.setImageResource(R.drawable.four);
+//            }
+//            if (zhsr2==4.5){
+//                recommend2.setImageResource(R.drawable.fourhalf);
+//            }
+//            if (zhsr2==5){
+//                recommend2.setImageResource(R.drawable.five);
+//            }
+            System.out.println(zhsr2);
+            TextView recommend3 = (TextView)findViewById(R.id.frecommend);
+            if(zhsr>zhsr2) {
+                recommend3.setText("Better product is " + product1.getName());
+            }
+            else{recommend3.setText("Better product is " + product2.getName());}
 
 
     }

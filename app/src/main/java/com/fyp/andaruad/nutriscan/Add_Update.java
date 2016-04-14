@@ -695,12 +695,9 @@ public class Add_Update extends Activity {
     }
 
 
-    public void Is_Valid_Product_Name(EditText edt) throws NumberFormatException {
+    public void Is_Valid_Product_Name(EditText edt) {
         if (edt.getText().toString().length() <= 0) {
-            edt.setError("Accept Alphabets Only.");
-            valid_name = null;
-        } else if (!edt.getText().toString().matches("[a-zA-Z ]+")) {
-            edt.setError("Accept Alphabets Only.");
+            edt.setError("Field can't be empty");
             valid_name = null;
         } else {
             valid_name = edt.getText().toString();
