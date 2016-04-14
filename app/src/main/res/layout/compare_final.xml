@@ -13,7 +13,7 @@
         android:id="@+id/calA1"
         android:layout_marginTop="170dp"
         android:layout_marginRight="10dp"
-        android:layout_marginLeft="165dp"
+        android:layout_marginLeft="120dp"
         android:layout_alignParentTop="true"
         android:textSize="@dimen/txtsizesmall"
         android:focusableInTouchMode="false"
@@ -329,10 +329,10 @@
         android:id="@+id/calB1"
         android:layout_alignTop="@+id/calA2"
         android:layout_toRightOf="@+id/calA2"
-        android:layout_toEndOf="@+id/calA2"
         android:layout_marginLeft="100dp"
         android:layout_marginStart="45dp"         android:textSize="@dimen/txtsizesmall"
-        />
+        android:layout_alignRight="@+id/barcodeF2"
+        android:layout_alignEnd="@+id/barcodeF2" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -653,8 +653,8 @@
         android:text="Medium Text"
         android:id="@+id/pname2"
         android:layout_alignTop="@+id/pname1"
-        android:layout_alignLeft="@+id/barcodeF2"
-        android:layout_alignStart="@+id/barcodeF2" />
+        android:layout_alignRight="@+id/calB2"
+        android:layout_alignEnd="@+id/calB2" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -673,28 +673,8 @@
         android:text="Small Text"
         android:id="@+id/barcodeF2"
         android:layout_below="@+id/pname2"
-        android:layout_toLeftOf="@+id/tofatB2"
-        android:layout_toStartOf="@+id/tofatB2" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="The Rating1 is "
-        android:id="@+id/recommend1"
-        android:layout_below="@+id/potasB1"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="The Rating2 is"
-        android:id="@+id/recommend2"
-        android:layout_below="@+id/recommend1"
-        android:layout_alignLeft="@+id/recommend1"
-        android:layout_alignStart="@+id/recommend1" />
+        android:layout_alignLeft="@+id/calA2"
+        android:layout_alignStart="@+id/calA2" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -702,8 +682,24 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="We Reccomend "
         android:id="@+id/frecommend"
-        android:layout_below="@+id/recommend2"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="55dp" />
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/recommend1"
+        android:layout_below="@+id/potasB1"
+        android:layout_toRightOf="@+id/potasA1"
+        android:layout_toEndOf="@+id/potasA1" />
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/recommend2"
+        android:layout_above="@+id/frecommend"
+        android:layout_toRightOf="@+id/potasB1"
+        android:layout_toEndOf="@+id/potasB1" />
 
 </RelativeLayout>
