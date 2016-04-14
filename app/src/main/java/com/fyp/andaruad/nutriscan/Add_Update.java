@@ -602,7 +602,7 @@ public class Add_Update extends Activity {
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 Intent view_user = new Intent(Add_Update.this,
-                        Testing.class);
+                        Addlist.class);
                 view_user.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
                         | Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(view_user);
@@ -616,7 +616,7 @@ public class Add_Update extends Activity {
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 Intent view_user = new Intent(Add_Update.this,
-                        Testing.class);
+                        Addlist.class);
                 view_user.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
                         | Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(view_user);

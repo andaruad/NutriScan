@@ -1,13 +1,11 @@
 package com.fyp.andaruad.nutriscan;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,7 +18,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
@@ -29,8 +26,6 @@ import android.widget.Toast;
 import android.view.View.OnClickListener;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
-
-import java.net.URI;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -214,7 +209,7 @@ public class MainActivity extends AppCompatActivity
             startActivity(intent);
 
         }else if (id == R.id.testing) {
-            startActivity(new Intent(getApplicationContext(),Testing.class));}
+            startActivity(new Intent(getApplicationContext(),Addlist.class));}
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

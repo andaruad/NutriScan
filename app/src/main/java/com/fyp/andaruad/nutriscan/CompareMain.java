@@ -42,7 +42,7 @@ public class CompareMain extends Activity {
                     .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            Intent intent = new Intent(getApplicationContext(), Testing.class);
+                            Intent intent = new Intent(getApplicationContext(), Addlist.class);
                             startActivity(intent);
                         }
 

@@ -42,7 +42,7 @@ double zpoint2,zhsr2, zcal2, zsfat2, zsugr2, zsodiu2,zpro2, zdiefi2;
                     .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            Intent intent = new Intent(getApplicationContext(), Testing.class);
+                            Intent intent = new Intent(getApplicationContext(), Addlist.class);
                             startActivity(intent);
                         }
 
