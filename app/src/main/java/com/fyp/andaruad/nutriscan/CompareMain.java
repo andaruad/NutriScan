@@ -32,7 +32,7 @@ public class CompareMain extends Activity {
         result1 = getIntent().getStringExtra("barcode_num1");
         diettypes = getIntent().getStringExtra("diet");
         resultx1 = Long.parseLong(getIntent().getStringExtra("barcode_num1"));
-//        diettypes = getIntent().getStringExtra("diet");
+       diettypes = getIntent().getStringExtra("diet");
         product = dbHandler.Get_Bar(resultx1);
 
         if(product == null ){
@@ -53,7 +53,7 @@ public class CompareMain extends Activity {
         } else{
 
             Toast toast = Toast.makeText(getApplicationContext(),
-                    "The product you scanned exist in the Database "+diettypes, Toast.LENGTH_LONG);
+                    "The product you scanned exist in the Database "+DietTypes.choice, Toast.LENGTH_LONG);
             toast.show();
             TVHolder();
 
@@ -77,7 +77,7 @@ public class CompareMain extends Activity {
             }
         });
 
-
+        getIntent().getSerializableExtra("diet");
         TextView tv =(TextView) findViewById(R.id.tvresult2);
         tv.setText("   " + result1);
 

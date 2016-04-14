@@ -17,7 +17,7 @@ public class DietTypes extends Activity {
     private RadioGroup dietgroup;
     private RadioButton vege, halal, soy, shell, peanut, vegan, high;
     private Button done;
-    private String choice;
+    public static String choice;
 
 
 
@@ -80,6 +80,7 @@ public class DietTypes extends Activity {
                 }
                 Intent diet = new Intent(v.getContext(),CompareMain.class);
                 diet.putExtra("diet", choice);
+                startActivity(diet);
 
                 Intent intent = new Intent(v.getContext(),MainActivity.class);
                 intent.putExtra("diet", choice);

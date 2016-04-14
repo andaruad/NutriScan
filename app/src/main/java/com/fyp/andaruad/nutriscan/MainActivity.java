@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity
         choice = getIntent().getStringExtra("diet");
         choicemain = choice;
         tvresult = (TextView) findViewById(R.id.tvresult);
-        tvresult.setText(choice);
+//        tvresult.setText(DietTypes.choice);
 
         //Get Object from StoreValue
         //final StoreValue value1 = new StoreValue();

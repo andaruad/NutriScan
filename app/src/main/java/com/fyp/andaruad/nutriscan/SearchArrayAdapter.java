@@ -48,9 +48,11 @@ public class SearchArrayAdapter extends ArrayAdapter<Product>{
 
             Product currentProduct = getItem(position);
             View rowView = inflater.inflate(R.layout.search_main, parent, false);
-            TextView textView = (TextView) rowView.findViewById(R.id.listlabel);
+            TextView name = (TextView) rowView.findViewById(R.id.listlabel);
 //            ImageView imageView = (ImageView) rowView.findViewById(R.id.icon);
-            textView.setText(currentProduct.getName());
+            name.setText(currentProduct.getName());
+            TextView cate = (TextView) rowView.findViewById(R.id.listcate);
+            cate.setText(currentProduct.getCate());
 
 
             return rowView;
