@@ -211,34 +211,34 @@ public class DBHandler extends SQLiteOpenHelper {
         return product_list;
     }
 
-    // Updating single contact
-    public int Update_Product(Product contact) {
+    // Updating single product
+    public int Update_Product(Product product) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put(KEY_NAME, contact.getName());
-        values.put(KEY_BR_NO, contact.getBarcodeNumber());
-        values.put(KEY_CATE, contact.getCate());
-        values.put(KEY_CAL, contact.getCal());
-        values.put(KEY_TOFAT, contact.get_tofat());
-        values.put(KEY_SFAT, contact.get_sfat());
-        values.put(KEY_TRFAT, contact.get_trfat());
+        values.put(KEY_NAME, product.getName());
+        values.put(KEY_BR_NO, product.getBarcodeNumber());
+        values.put(KEY_CATE, product.getCate());
+        values.put(KEY_CAL, product.getCal());
+        values.put(KEY_TOFAT, product.get_tofat());
+        values.put(KEY_SFAT, product.get_sfat());
+        values.put(KEY_TRFAT, product.get_trfat());
 
-        values.put(KEY_CHOLE, contact.get_chole());
-        values.put(KEY_SODIU, contact.get_sodiu());
-        values.put(KEY_CARBS, contact.get_carbs());
-        values.put(KEY_DIEFI, contact.get_diefi());
-        values.put(KEY_SUGR, contact.get_sugr());
-        values.put(KEY_PROTE, contact.get_prote());
-        values.put(KEY_VITD, contact.get_vitd());
-        values.put(KEY_CALC, contact.get_calc());
-        values.put(KEY_IRON, contact.get_iron());
-        values.put(KEY_POTAS, contact.get_potas());
-        values.put(KEY_SERSI, contact.get_sersi());
+        values.put(KEY_CHOLE, product.get_chole());
+        values.put(KEY_SODIU, product.get_sodiu());
+        values.put(KEY_CARBS, product.get_carbs());
+        values.put(KEY_DIEFI, product.get_diefi());
+        values.put(KEY_SUGR, product.get_sugr());
+        values.put(KEY_PROTE, product.get_prote());
+        values.put(KEY_VITD, product.get_vitd());
+        values.put(KEY_CALC, product.get_calc());
+        values.put(KEY_IRON, product.get_iron());
+        values.put(KEY_POTAS, product.get_potas());
+        values.put(KEY_SERSI, product.get_sersi());
 
         // updating row
         return db.update(TABLE_PRODUCTS, values, KEY_ID + " = ?",
-                new String[] { String.valueOf(contact.getID()) });
+                new String[] { String.valueOf(product.getID()) });
     }
 
     // Deleting single contact

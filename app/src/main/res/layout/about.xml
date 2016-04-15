@@ -42,4 +42,11 @@
         android:text="Supervised By: Mr. Chew Sze Ker"
         android:id="@+id/textView33" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLargePopupMenu"
+        android:text="Background images, Button images, are retrieved from freepik.com"
+        android:id="@+id/textView34" />
+
 </LinearLayout>

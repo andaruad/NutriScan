@@ -60,12 +60,14 @@ double zpoint2,zhsr2, zcal2, zsfat2, zsugr2, zsodiu2,zpro2, zdiefi2;
 
             Calculation1();
             Calculation2();
+            Rating();
 
 
             Toast toast = Toast.makeText(getApplicationContext(),
                     "The product you scanned exist in the Database", Toast.LENGTH_SHORT);
             toast.show();
-
+          System.out.println(zhsr);
+            System.out.println(zhsr2);
             ImageView recommend = (ImageView)findViewById(R.id.recommend1);
             if (zhsr==0.5){
                 recommend.setImageResource(R.drawable.half);
@@ -98,43 +100,44 @@ double zpoint2,zhsr2, zcal2, zsfat2, zsugr2, zsodiu2,zpro2, zdiefi2;
                 recommend.setImageResource(R.drawable.five);
             }
 
-//            ImageView recommend2 = (ImageView)findViewById(R.id.recommend2);
-//            if (zhsr2==0.5){
-//                recommend2.setImageResource(R.drawable.half);
-//            }
-//            if (zhsr2==1){
-//                recommend2.setImageResource(R.drawable.one);
-//            }
-//            if (zhsr2==1.5){
-//                recommend2.setImageResource(R.drawable.onehalf);
-//            }
-//            if (zhsr2==2){
-//                recommend2.setImageResource(R.drawable.two);
-//            }
-//            if (zhsr2==2.5){
-//                recommend2.setImageResource(R.drawable.twohalf);
-//            }
-//            if (zhsr2==3){
-//                recommend2.setImageResource(R.drawable.three);
-//            }
-//            if (zhsr2==3.5){
-//                recommend2.setImageResource(R.drawable.threehalf);
-//            }
-//            if (zhsr2==4){
-//                recommend2.setImageResource(R.drawable.four);
-//            }
-//            if (zhsr2==4.5){
-//                recommend2.setImageResource(R.drawable.fourhalf);
-//            }
-//            if (zhsr2==5){
-//                recommend2.setImageResource(R.drawable.five);
-//            }
-            System.out.println(zhsr2);
+            ImageView recommend2 = (ImageView)findViewById(R.id.recommend2);
+            if (zhsr2==0.5){
+                recommend2.setImageResource(R.drawable.half);
+            }
+            if (zhsr2==1){
+                recommend2.setImageResource(R.drawable.one);
+            }
+            if (zhsr2==1.5){
+                recommend2.setImageResource(R.drawable.onehalf);
+            }
+            if (zhsr2==2){
+                recommend2.setImageResource(R.drawable.two);
+            }
+            if (zhsr2==2.5){
+                recommend2.setImageResource(R.drawable.twohalf);
+            }
+            if (zhsr2==3){
+                recommend2.setImageResource(R.drawable.three);
+            }
+            if (zhsr2==3.5){
+                recommend2.setImageResource(R.drawable.threehalf);
+            }
+            if (zhsr2==4){
+                recommend2.setImageResource(R.drawable.four);
+            }
+            if (zhsr2==4.5){
+                recommend2.setImageResource(R.drawable.fourhalf);
+            }
+            if (zhsr2==5){
+                recommend2.setImageResource(R.drawable.five);
+            }
+
             TextView recommend3 = (TextView)findViewById(R.id.frecommend);
             if(zhsr>zhsr2) {
                 recommend3.setText("Better product is " + product1.getName());
             }
             else{recommend3.setText("Better product is " + product2.getName());}
+
 
 
     }
@@ -1020,7 +1023,7 @@ double zpoint2,zhsr2, zcal2, zsfat2, zsugr2, zsodiu2,zpro2, zdiefi2;
         iron3= (TextView)findViewById(R.id.ironB1);
         iron3.setText((Integer.parseInt(product1.get_iron().toString()))/divider1+"");
         potas3= (TextView)findViewById(R.id.potasB1);
-        potas3.setText((Integer.parseInt(product1.get_potas().toString()))/divider1+"");
+        potas3.setText((Integer.parseInt(product1.get_potas().toString())) / divider1 + "");
 
         int divider2 = 100/(Integer.parseInt(product2.get_sersi().toString()));
         calori4 = (TextView) findViewById(R.id.calB2);
@@ -1038,7 +1041,7 @@ double zpoint2,zhsr2, zcal2, zsfat2, zsugr2, zsodiu2,zpro2, zdiefi2;
         carbs4= (TextView)findViewById(R.id.carbsB2);
         carbs4.setText((Integer.parseInt(product2.get_carbs().toString()))/divider2+"");
         diefi4= (TextView)findViewById(R.id.diefiB2);
-        diefi4.setText((Integer.parseInt(product2.get_diefi().toString()))/divider2+"");
+        diefi4.setText((Integer.parseInt(product2.get_diefi().toString())) / divider2 + "");
         sugar4= (TextView)findViewById(R.id.sugarB2);
         sugar4.setText((Integer.parseInt(product2.get_sugr().toString()))/divider2+"");
         protein4= (TextView)findViewById(R.id.proteiB2);
@@ -1055,71 +1058,9 @@ double zpoint2,zhsr2, zcal2, zsfat2, zsugr2, zsodiu2,zpro2, zdiefi2;
 
     }
 
+    public void Rating(){
 
-
-    /*
-    public void Addition1()   {
-
-        int point1 = 1;
-        int point2 = 1;
-        if((Integer.parseInt(product1.get_tofat().toString())) > (Integer.parseInt(product2.get_tofat().toString())))
-        {   point1 += 1;}
-        else if((Integer.parseInt(product2.get_tofat().toString())) > (Integer.parseInt(product1.get_tofat().toString())))
-        { point2 += 1;}
-        System.out.println(point1);
-        System.out.println(point2);
-
-        if((Integer.parseInt(product1.get_chole().toString())) > (Integer.parseInt(product2.get_chole().toString())))
-        {   point1 += 1;}
-        else if((Integer.parseInt(product2.get_chole().toString())) > (Integer.parseInt(product1.get_chole().toString())))
-        { point2 += 1;}
-        System.out.println(point1);
-        System.out.println(point2);
-
-        if((Integer.parseInt(product1.get_sodiu().toString())) > (Integer.parseInt(product2.get_sodiu().toString())))
-        {   point1 += 1;}
-        else if((Integer.parseInt(product2.get_sodiu().toString())) > (Integer.parseInt(product1.get_sodiu().toString())))
-        { point2 += 1;}
-        System.out.println(point1);
-        System.out.println(point2);
-
-        if((Integer.parseInt(product1.get_sugr().toString())) > (Integer.parseInt(product2.get_sugr().toString())))
-        {   point1 += 1;}
-        else if((Integer.parseInt(product2.get_sugr().toString())) > (Integer.parseInt(product1.get_sugr().toString())))
-        { point2 += 1;}
-        System.out.println(point1);
-        System.out.println(point2);
-
-        if((Integer.parseInt(product1.get_prote().toString())) > (Integer.parseInt(product2.get_prote().toString())))
-        {   point1 -= 1;}
-        else if((Integer.parseInt(product2.get_prote().toString())) > (Integer.parseInt(product1.get_prote().toString())))
-        { point2 -= 1;}
-        System.out.println(point1);
-        System.out.println(point2);
-
-        if((Integer.parseInt(product1.get_diefi().toString())) > (Integer.parseInt(product2.get_diefi().toString())))
-        {   point1 -= 1;}
-        else if((Integer.parseInt(product2.get_diefi().toString())) > (Integer.parseInt(product1.get_diefi().toString())))
-        { point2 -= 1;}
-        System.out.println(point1);
-        System.out.println(point2);
-
-        if (point1<point2){
-            TextView recommend = (TextView)findViewById(R.id.recommend);
-            recommend.setText("We Recommend: " + product1.getName() );
-        }
-        if (point2>point1){
-
-
-            TextView recommend = (TextView)findViewById(R.id.recommend);
-            recommend.setText("We Recommend: " + product2.getName());
-        }
-        if(point1==point2){
-            TextView recommend = (TextView)findViewById(R.id.recommend);
-            recommend.setText("The Product is equal");
-        }
     }
-    */
 
 
 

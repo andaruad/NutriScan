@@ -21,7 +21,7 @@ public class Addlist extends Activity {
     Button add_btn;
     ListView show_product;
     ListView Product_listview;
-    ArrayList<Product> contact_data = new ArrayList<Product>();
+    ArrayList<Product> product_data = new ArrayList<Product>();
     Product_Adapter cAdapter;
     DBHandler db;
     String Toast_msg;
@@ -67,7 +67,7 @@ public class Addlist extends Activity {
 
 
     public void Set_Data() {
-        contact_data.clear();
+        product_data.clear();
         db = new DBHandler(this);
         ArrayList<Product> contact_array_from_db = db.Get_Products();
 
@@ -107,11 +107,11 @@ public class Addlist extends Activity {
             pdct.set_calc(calc);pdct.set_iron(iron);pdct.set_potas(potas);
             pdct.set_sersi(sersi);
 
-            contact_data.add(pdct);
+            product_data.add(pdct);
         }
         db.close();
         cAdapter = new Product_Adapter(Addlist.this, R.layout.list_view_row,
-                contact_data);
+                product_data);
         Product_listview.setAdapter(cAdapter);
         cAdapter.notifyDataSetChanged();
     }

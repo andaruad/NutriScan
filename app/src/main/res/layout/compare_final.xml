@@ -680,7 +680,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="We Reccomend "
+        android:text="We Recommend "
         android:id="@+id/frecommend"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
@@ -701,5 +701,14 @@
         android:layout_above="@+id/frecommend"
         android:layout_toRightOf="@+id/potasB1"
         android:layout_toEndOf="@+id/potasB1" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add to History"
+        android:id="@+id/addhistory"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/recommend1"
+        android:layout_toStartOf="@+id/recommend1" />
 
 </RelativeLayout>
