@@ -57,39 +57,39 @@ public class ResultActivity extends Activity {
 
         if(product != null){
             pname.setText(product.getName());
-            cal.setText(product.getCal());
+            cal.setText(product.getCal()+" kJ");
             int cals = (Integer.parseInt(product.getCal().toString()));
             int divider = 100/(Integer.parseInt(product.get_sersi().toString()));
 
-            cal2.setText((Integer.parseInt(product.getCal().toString()))/divider+"");
-            tofat2.setText((Integer.parseInt(product.get_tofat().toString()))/divider+"");
-            tofat.setText(product.get_tofat());
-            sfat2.setText((Integer.parseInt(product.get_sfat().toString()))/divider+"");
-            sfat.setText(product.get_sfat());
-            trfat2.setText((Integer.parseInt(product.get_trfat().toString())) / divider + "");
-            trfat.setText(product.get_trfat());
-            chloe2.setText((Integer.parseInt(product.get_chole().toString()))/divider+"");
-            chloe.setText(product.get_chole());
-            sodiu2.setText((Integer.parseInt(product.get_sodiu().toString()))/divider+"");
-            sodiu.setText(product.get_sodiu());
-            carbs2.setText((Integer.parseInt(product.get_carbs().toString()))/divider+"");
-            carbs.setText(product.get_carbs());
-            diefi2.setText((Integer.parseInt(product.get_diefi().toString()))/divider+"");
-            diefi.setText(product.get_diefi());
-            sugr2.setText((Integer.parseInt(product.get_sugr().toString()))/divider+"");
-            sugr.setText(product.get_sugr());
-            prote2.setText((Integer.parseInt(product.get_prote().toString())) / divider + "");
-            prote.setText(product.get_prote());
-            vitd2.setText((Integer.parseInt(product.get_vitd().toString()))/divider+"");
-            vitd.setText(product.get_vitd());
-            calc2.setText((Integer.parseInt(product.get_calc().toString()))/divider+"");
-            calc.setText(product.get_calc());
-            iron2.setText((Integer.parseInt(product.get_iron().toString()))/divider+"");
-            iron.setText(product.get_iron());
-            potas2.setText((Integer.parseInt(product.get_potas().toString()))/divider+"");
-            potas.setText(product.get_potas());
-            barcode.setText(product.getBarcodeNumber());
-            sersi.setText(product.get_sersi());
+            cal2.setText((Integer.parseInt(product.getCal().toString()))/divider+" kJ");
+            tofat2.setText((Integer.parseInt(product.get_tofat().toString()))/divider+" g");
+            tofat.setText(product.get_tofat()+" g");
+            sfat2.setText((Integer.parseInt(product.get_sfat().toString()))/divider+" g");
+            sfat.setText(product.get_sfat()+" g");
+            trfat2.setText((Integer.parseInt(product.get_trfat().toString())) / divider +" g");
+            trfat.setText(product.get_trfat()+" g");
+            chloe2.setText((Integer.parseInt(product.get_chole().toString()))/divider+" mg");
+            chloe.setText(product.get_chole()+" mg");
+            sodiu2.setText((Integer.parseInt(product.get_sodiu().toString()))/divider+" mg");
+            sodiu.setText(product.get_sodiu()+" mg");
+            carbs2.setText((Integer.parseInt(product.get_carbs().toString()))/divider+" g");
+            carbs.setText(product.get_carbs()+" g");
+            diefi2.setText((Integer.parseInt(product.get_diefi().toString()))/divider+" mg");
+            diefi.setText(product.get_diefi()+" mg");
+            sugr2.setText((Integer.parseInt(product.get_sugr().toString()))/divider+" g");
+            sugr.setText(product.get_sugr()+" g");
+            prote2.setText((Integer.parseInt(product.get_prote().toString())) / divider +" g");
+            prote.setText(product.get_prote()+" g");
+            vitd2.setText((Integer.parseInt(product.get_vitd().toString()))/divider+" mg");
+            vitd.setText(product.get_vitd()+" mg");
+            calc2.setText((Integer.parseInt(product.get_calc().toString()))/divider+" mg");
+            calc.setText(product.get_calc()+" mg");
+            iron2.setText((Integer.parseInt(product.get_iron().toString()))/divider+" mg");
+            iron.setText(product.get_iron()+" mg");
+            potas2.setText((Integer.parseInt(product.get_potas().toString()))/divider+" mg");
+            potas.setText(product.get_potas()+" mg");
+            barcode.setText("Barcode No:  "+product.getBarcodeNumber());
+            sersi.setText(product.get_sersi()+" g");
 
             if(Integer.parseInt(product.getCal())<=335){
                 zcal2=0;
@@ -508,8 +508,8 @@ public class ResultActivity extends Activity {
             if (zhsr2==5){
                 recommend.setImageResource(R.drawable.five);
             }
-            TextView rating = (TextView)findViewById(R.id.rating);
-            rating.setText("Rating of the product is "+ zhsr2);
+           TextView category = (TextView)findViewById(R.id.textView5);
+            category.setText("Category:  "+product.getCate());
         } else {
             pname.setText("Product not found");
         }
