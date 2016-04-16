@@ -927,14 +927,12 @@ double zpoint2,zhsr2, zcal2, zsfat2, zsugr2, zsodiu2,zpro2, zdiefi2;
     }
 
     public void TVholder(){
-        barcodeF1 =(TextView)findViewById(R.id.barcodeF1);
-        barcodeF1.setText(result1);
-        barcodeF2 =(TextView)findViewById(R.id.barcodeF2);
-        barcodeF2.setText(result2);
+
         pname2 = (TextView)findViewById(R.id.pname2);
         pname2.setText(product2.getName());
         calori2 = (TextView) findViewById(R.id.calA2);
         calori2.setText(product2.getCal());
+//        calori2.setText("XXXXX");
         tfat2= (TextView)findViewById(R.id.tofatA2);
         tfat2.setText(product2.get_tofat());
         sfat2= (TextView)findViewById(R.id.sfatA2);
