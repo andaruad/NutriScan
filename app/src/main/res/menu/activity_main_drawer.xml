@@ -2,8 +2,8 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <group android:checkableBehavior="single">
-        <item android:id="@+id/diettypes" android:icon="@drawable/diet"
-            android:title="Diet Types" />
+        <!--<item android:id="@+id/diettypes" android:icon="@drawable/diet"-->
+            <!--android:title="Diet Types" />-->
         <item android:id="@+id/testing" android:icon="@drawable/plus"
             android:title="Add Product" />
         <item android:id="@+id/about" android:icon="@drawable/note"

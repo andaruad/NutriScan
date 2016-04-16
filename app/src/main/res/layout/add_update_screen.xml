@@ -44,7 +44,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:ems="10"
-        android:hint="Product Category"
+        android:hint="Category (Check Example in About page)"
         android:inputType="textCapWords" />
 
     <TextView
@@ -53,6 +53,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Fill in nutrition content per 100g"
         android:id="@+id/textView50"
+        android:layout_marginTop="10dp"
         android:layout_gravity="center_horizontal" />
 
     <TextView
@@ -68,7 +69,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:ems="10"
-        android:hint=""
+        android:hint="in Kilojoule"
         android:inputType="number" />
 
     <TextView
@@ -84,7 +85,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:ems="10"
-        android:hint=""
+        android:hint="in Gram"
         android:inputType="number" />
 
     <TextView
@@ -92,6 +93,7 @@
         android:layout_height="wrap_content"
         android:text="Total Fat"
         android:id="@+id/textView14"
+
         android:layout_marginLeft="@dimen/margin10"/>
 
     <EditText
@@ -100,7 +102,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:ems="10"
-        android:hint=""
+        android:hint="in Gram"
         android:inputType="number"
         />
 
@@ -117,7 +119,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:ems="10"
-        android:hint=""
+        android:hint="in Gram"
         android:inputType="number" />
 
     <TextView
@@ -133,7 +135,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:ems="10"
-        android:hint=""
+        android:hint="in Gram"
         android:inputType="number" />
 
     <TextView
@@ -149,7 +151,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:ems="10"
-        android:hint=""
+        android:hint="in Gram"
         android:inputType="number" />
 
     <TextView
@@ -165,7 +167,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:ems="10"
-        android:hint=""
+        android:hint="in Miligram"
         android:inputType="number" />
 
     <TextView
@@ -181,7 +183,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:ems="10"
-        android:hint=""
+        android:hint="in Gram"
         android:inputType="number" />
 
     <TextView
@@ -197,7 +199,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:ems="10"
-        android:hint=""
+        android:hint="in Gram"
         android:inputType="number" />
 
     <TextView
@@ -228,7 +230,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:ems="10"
-        android:hint=""
+        android:hint="in Gram"
         android:inputType="number"
         />
 
@@ -245,7 +247,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:ems="10"
-        android:hint="in mg"
+        android:hint="in Miligram"
         android:inputType="number" />
 
     <TextView
@@ -263,7 +265,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:ems="10"
-        android:hint="in mg"
+        android:hint="in Miligram"
         android:inputType="number" />
 
     <TextView
@@ -279,7 +281,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:ems="10"
-        android:hint="in mg"
+        android:hint="in Miligram"
         android:inputType="number" />
 
     <TextView
@@ -295,7 +297,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:ems="10"
-        android:hint="in mg"
+        android:hint="in Miligram"
         android:inputType="number" />
     <LinearLayout
         android:id="@+id/add_view"

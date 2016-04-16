@@ -2,6 +2,7 @@ package com.fyp.andaruad.nutriscan;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 /*
@@ -476,6 +477,37 @@ public class ResultActivity extends Activity {
                 zhsr2=5;
             }
 
+            ImageView recommend = (ImageView)findViewById(R.id.imageView3);
+            if (zhsr2==0.5){
+                recommend.setImageResource(R.drawable.half);
+            }
+            if (zhsr2==1){
+                recommend.setImageResource(R.drawable.one);
+            }
+            if (zhsr2==1.5){
+                recommend.setImageResource(R.drawable.onehalf);
+            }
+            if (zhsr2==2){
+                recommend.setImageResource(R.drawable.two);
+            }
+            if (zhsr2==2.5){
+                recommend.setImageResource(R.drawable.twohalf);
+            }
+            if (zhsr2==3){
+                recommend.setImageResource(R.drawable.three);
+            }
+            if (zhsr2==3.5){
+                recommend.setImageResource(R.drawable.threehalf);
+            }
+            if (zhsr2==4){
+                recommend.setImageResource(R.drawable.four);
+            }
+            if (zhsr2==4.5){
+                recommend.setImageResource(R.drawable.fourhalf);
+            }
+            if (zhsr2==5){
+                recommend.setImageResource(R.drawable.five);
+            }
             TextView rating = (TextView)findViewById(R.id.rating);
             rating.setText("Rating of the product is "+ zhsr2);
         } else {

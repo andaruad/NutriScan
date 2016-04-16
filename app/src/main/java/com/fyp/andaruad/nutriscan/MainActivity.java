@@ -196,11 +196,15 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.diettypes) {
-            startActivity(new Intent(getApplicationContext(),DietTypes.class));
-        } else if (id == R.id.addproduct) {
+//        if (id == R.id.diettypes) {
+//            startActivity(new Intent(getApplicationContext(),DietTypes.class));
+//        } else
+        if (id == R.id.addproduct) {
             startActivity(new Intent(getApplicationContext(),AddProduct.class));
         } else if (id == R.id.about) {
+            startActivity(new Intent(getApplicationContext(),About.class));
+        }
+        else if (id == R.id.about) {
             startActivity(new Intent(getApplicationContext(),About.class));
         }
         else if (id == R.id.nav_share) {

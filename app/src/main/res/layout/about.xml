@@ -49,4 +49,19 @@
         android:text="Background images, Button images, are retrieved from freepik.com"
         android:id="@+id/textView34" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Category List Example"
+        android:layout_marginTop="25dp"
+        android:id="@+id/textView2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Cereal, Chocolate bar, Ice Cream, Jam, Peanut Butter, Snack, Sweets"
+        android:id="@+id/textView3" />
+
 </LinearLayout>

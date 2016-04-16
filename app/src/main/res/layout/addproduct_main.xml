@@ -59,7 +59,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Serving Container (in grams)"
+        android:text="Serving Container (per grams)"
         android:layout_marginTop="10dp"
         android:id="@+id/textView37" />
 
@@ -72,7 +72,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Calories per container"
+        android:text="Calories per container (in Kilo Joules)"
         android:layout_marginTop="10dp"
         android:id="@+id/textView38" />
 
