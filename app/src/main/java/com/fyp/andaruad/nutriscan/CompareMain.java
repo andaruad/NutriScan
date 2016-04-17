@@ -55,7 +55,7 @@ public class CompareMain extends Activity {
         } else{
 
             Toast toast = Toast.makeText(getApplicationContext(),
-                    "The product you scanned exist in the Database "+DietTypes.choice, Toast.LENGTH_LONG);
+                    "The product you scanned exist in the Database", Toast.LENGTH_LONG);
             toast.show();
             TVHolder();
 
@@ -66,8 +66,8 @@ public class CompareMain extends Activity {
         rescan.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                IntentIntegrator integrator = new IntentIntegrator(CompareMain.this);
-                integrator.initiateScan();
+                Intent intent = new Intent(view.getContext(),MainActivity.class);
+                startActivity(intent);
             }});
 
         ImageButton compare = (ImageButton) findViewById(R.id.bcompare2);

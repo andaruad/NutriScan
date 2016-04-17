@@ -64,7 +64,7 @@ double zpoint2,zhsr2, zcal2, zsfat2, zsugr2, zsodiu2,zpro2, zdiefi2;
 
 
             Toast toast = Toast.makeText(getApplicationContext(),
-                    "The product you scanned exist in the Database", Toast.LENGTH_SHORT);
+                    "The product you scanned exist in Database", Toast.LENGTH_SHORT);
             toast.show();
           System.out.println(zhsr);
             System.out.println(zhsr2);
