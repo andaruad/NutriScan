@@ -136,7 +136,11 @@ double zpoint2,zhsr2, zcal2, zsfat2, zsugr2, zsodiu2,zpro2, zdiefi2;
             if(zhsr>zhsr2) {
                 recommend3.setText("Better product is " + product1.getName());
             }
-            else{recommend3.setText("Better product is " + product2.getName());}
+            else if(zhsr2>zhsr)
+            {
+                recommend3.setText("Better product is " + product2.getName());
+            }
+            else {recommend3.setText("Products have equal rating");}
 
 
 
@@ -1053,7 +1057,8 @@ double zpoint2,zhsr2, zcal2, zsfat2, zsugr2, zsodiu2,zpro2, zdiefi2;
         potas4= (TextView)findViewById(R.id.potasB2);
         potas4.setText((Integer.parseInt(product2.get_potas().toString())) / divider2 + "");
 
-
+        TextView serving = (TextView)findViewById(R.id.textView4);
+        serving.setText(product1.get_sersi().toString());
     }
 
     public void Rating(){

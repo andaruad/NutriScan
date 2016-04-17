@@ -6,7 +6,7 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
-    <dimen name="txtsizesmall">15dp</dimen>
+    <dimen name="txtsizesmall">14dp</dimen>
     <dimen name="margin10">10dp</dimen>
     <dimen name="testing">0dp</dimen>
 </resources>

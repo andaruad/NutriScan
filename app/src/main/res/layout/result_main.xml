@@ -10,7 +10,7 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Text"
         android:id="@+id/serve"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="23dp"
         android:layout_marginLeft="10dp"
         android:layout_below="@+id/pname"
         android:layout_alignParentLeft="true"
@@ -22,7 +22,7 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="this"
         android:id="@+id/calories"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="42dp"
         android:layout_below="@+id/serve"
         android:layout_alignLeft="@+id/tofat"
         android:layout_alignStart="@+id/tofat"
@@ -359,10 +359,10 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Large Text"
         android:id="@+id/pname"
-        android:layout_marginTop="62dp"
+        android:layout_marginTop="61dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        />
+        android:layout_alignRight="@+id/calories"
+        android:layout_alignEnd="@+id/calories" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -386,18 +386,18 @@
         android:layout_alignStart="@+id/sugr2" />
 
     <ImageView
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="20dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
         android:id="@+id/imageView3"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_alignTop="@+id/pname"
+        android:layout_toEndOf="@+id/calories"
         android:layout_above="@+id/calories2"
-        android:layout_toRightOf="@+id/pname"
-        android:layout_toEndOf="@+id/pname" />
+        android:layout_toRightOf="@+id/calories"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="30dp" />
 
     <TextView
         android:layout_width="wrap_content"

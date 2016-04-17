@@ -97,7 +97,7 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="@string/test"
         android:id="@+id/caloriessmall"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="0dp"
         android:textSize="@dimen/txtsizesmall"
         android:layout_below="@+id/servesmall"
         android:layout_centerHorizontal="true" />
