@@ -18,10 +18,10 @@ long resultx1,resultx2;
 Product product1, product2;
 DBHandler dbHandler;
 Toast toastz;
-TextView calori2,sersi2, pname2, cate2, tfat2, sfat2,trfat2, chloe2, sodiu2, carbs2, diefi2, sugar2, protein2, vitd2, calc2, iron2, potas2;
-TextView calori1,sersi1, pname1, cate1, tfat1, sfat1,trfat1, chloe1, sodiu1, carbs1, diefi1, sugar1, protein1, vitd1, calc1, iron1, potas1;
-TextView calori3,sersi3, pname3, cate3, tfat3, sfat3,trfat3, chloe3, sodiu3, carbs3, diefi3, sugar3, protein3, vitd3, calc3, iron3, potas3;
-TextView calori4,sersi4, pname4, cate4, tfat4, sfat4,trfat4, chloe4, sodiu4, carbs4, diefi4, sugar4, protein4, vitd4, calc4, iron4, potas4;
+TextView calori2, pname2,  tfat2, sfat2,trfat2, chloe2, sodiu2, carbs2, diefi2, sugar2, protein2, vitd2, calc2, iron2, potas2;
+TextView calori1, pname1,  tfat1, sfat1,trfat1, chloe1, sodiu1, carbs1, diefi1, sugar1, protein1, vitd1, calc1, iron1, potas1;
+TextView calori3, pname3,  tfat3, sfat3,trfat3, chloe3, sodiu3, carbs3, diefi3, sugar3, protein3, vitd3, calc3, iron3, potas3;
+TextView calori4, pname4,  tfat4, sfat4,trfat4, chloe4, sodiu4, carbs4, diefi4, sugar4, protein4, vitd4, calc4, iron4, potas4;
 double zpoint,zhsr, zcal, zsfat, zsugr, zsodiu,zpro, zdiefi;
 double zpoint2,zhsr2, zcal2, zsfat2, zsugr2, zsodiu2,zpro2, zdiefi2;
     @Override

@@ -117,9 +117,6 @@ public class CompareMain extends Activity {
             recommend.setImageResource(R.drawable.five);
         }
 
-//        System.out.println(product.getCate());
-
-//        TextView checked = (TextView)findViewById(diettypes)
 
     }
 

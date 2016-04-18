@@ -4,11 +4,11 @@
     <group android:checkableBehavior="single">
         <!--<item android:id="@+id/diettypes" android:icon="@drawable/diet"-->
             <!--android:title="Diet Types" />-->
-        <item android:id="@+id/testing" android:icon="@drawable/plus"
+        <item android:id="@+id/addproduct" android:icon="@drawable/plus"
             android:title="Add Product" />
         <item android:id="@+id/about" android:icon="@drawable/note"
             android:title="About" />
-        <item android:id="@+id/addproduct" android:icon="@drawable/test"
+        <item android:id="@+id/testing" android:icon="@drawable/test"
             android:title="Testing" />
     </group>
 

@@ -51,11 +51,8 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        halal = "Halal";
-        choice = getIntent().getStringExtra("diet");
-        choicemain = choice;
+//
         tvresult = (TextView) findViewById(R.id.tvresult);
-//        tvresult.setText(DietTypes.choice);
 
         //Get Object from StoreValue
         //final StoreValue value1 = new StoreValue();
@@ -106,9 +103,9 @@ public class MainActivity extends AppCompatActivity
         bhistory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent intent = new Intent(v.getContext(),SearchActivity.class);
-//                startActivity(intent);
-      Toast.makeText(getApplicationContext(),"Bhistory button",Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(v.getContext(),SearchActivity.class);
+                startActivity(intent);
+      //Toast.makeText(getApplicationContext(),"Bhistory button",Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -200,7 +197,8 @@ public class MainActivity extends AppCompatActivity
 //            startActivity(new Intent(getApplicationContext(),DietTypes.class));
 //        } else
         if (id == R.id.addproduct) {
-            startActivity(new Intent(getApplicationContext(),AddProduct.class));
+            startActivity(new Intent(getApplicationContext(),Addlist.class));
+
         } else if (id == R.id.about) {
             startActivity(new Intent(getApplicationContext(),About.class));
         }
@@ -213,7 +211,10 @@ public class MainActivity extends AppCompatActivity
             startActivity(intent);
 
         }else if (id == R.id.testing) {
-            startActivity(new Intent(getApplicationContext(),Addlist.class));}
+//            startActivity(new Intent(getApplicationContext(),AddProduct.class));
+            Toast justtest = Toast.makeText(getApplicationContext(),"This Button is used just for testing the App",Toast.LENGTH_LONG);
+            justtest.show();
+        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
