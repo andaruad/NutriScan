@@ -51,8 +51,30 @@ double zpoint2,zhsr2, zcal2, zsfat2, zsugr2, zsodiu2,zpro2, zdiefi2;
                     .setNegativeButton("No", null)
                     .show();
 
-        }else{
+        }
+        else if(product1.getCate().equals(product2.getCate())== false){
+            new AlertDialog.Builder(this)
+                    .setTitle("You can't compare products with different types")
+                    .setMessage("Do you want to go back?")
+                    .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                            startActivity(intent);
+                        }
 
+                    })
+                    .setNegativeButton("No", null)
+                    .show();
+
+        }
+        else{
+
+
+            System.out.println("ZZZZZZZ"+product1.getCate().equals(product2.getCate()));
+            if(product1.getCate().equals(product2.getCate())==true){
+                System.out.println("ZXXZ Trueeee");
+            }
 
             TVholder();
 
