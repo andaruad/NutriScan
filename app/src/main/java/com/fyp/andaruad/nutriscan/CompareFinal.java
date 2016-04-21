@@ -54,7 +54,7 @@ double zpoint2,zhsr2, zcal2, zsfat2, zsugr2, zsodiu2,zpro2, zdiefi2;
         }
         else if(product1.getCate().equals(product2.getCate())== false){
             new AlertDialog.Builder(this)
-                    .setTitle("You can't compare products with different types")
+                    .setTitle("You can't compare " + product1.getCate() + " with " + product2.getCate())
                     .setMessage("Do you want to go back?")
                     .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                         @Override
@@ -63,18 +63,14 @@ double zpoint2,zhsr2, zcal2, zsfat2, zsugr2, zsodiu2,zpro2, zdiefi2;
                             startActivity(intent);
                         }
 
-                    })
-                    .setNegativeButton("No", null)
-                    .show();
+                    });
+
 
         }
         else{
 
 
-            System.out.println("ZZZZZZZ"+product1.getCate().equals(product2.getCate()));
-            if(product1.getCate().equals(product2.getCate())==true){
-                System.out.println("ZXXZ Trueeee");
-            }
+
 
             TVholder();
 
